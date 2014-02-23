@@ -266,7 +266,6 @@ typedef enum {
 //	Executed by the singleton, owned by the root controller, as needed.
 
 - (void)drawRect:(CGRect)rect {
-	return;
 	NSAssert(mode, @"Uninitialized mode");
 	if (mode == singlePageMode) {
 		[self drawPage];

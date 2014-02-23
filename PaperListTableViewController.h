@@ -20,7 +20,7 @@
 
 @end
 
-@interface PaperListTableViewController : UITableViewController <UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate> {
+@interface PaperListTableViewController : UITableViewController <UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate> {
 	IBOutlet TermPaperTextViewController*		viewController;
 	NSArray*									paperNames;					// paper name strings
 	IBOutlet PaperDetailTableViewController*	paperDetailTableController;
@@ -65,5 +65,6 @@
 @property (nonatomic, strong) NSArray* paperNames;
 @property (nonatomic, strong) UIPopoverController *popoverViewController;
 @property (nonatomic) BOOL exportPaperActionSheetVisible;
+@property id											delegate;
 @end
 

@@ -8,6 +8,13 @@
 
 #import "PaperListTableViewController.h"
 
+const static int kSGTextFieldTagNumber = 99;
+
+@interface PaperListTableViewController ()
+
+@property (assign) NSInteger						activeEditingSessionIndex;				// in case user taps another row during an active editing session (rename drawing). -1: no active session
+
+@end
 @implementation PaperListTableViewController
 
 @synthesize paperNames, popoverViewController, exportPaperActionSheetVisible;
@@ -28,21 +35,7 @@
 						 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], 
 						 actionPaper, 
 						 nil];
-	// setup Rename buttons
-	UIImage *buttonImageNormal = [UIImage imageNamed:@"redButton.png"];
-	UIImage *stretchableButtonImageNormal = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	UIImage *buttonImagePressed = [UIImage imageNamed:@"darkRedButton.png"];
-	UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	UIImage *buttonImageCancelNormal = [UIImage imageNamed:@"blueButton.png"];
-	UIImage *stretchableButtonImageCancelNormal = [buttonImageCancelNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	UIImage *buttonImageCancelPressed = [UIImage imageNamed:@"darkBlueButton.png"];
-	UIImage *stretchableButtonImageCancelPressed = [buttonImageCancelPressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	
-	[renameOKButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
-	[renameOKButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
-	[renameCancelButton setBackgroundImage:stretchableButtonImageCancelNormal forState:UIControlStateNormal];
-	[renameCancelButton setBackgroundImage:stretchableButtonImageCancelPressed forState:UIControlStateHighlighted];
-    self.clearsSelectionOnViewWillAppear = YES;
+    self.clearsSelectionOnViewWillAppear = NO;
 	exportPaperActionSheetVisible = NO;
 }
 
@@ -54,18 +47,12 @@
 	indexes[1] = [paperNames indexOfObject:[TermPaperModel activeTermPaper].name];
 	NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
 	[self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
-	self.contentSizeForViewInPopover = CGSizeMake(300, 342);		// TODO: get the appropriate size
 	[self setDeleteButtonEnabled];
 }
 
 - (void)setDeleteButtonEnabled
 {
 	deletePaper.enabled = self.paperNames.count > 1; 
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Override to allow orientations other than the default portrait orientation.
-    return YES;
 }
 
 #pragma mark -
@@ -95,6 +82,13 @@
     // Configure the cell...
     
 	cell.textLabel.text = [self.paperNames objectAtIndex:[indexPath indexAtPosition:1]];
+	// create the editing text field
+	UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 200, 30)];
+	textField.tag = kSGTextFieldTagNumber;
+	[cell.contentView insertSubview:textField belowSubview:cell.textLabel];
+	textField.borderStyle = UITextBorderStyleRoundedRect;
+	textField.clearButtonMode = UITextFieldViewModeAlways;
+	textField.hidden = YES;
 	if ([[paperNames objectAtIndex:[indexPath indexAtPosition:1]] isEqualToString:[TermPaperModel activeTermPaper].name]) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
 	}
@@ -153,7 +147,7 @@
 	exportPaperActionSheetVisible = NO;
 	if (buttonIndex == actionSheet.cancelButtonIndex) return;									// user canceled
 	if (actionSheet == deletePaperActionSheet) {
-		int previousSelectionIndex = [paperNames indexOfObject:[TermPaperModel activeTermPaper].name];
+		NSUInteger previousSelectionIndex = [paperNames indexOfObject:[TermPaperModel activeTermPaper].name];
 		[[TermPaperModel activeTermPaper] remove];
 		if (previousSelectionIndex >= paperNames.count) --previousSelectionIndex;					// in case user has deleted the last paper in the list
 		NSUInteger indexes[2];
@@ -167,7 +161,7 @@
 		}
 		[self setDeleteButtonEnabled];
 	} else if (actionSheet == exportPaperActionSheet) {
-		NSLog(@"buttonIndex = %d", buttonIndex);
+		NSLog(@"buttonIndex = %ld", buttonIndex);
 		switch (buttonIndex) {
 			case 0:
 				[self handleEmailFeedbackButton:self];
@@ -197,41 +191,63 @@
 
 - (IBAction)handleDeletePaper:(id)sender			// TODO: implement UIPopoverControllerDelegate
 {
-	deletePaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete Document" otherButtonTitles:nil];
-	[deletePaperActionSheet showFromToolbar:toolbar];
+	deletePaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete Paper" otherButtonTitles:nil];
+	[deletePaperActionSheet showFromBarButtonItem:actionPaper animated:YES];
 }
 
-- (IBAction)handleRenameConfirm:(id)sender
-{
-	[renameDocumentViewController dismissModalViewControllerAnimated:YES];
-	if (sender != renameOKButton) return;
-	[[TermPaperModel activeTermPaper] rename:renameText.text];
-	[self.tableView reloadData];
-	[self handlePaperPick:renameText.text];
-}
-
-- (IBAction)renameTextDidChange:(id)sender
-{
-	if (renameText.text.length == 0)
-		renameOKButton.enabled = NO;
-	else if ([paperNames containsObject:renameText.text])
-		renameOKButton.enabled = NO;
-	else
-		renameOKButton.enabled = YES;
-}
+//	make the cell's label invisible and activate the text field
 
 - (IBAction)handleRenamePaper:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(renameTextDidChange:) name:UITextFieldTextDidChangeNotification object:nil];
-	renameDocumentViewController = [[RenameViewController alloc] init];
-	renameDocumentViewController.view = renameDialog;
-	renameText.text = [TermPaperModel activeTermPaper].name;
-	renameOKButton.enabled = NO;
-	renameDocumentViewController.modalInPopover = YES;
-	renameDocumentViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
-	renameDocumentViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-	renameDocumentViewController.hidesBottomBarWhenPushed = NO;
-	[parentNavigationController presentModalViewController:renameDocumentViewController animated:YES];
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+	cell.textLabel.hidden = YES;
+	UITextField *textField = (UITextField *)[cell.contentView viewWithTag:kSGTextFieldTagNumber];
+	textField.hidden = NO;
+	textField.text = cell.textLabel.text;
+	textField.delegate = self;
+	[textField becomeFirstResponder];
+	self.activeEditingSessionIndex = [[self.tableView indexPathForSelectedRow] indexAtPosition:1];					// active editing session here!
+}
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+	[self closeEditingSessionOfCell:cell textField:textField];
+	return YES;																										// always allow the session to end
+}
+
+//	User has tapped a different row from the active editing session, we need to end it (and possibly rename its drawing)
+
+- (void)deselectedActiveEditingSession
+{
+	UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForItem:self.activeEditingSessionIndex inSection:0]];		// row that contained active editing session
+	UITextField *textField = (UITextField *) [cell.contentView viewWithTag:kSGTextFieldTagNumber];
+	[self closeEditingSessionOfCell:cell textField:textField];														// close the editing session
+	self.activeEditingSessionIndex = -1;																			// no active editing session
+}
+
+/*
+ Active editing session terminated, either because user dismissed keyboard, dismissed popover, or tapped a different drawing
+ row in the popover.
+ */
+
+- (void)closeEditingSessionOfCell:(UITableViewCell *)cell textField:(UITextField *)textField
+{
+	if (textField.text.length > 0 && ![[TermPaperModel termPapers] containsObject:textField.text]) {				// rename the drawing if it's legal
+		BOOL success = [[TermPaperModel activeTermPaper] rename:textField.text];
+		if (success) {																								// test return code from rename operation
+			[self.tableView reloadData];
+			[self handlePaperPick:textField.text];
+		}
+	}
+	// deactivate editing control and activate original cell label
+	textField.hidden = YES;
+	textField.delegate = nil;
+	[textField resignFirstResponder];
+	cell.textLabel.hidden = NO;
+	cell.textLabel.text = textField.text;
 }
 
 - (IBAction)handleDuplicatePaper:(id)sender
@@ -282,7 +298,7 @@
 	NSString *pdfFile = [documentsFolder stringByAppendingFormat:@"/%@.pdf", [TermPaperModel activeTermPaper].name];
 	NSLog(@"pdffile = %@", pdfFile);
     NSData *myData = [NSData dataWithContentsOfFile:pdfFile];
-	NSLog(@"myData.length = %d", myData.length);
+	NSLog(@"myData.length = %ld", myData.length);
 	NSLog(@"name = %@", [[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]);
 	[picker addAttachmentData:myData mimeType:@"application/pdf" fileName:[[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]];
 	
@@ -335,12 +351,8 @@
 
 - (IBAction)handleActionPaper:(id)sender
 {
-#if !CONSOLE
 	exportPaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Feedback…", @"Email .docx", @"Export .docx", @"Email PDF", @"Export PDF",nil];
-#else
-	exportPaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Feedback…", @"Email .docx", @"Export .docx", @"Email PDF", @"Export PDF",@"Email Console", nil];
-#endif
-	[exportPaperActionSheet showFromToolbar:toolbar];
+	[exportPaperActionSheet showFromBarButtonItem:actionPaper animated:YES];
 	exportPaperActionSheetVisible = YES;
 }
 
@@ -381,7 +393,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-	self.contentSizeForViewInPopover = CGSizeMake(300, 342);		// TODO: get the appropriate size
 }
 
 @end

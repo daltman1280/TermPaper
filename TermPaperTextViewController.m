@@ -8,8 +8,15 @@
 
 #import "TermPaperTextViewController.h"
 #import "TermPaperAppDelegate.h"
+#import "PaperListTableViewController.h"
 
 static BOOL gIsPlainMode = YES;
+
+@interface TermPaperTextViewController ()
+
+@property UIPopoverController *popover;
+
+@end
 
 @implementation TermPaperTextViewController
 
@@ -39,6 +46,17 @@ static BOOL gIsPlainMode = YES;
 		[[NSUserDefaults standardUserDefaults] setObject:newPaperName forKey:@"activePaper"];
 		[TermPaperModel makeActive:newPaperName];
 		[self openPaper];
+	}
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"papers"]) {
+		UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
+		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).delegate = self;			// set up ourselves as delegate
+		((UIStoryboardPopoverSegue *)segue).popoverController.delegate = (id) self;																	// popover controller delegate
+		self.popover = popoverSegue.popoverController;																								// so we can dismiss the popover
+		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).paperNames = [TermPaperModel termPapers];
 	}
 }
 

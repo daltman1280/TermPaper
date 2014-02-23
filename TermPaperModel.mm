@@ -145,17 +145,19 @@ static NSString*				gPapersFolder;
 	return gActiveTermPaper;
 }
 
-- (void)rename:(NSString *)newName
+- (BOOL)rename:(NSString *)newName
 {
+	BOOL success = NO;
 	[gTermPapersList removeObject:gActiveTermPaper.name];
 	self.name = newName;
 	NSString *oldFilepath = [NSString stringWithString:mPlistFilepath];
 	NSString *newFilepath = [[[[oldFilepath stringByDeletingLastPathComponent] stringByAppendingString:@"/"] stringByAppendingString:newName] stringByAppendingString:@".TermPaper"];
 	if (![newFilepath isEqualToString:oldFilepath])
-		[[NSFileManager defaultManager] moveItemAtPath:oldFilepath toPath:newFilepath error:nil];
+		success = [[NSFileManager defaultManager] moveItemAtPath:oldFilepath toPath:newFilepath error:nil];
 	[gTermPapersList addObject:newName];
 	[gTermPapersList sortUsingSelector:@selector(caseInsensitiveCompare:)];
 	self.mPlistFilepath = newFilepath;
+	return success;
 }
 
 //	return the name of the duplicated paper

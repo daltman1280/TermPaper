@@ -95,7 +95,7 @@
 		25C0DC6D18B95ADD00AE93EF /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
 		25C0DC6E18B95ADD00AE93EF /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		25C0DC7818B95B0800AE93EF /* CitationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationModel.h; sourceTree = "<group>"; };
-		25C0DC7918B95B0800AE93EF /* CitationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitationModel.m; sourceTree = "<group>"; };
+		25C0DC7918B95B0800AE93EF /* CitationModel.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CitationModel.m; sourceTree = "<group>"; };
 		25C0DC7A18B95B0800AE93EF /* DocXFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocXFormatter.h; sourceTree = "<group>"; };
 		25C0DC7B18B95B0800AE93EF /* DocXFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocXFormatter.m; sourceTree = "<group>"; };
 		25C0DC7C18B95B0800AE93EF /* TermPaperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermPaperModel.h; sourceTree = "<group>"; };

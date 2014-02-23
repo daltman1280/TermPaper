@@ -39,7 +39,7 @@ const static NSString *kDWPaperTagVersion = @"ApplicationVersion";								//
 	NSMutableDictionary*	mDictionary;
 }
 
-- (void)rename:(NSString *)newName;
+- (BOOL)rename:(NSString *)newName;
 - (NSString *)duplicate;
 + (void)makeActive:(NSString *)selectedPaperName;
 + (TermPaperModel *)activeTermPaper;
