@@ -27,11 +27,6 @@
 	mTermPaper.abstract = textView.text;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
-    return YES;
-}
-
 #pragma mark UITextViewDelegate methods
 
 - (void)textViewDidChange:(UITextView *)aTextView

@@ -141,11 +141,6 @@ static BOOL gIsPlainMode = YES;
 	[self calculateTextViewBounds];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
-    return YES;
-}
-
 - (void)didReceiveMemoryWarning {
 	NSLog(@"TermPaperTextViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
