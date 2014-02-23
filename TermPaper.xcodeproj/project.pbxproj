@@ -12,15 +12,43 @@
 		25C0DC1C18B9480B00AE93EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1B18B9480B00AE93EF /* UIKit.framework */; };
 		25C0DC2218B9480B00AE93EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DC2018B9480B00AE93EF /* InfoPlist.strings */; };
 		25C0DC2418B9480B00AE93EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC2318B9480B00AE93EF /* main.m */; };
-		25C0DC2818B9480B00AE93EF /* TPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC2718B9480B00AE93EF /* TPAppDelegate.m */; };
-		25C0DC2B18B9480B00AE93EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DC2918B9480B00AE93EF /* Main.storyboard */; };
-		25C0DC2E18B9480B00AE93EF /* TPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC2D18B9480B00AE93EF /* TPViewController.m */; };
+		25C0DC2818B9480B00AE93EF /* TermPaperAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC2718B9480B00AE93EF /* TermPaperAppDelegate.m */; };
+		25C0DC2B18B9480B00AE93EF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DC2918B9480B00AE93EF /* MainStoryboard.storyboard */; };
 		25C0DC3018B9480B00AE93EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DC2F18B9480B00AE93EF /* Images.xcassets */; };
 		25C0DC3718B9480B00AE93EF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC3618B9480B00AE93EF /* XCTest.framework */; };
 		25C0DC3818B9480B00AE93EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1718B9480B00AE93EF /* Foundation.framework */; };
 		25C0DC3918B9480B00AE93EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1B18B9480B00AE93EF /* UIKit.framework */; };
 		25C0DC4118B9480B00AE93EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DC3F18B9480B00AE93EF /* InfoPlist.strings */; };
 		25C0DC4318B9480B00AE93EF /* TermPaperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC4218B9480B00AE93EF /* TermPaperTests.m */; };
+		25C0DC5418B9588F00AE93EF /* Format background.png in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DC5318B9588F00AE93EF /* Format background.png */; };
+		25C0DC6F18B95ADD00AE93EF /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC6218B95ADD00AE93EF /* ioapi.c */; };
+		25C0DC7418B95ADD00AE93EF /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC6918B95ADD00AE93EF /* mztools.c */; };
+		25C0DC7518B95ADD00AE93EF /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC6B18B95ADD00AE93EF /* unzip.c */; };
+		25C0DC7618B95ADD00AE93EF /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC6D18B95ADD00AE93EF /* zip.c */; };
+		25C0DC8018B95B0800AE93EF /* CitationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC7918B95B0800AE93EF /* CitationModel.m */; };
+		25C0DC8118B95B0800AE93EF /* DocXFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC7B18B95B0800AE93EF /* DocXFormatter.m */; };
+		25C0DC8218B95B0800AE93EF /* TermPaperModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC7D18B95B0800AE93EF /* TermPaperModel.mm */; };
+		25C0DC8318B95B0800AE93EF /* CitationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC7F18B95B0800AE93EF /* CitationFormatter.m */; };
+		25C0DC9118B95B2D00AE93EF /* FormattedTextTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC8618B95B2D00AE93EF /* FormattedTextTileView.m */; };
+		25C0DC9218B95B2D00AE93EF /* FormattedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC8818B95B2D00AE93EF /* FormattedTextView.m */; };
+		25C0DC9318B95B2D00AE93EF /* TermPaperTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC8A18B95B2D00AE93EF /* TermPaperTextViewController.m */; };
+		25C0DC9418B95B2D00AE93EF /* BackgroundPaperTileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC8C18B95B2D00AE93EF /* BackgroundPaperTileView.m */; };
+		25C0DC9518B95B2D00AE93EF /* PlainTextScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC8E18B95B2D00AE93EF /* PlainTextScrollView.m */; };
+		25C0DC9618B95B2D00AE93EF /* FormattedTextScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC9018B95B2D00AE93EF /* FormattedTextScrollView.m */; };
+		25C0DC9C18B95BBD00AE93EF /* PaperListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC9B18B95BBD00AE93EF /* PaperListTableViewController.m */; };
+		25C0DCA418B95BD800AE93EF /* PaperFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DC9F18B95BD800AE93EF /* PaperFontsTableViewController.m */; };
+		25C0DCA518B95BD800AE93EF /* PaperDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DCA118B95BD800AE93EF /* PaperDetailTableViewController.m */; };
+		25C0DCA618B95BD800AE93EF /* AbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DCA318B95BD800AE93EF /* AbstractViewController.m */; };
+		25C0DCB018B95BEF00AE93EF /* CitationReferenceListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DCA918B95BEF00AE93EF /* CitationReferenceListTableViewController.m */; };
+		25C0DCB118B95BEF00AE93EF /* CitationListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DCAB18B95BEF00AE93EF /* CitationListTableViewController.m */; };
+		25C0DCB218B95BEF00AE93EF /* CitationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DCAD18B95BEF00AE93EF /* CitationAddViewController.m */; };
+		25C0DCB318B95BEF00AE93EF /* CitationDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C0DCAF18B95BEF00AE93EF /* CitationDetailTableViewController.m */; };
+		25C0DCB518B95C6300AE93EF /* CitationTypes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DCB418B95C6300AE93EF /* CitationTypes.plist */; };
+		25C0DCB718B95C7000AE93EF /* DefaultTermPaper.TermPaper in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DCB618B95C7000AE93EF /* DefaultTermPaper.TermPaper */; };
+		25C0DCB918B95C7D00AE93EF /* Sample Paper.TermPaper in Resources */ = {isa = PBXBuildFile; fileRef = 25C0DCB818B95C7D00AE93EF /* Sample Paper.TermPaper */; };
+		25C0DCBB18B95D4800AE93EF /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DCBA18B95D4800AE93EF /* libz.1.1.3.dylib */; };
+		25C0DCBD18B95D6900AE93EF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DCBC18B95D6900AE93EF /* CoreText.framework */; };
+		25C0DCBF18B95D7A00AE93EF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DCBE18B95D7A00AE93EF /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,17 +70,72 @@
 		25C0DC2118B9480B00AE93EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		25C0DC2318B9480B00AE93EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25C0DC2518B9480B00AE93EF /* TermPaper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TermPaper-Prefix.pch"; sourceTree = "<group>"; };
-		25C0DC2618B9480B00AE93EF /* TPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPAppDelegate.h; sourceTree = "<group>"; };
-		25C0DC2718B9480B00AE93EF /* TPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPAppDelegate.m; sourceTree = "<group>"; };
-		25C0DC2A18B9480B00AE93EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		25C0DC2C18B9480B00AE93EF /* TPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPViewController.h; sourceTree = "<group>"; };
-		25C0DC2D18B9480B00AE93EF /* TPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPViewController.m; sourceTree = "<group>"; };
+		25C0DC2618B9480B00AE93EF /* TermPaperAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TermPaperAppDelegate.h; path = TermPaper/TermPaperAppDelegate.h; sourceTree = "<group>"; };
+		25C0DC2718B9480B00AE93EF /* TermPaperAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TermPaperAppDelegate.m; path = TermPaper/TermPaperAppDelegate.m; sourceTree = "<group>"; };
+		25C0DC2A18B9480B00AE93EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		25C0DC2F18B9480B00AE93EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		25C0DC3518B9480B00AE93EF /* TermPaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TermPaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C0DC3618B9480B00AE93EF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		25C0DC3E18B9480B00AE93EF /* TermPaperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TermPaperTests-Info.plist"; sourceTree = "<group>"; };
 		25C0DC4018B9480B00AE93EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		25C0DC4218B9480B00AE93EF /* TermPaperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TermPaperTests.m; sourceTree = "<group>"; };
+		25C0DC5318B9588F00AE93EF /* Format background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Format background.png"; path = "images/Format background.png"; sourceTree = "<group>"; };
+		25C0DC6118B95ADD00AE93EF /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		25C0DC6218B95ADD00AE93EF /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		25C0DC6318B95ADD00AE93EF /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		25C0DC6418B95ADD00AE93EF /* iowin32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iowin32.c; sourceTree = "<group>"; };
+		25C0DC6518B95ADD00AE93EF /* iowin32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iowin32.h; sourceTree = "<group>"; };
+		25C0DC6618B95ADD00AE93EF /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		25C0DC6718B95ADD00AE93EF /* miniunz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = miniunz.c; sourceTree = "<group>"; };
+		25C0DC6818B95ADD00AE93EF /* minizip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minizip.c; sourceTree = "<group>"; };
+		25C0DC6918B95ADD00AE93EF /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		25C0DC6A18B95ADD00AE93EF /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		25C0DC6B18B95ADD00AE93EF /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		25C0DC6C18B95ADD00AE93EF /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		25C0DC6D18B95ADD00AE93EF /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		25C0DC6E18B95ADD00AE93EF /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		25C0DC7818B95B0800AE93EF /* CitationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationModel.h; sourceTree = "<group>"; };
+		25C0DC7918B95B0800AE93EF /* CitationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitationModel.m; sourceTree = "<group>"; };
+		25C0DC7A18B95B0800AE93EF /* DocXFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocXFormatter.h; sourceTree = "<group>"; };
+		25C0DC7B18B95B0800AE93EF /* DocXFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocXFormatter.m; sourceTree = "<group>"; };
+		25C0DC7C18B95B0800AE93EF /* TermPaperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermPaperModel.h; sourceTree = "<group>"; };
+		25C0DC7D18B95B0800AE93EF /* TermPaperModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TermPaperModel.mm; sourceTree = "<group>"; };
+		25C0DC7E18B95B0800AE93EF /* CitationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationFormatter.h; sourceTree = "<group>"; };
+		25C0DC7F18B95B0800AE93EF /* CitationFormatter.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = CitationFormatter.m; sourceTree = "<group>"; };
+		25C0DC8518B95B2D00AE93EF /* FormattedTextTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedTextTileView.h; sourceTree = "<group>"; };
+		25C0DC8618B95B2D00AE93EF /* FormattedTextTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormattedTextTileView.m; sourceTree = "<group>"; };
+		25C0DC8718B95B2D00AE93EF /* FormattedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedTextView.h; sourceTree = "<group>"; };
+		25C0DC8818B95B2D00AE93EF /* FormattedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormattedTextView.m; sourceTree = "<group>"; };
+		25C0DC8918B95B2D00AE93EF /* TermPaperTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermPaperTextViewController.h; sourceTree = "<group>"; };
+		25C0DC8A18B95B2D00AE93EF /* TermPaperTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermPaperTextViewController.m; sourceTree = "<group>"; };
+		25C0DC8B18B95B2D00AE93EF /* BackgroundPaperTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundPaperTileView.h; sourceTree = "<group>"; };
+		25C0DC8C18B95B2D00AE93EF /* BackgroundPaperTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundPaperTileView.m; sourceTree = "<group>"; };
+		25C0DC8D18B95B2D00AE93EF /* PlainTextScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainTextScrollView.h; sourceTree = "<group>"; };
+		25C0DC8E18B95B2D00AE93EF /* PlainTextScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainTextScrollView.m; sourceTree = "<group>"; };
+		25C0DC8F18B95B2D00AE93EF /* FormattedTextScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedTextScrollView.h; sourceTree = "<group>"; };
+		25C0DC9018B95B2D00AE93EF /* FormattedTextScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormattedTextScrollView.m; sourceTree = "<group>"; };
+		25C0DC9A18B95BBD00AE93EF /* PaperListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperListTableViewController.h; sourceTree = "<group>"; };
+		25C0DC9B18B95BBD00AE93EF /* PaperListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperListTableViewController.m; sourceTree = "<group>"; };
+		25C0DC9E18B95BD800AE93EF /* PaperFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperFontsTableViewController.h; sourceTree = "<group>"; };
+		25C0DC9F18B95BD800AE93EF /* PaperFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperFontsTableViewController.m; sourceTree = "<group>"; };
+		25C0DCA018B95BD800AE93EF /* PaperDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperDetailTableViewController.h; sourceTree = "<group>"; };
+		25C0DCA118B95BD800AE93EF /* PaperDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperDetailTableViewController.m; sourceTree = "<group>"; };
+		25C0DCA218B95BD800AE93EF /* AbstractViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractViewController.h; sourceTree = "<group>"; };
+		25C0DCA318B95BD800AE93EF /* AbstractViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractViewController.m; sourceTree = "<group>"; };
+		25C0DCA818B95BEF00AE93EF /* CitationReferenceListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationReferenceListTableViewController.h; sourceTree = "<group>"; };
+		25C0DCA918B95BEF00AE93EF /* CitationReferenceListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitationReferenceListTableViewController.m; sourceTree = "<group>"; };
+		25C0DCAA18B95BEF00AE93EF /* CitationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationListTableViewController.h; sourceTree = "<group>"; };
+		25C0DCAB18B95BEF00AE93EF /* CitationListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitationListTableViewController.m; sourceTree = "<group>"; };
+		25C0DCAC18B95BEF00AE93EF /* CitationAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationAddViewController.h; sourceTree = "<group>"; };
+		25C0DCAD18B95BEF00AE93EF /* CitationAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitationAddViewController.m; sourceTree = "<group>"; };
+		25C0DCAE18B95BEF00AE93EF /* CitationDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitationDetailTableViewController.h; sourceTree = "<group>"; };
+		25C0DCAF18B95BEF00AE93EF /* CitationDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitationDetailTableViewController.m; sourceTree = "<group>"; };
+		25C0DCB418B95C6300AE93EF /* CitationTypes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CitationTypes.plist; sourceTree = "<group>"; };
+		25C0DCB618B95C7000AE93EF /* DefaultTermPaper.TermPaper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = DefaultTermPaper.TermPaper; sourceTree = "<group>"; };
+		25C0DCB818B95C7D00AE93EF /* Sample Paper.TermPaper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sample Paper.TermPaper"; sourceTree = "<group>"; };
+		25C0DCBA18B95D4800AE93EF /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		25C0DCBC18B95D6900AE93EF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		25C0DCBE18B95D7A00AE93EF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +143,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C0DCBF18B95D7A00AE93EF /* MessageUI.framework in Frameworks */,
+				25C0DCBD18B95D6900AE93EF /* CoreText.framework in Frameworks */,
+				25C0DCBB18B95D4800AE93EF /* libz.1.1.3.dylib in Frameworks */,
 				25C0DC1A18B9480B00AE93EF /* CoreGraphics.framework in Frameworks */,
 				25C0DC1C18B9480B00AE93EF /* UIKit.framework in Frameworks */,
 				25C0DC1818B9480B00AE93EF /* Foundation.framework in Frameworks */,
@@ -82,6 +168,7 @@
 		25C0DC0B18B9480B00AE93EF = {
 			isa = PBXGroup;
 			children = (
+				25C0DC6018B95A9A00AE93EF /* Classes */,
 				25C0DC1D18B9480B00AE93EF /* TermPaper */,
 				25C0DC3C18B9480B00AE93EF /* TermPaperTests */,
 				25C0DC1618B9480B00AE93EF /* Frameworks */,
@@ -101,9 +188,12 @@
 		25C0DC1618B9480B00AE93EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25C0DCBA18B95D4800AE93EF /* libz.1.1.3.dylib */,
 				25C0DC1718B9480B00AE93EF /* Foundation.framework */,
 				25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */,
 				25C0DC1B18B9480B00AE93EF /* UIKit.framework */,
+				25C0DCBC18B95D6900AE93EF /* CoreText.framework */,
+				25C0DCBE18B95D7A00AE93EF /* MessageUI.framework */,
 				25C0DC3618B9480B00AE93EF /* XCTest.framework */,
 			);
 			name = Frameworks;
@@ -112,12 +202,9 @@
 		25C0DC1D18B9480B00AE93EF /* TermPaper */ = {
 			isa = PBXGroup;
 			children = (
-				25C0DC2618B9480B00AE93EF /* TPAppDelegate.h */,
-				25C0DC2718B9480B00AE93EF /* TPAppDelegate.m */,
-				25C0DC2918B9480B00AE93EF /* Main.storyboard */,
-				25C0DC2C18B9480B00AE93EF /* TPViewController.h */,
-				25C0DC2D18B9480B00AE93EF /* TPViewController.m */,
+				25C0DC2918B9480B00AE93EF /* MainStoryboard.storyboard */,
 				25C0DC2F18B9480B00AE93EF /* Images.xcassets */,
+				25C0DC5518B958A300AE93EF /* Resources */,
 				25C0DC1E18B9480B00AE93EF /* Supporting Files */,
 			);
 			path = TermPaper;
@@ -150,6 +237,140 @@
 				25C0DC3F18B9480B00AE93EF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25C0DC5518B958A300AE93EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DCB418B95C6300AE93EF /* CitationTypes.plist */,
+				25C0DCB618B95C7000AE93EF /* DefaultTermPaper.TermPaper */,
+				25C0DCB818B95C7D00AE93EF /* Sample Paper.TermPaper */,
+				25C0DC5618B958AE00AE93EF /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		25C0DC5618B958AE00AE93EF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC5318B9588F00AE93EF /* Format background.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		25C0DC6018B95A9A00AE93EF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC7718B95AE400AE93EF /* unzip101h */,
+				25C0DC8418B95B1300AE93EF /* Data Model */,
+				25C0DC9718B95B3D00AE93EF /* Content Views */,
+				25C0DC9818B95B6400AE93EF /* Popover View Controllers */,
+				25C0DC2618B9480B00AE93EF /* TermPaperAppDelegate.h */,
+				25C0DC2718B9480B00AE93EF /* TermPaperAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		25C0DC7718B95AE400AE93EF /* unzip101h */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC6118B95ADD00AE93EF /* crypt.h */,
+				25C0DC6218B95ADD00AE93EF /* ioapi.c */,
+				25C0DC6318B95ADD00AE93EF /* ioapi.h */,
+				25C0DC6418B95ADD00AE93EF /* iowin32.c */,
+				25C0DC6518B95ADD00AE93EF /* iowin32.h */,
+				25C0DC6618B95ADD00AE93EF /* Makefile */,
+				25C0DC6718B95ADD00AE93EF /* miniunz.c */,
+				25C0DC6818B95ADD00AE93EF /* minizip.c */,
+				25C0DC6918B95ADD00AE93EF /* mztools.c */,
+				25C0DC6A18B95ADD00AE93EF /* mztools.h */,
+				25C0DC6B18B95ADD00AE93EF /* unzip.c */,
+				25C0DC6C18B95ADD00AE93EF /* unzip.h */,
+				25C0DC6D18B95ADD00AE93EF /* zip.c */,
+				25C0DC6E18B95ADD00AE93EF /* zip.h */,
+			);
+			name = unzip101h;
+			sourceTree = "<group>";
+		};
+		25C0DC8418B95B1300AE93EF /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC7818B95B0800AE93EF /* CitationModel.h */,
+				25C0DC7918B95B0800AE93EF /* CitationModel.m */,
+				25C0DC7A18B95B0800AE93EF /* DocXFormatter.h */,
+				25C0DC7B18B95B0800AE93EF /* DocXFormatter.m */,
+				25C0DC7C18B95B0800AE93EF /* TermPaperModel.h */,
+				25C0DC7D18B95B0800AE93EF /* TermPaperModel.mm */,
+				25C0DC7E18B95B0800AE93EF /* CitationFormatter.h */,
+				25C0DC7F18B95B0800AE93EF /* CitationFormatter.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		25C0DC9718B95B3D00AE93EF /* Content Views */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC8518B95B2D00AE93EF /* FormattedTextTileView.h */,
+				25C0DC8618B95B2D00AE93EF /* FormattedTextTileView.m */,
+				25C0DC8718B95B2D00AE93EF /* FormattedTextView.h */,
+				25C0DC8818B95B2D00AE93EF /* FormattedTextView.m */,
+				25C0DC8918B95B2D00AE93EF /* TermPaperTextViewController.h */,
+				25C0DC8A18B95B2D00AE93EF /* TermPaperTextViewController.m */,
+				25C0DC8B18B95B2D00AE93EF /* BackgroundPaperTileView.h */,
+				25C0DC8C18B95B2D00AE93EF /* BackgroundPaperTileView.m */,
+				25C0DC8D18B95B2D00AE93EF /* PlainTextScrollView.h */,
+				25C0DC8E18B95B2D00AE93EF /* PlainTextScrollView.m */,
+				25C0DC8F18B95B2D00AE93EF /* FormattedTextScrollView.h */,
+				25C0DC9018B95B2D00AE93EF /* FormattedTextScrollView.m */,
+			);
+			name = "Content Views";
+			sourceTree = "<group>";
+		};
+		25C0DC9818B95B6400AE93EF /* Popover View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC9918B95BA700AE93EF /* Papers */,
+				25C0DC9D18B95BC500AE93EF /* Settings */,
+				25C0DCA718B95BE300AE93EF /* Citations */,
+			);
+			name = "Popover View Controllers";
+			sourceTree = "<group>";
+		};
+		25C0DC9918B95BA700AE93EF /* Papers */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC9A18B95BBD00AE93EF /* PaperListTableViewController.h */,
+				25C0DC9B18B95BBD00AE93EF /* PaperListTableViewController.m */,
+			);
+			name = Papers;
+			sourceTree = "<group>";
+		};
+		25C0DC9D18B95BC500AE93EF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DC9E18B95BD800AE93EF /* PaperFontsTableViewController.h */,
+				25C0DC9F18B95BD800AE93EF /* PaperFontsTableViewController.m */,
+				25C0DCA018B95BD800AE93EF /* PaperDetailTableViewController.h */,
+				25C0DCA118B95BD800AE93EF /* PaperDetailTableViewController.m */,
+				25C0DCA218B95BD800AE93EF /* AbstractViewController.h */,
+				25C0DCA318B95BD800AE93EF /* AbstractViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		25C0DCA718B95BE300AE93EF /* Citations */ = {
+			isa = PBXGroup;
+			children = (
+				25C0DCA818B95BEF00AE93EF /* CitationReferenceListTableViewController.h */,
+				25C0DCA918B95BEF00AE93EF /* CitationReferenceListTableViewController.m */,
+				25C0DCAA18B95BEF00AE93EF /* CitationListTableViewController.h */,
+				25C0DCAB18B95BEF00AE93EF /* CitationListTableViewController.m */,
+				25C0DCAC18B95BEF00AE93EF /* CitationAddViewController.h */,
+				25C0DCAD18B95BEF00AE93EF /* CitationAddViewController.m */,
+				25C0DCAE18B95BEF00AE93EF /* CitationDetailTableViewController.h */,
+				25C0DCAF18B95BEF00AE93EF /* CitationDetailTableViewController.m */,
+			);
+			name = Citations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +421,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Don Altman";
 				TargetAttributes = {
+					25C0DC1318B9480B00AE93EF = {
+						DevelopmentTeam = 7B5LNWD556;
+					};
 					25C0DC3418B9480B00AE93EF = {
 						TestTargetID = 25C0DC1318B9480B00AE93EF;
 					};
@@ -229,9 +453,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C0DCB518B95C6300AE93EF /* CitationTypes.plist in Resources */,
 				25C0DC3018B9480B00AE93EF /* Images.xcassets in Resources */,
+				25C0DC5418B9588F00AE93EF /* Format background.png in Resources */,
+				25C0DCB718B95C7000AE93EF /* DefaultTermPaper.TermPaper in Resources */,
 				25C0DC2218B9480B00AE93EF /* InfoPlist.strings in Resources */,
-				25C0DC2B18B9480B00AE93EF /* Main.storyboard in Resources */,
+				25C0DCB918B95C7D00AE93EF /* Sample Paper.TermPaper in Resources */,
+				25C0DC2B18B9480B00AE93EF /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +478,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25C0DC2E18B9480B00AE93EF /* TPViewController.m in Sources */,
-				25C0DC2818B9480B00AE93EF /* TPAppDelegate.m in Sources */,
+				25C0DC7518B95ADD00AE93EF /* unzip.c in Sources */,
+				25C0DCA418B95BD800AE93EF /* PaperFontsTableViewController.m in Sources */,
+				25C0DC9418B95B2D00AE93EF /* BackgroundPaperTileView.m in Sources */,
+				25C0DCB318B95BEF00AE93EF /* CitationDetailTableViewController.m in Sources */,
+				25C0DCA518B95BD800AE93EF /* PaperDetailTableViewController.m in Sources */,
+				25C0DC6F18B95ADD00AE93EF /* ioapi.c in Sources */,
+				25C0DCB018B95BEF00AE93EF /* CitationReferenceListTableViewController.m in Sources */,
+				25C0DC7618B95ADD00AE93EF /* zip.c in Sources */,
+				25C0DC9218B95B2D00AE93EF /* FormattedTextView.m in Sources */,
+				25C0DC7418B95ADD00AE93EF /* mztools.c in Sources */,
+				25C0DCB218B95BEF00AE93EF /* CitationAddViewController.m in Sources */,
+				25C0DCB118B95BEF00AE93EF /* CitationListTableViewController.m in Sources */,
+				25C0DC8318B95B0800AE93EF /* CitationFormatter.m in Sources */,
+				25C0DC9618B95B2D00AE93EF /* FormattedTextScrollView.m in Sources */,
+				25C0DC8018B95B0800AE93EF /* CitationModel.m in Sources */,
+				25C0DC8118B95B0800AE93EF /* DocXFormatter.m in Sources */,
+				25C0DC9518B95B2D00AE93EF /* PlainTextScrollView.m in Sources */,
+				25C0DC8218B95B0800AE93EF /* TermPaperModel.mm in Sources */,
+				25C0DC2818B9480B00AE93EF /* TermPaperAppDelegate.m in Sources */,
+				25C0DC9118B95B2D00AE93EF /* FormattedTextTileView.m in Sources */,
 				25C0DC2418B9480B00AE93EF /* main.m in Sources */,
+				25C0DC9318B95B2D00AE93EF /* TermPaperTextViewController.m in Sources */,
+				25C0DCA618B95BD800AE93EF /* AbstractViewController.m in Sources */,
+				25C0DC9C18B95BBD00AE93EF /* PaperListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +532,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		25C0DC2918B9480B00AE93EF /* Main.storyboard */ = {
+		25C0DC2918B9480B00AE93EF /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				25C0DC2A18B9480B00AE93EF /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		25C0DC3F18B9480B00AE93EF /* InfoPlist.strings */ = {
@@ -307,6 +556,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -328,6 +578,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONSOLE=0";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -347,6 +598,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -363,6 +615,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONSOLE=0";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -381,8 +634,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TermPaper/TermPaper-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include,
+				);
 				INFOPLIST_FILE = "TermPaper/TermPaper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -394,8 +655,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TermPaper/TermPaper-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include,
+				);
 				INFOPLIST_FILE = "TermPaper/TermPaper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -463,6 +732,7 @@
 				25C0DC4818B9480C00AE93EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25C0DC4918B9480C00AE93EF /* Build configuration list for PBXNativeTarget "TermPaperTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +741,7 @@
 				25C0DC4B18B9480C00AE93EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

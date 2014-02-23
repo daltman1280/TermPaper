@@ -1,0 +1,2234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CitationTypes</key>
+	<array>
+		<dict>
+			<key>CatName</key>
+			<string>Book</string>
+			<key>SubCats</key>
+			<array>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Single Author</string>
+					<key>TypeID</key>
+					<string>singleAuthor</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author1</string>
+					<key>Name</key>
+					<string>Multiple Authors</string>
+					<key>TypeID</key>
+					<string>multipleAuthors</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>author1</string>
+							<key>PropertyTitle</key>
+							<string>First Author</string>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>author2</string>
+							<key>PropertyTitle</key>
+							<string>Second Author</string>
+							<key>Placeholder</key>
+							<string>first name last name</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>author3</string>
+							<key>PropertyTitle</key>
+							<string>Third Author</string>
+							<key>Placeholder</key>
+							<string>first name last name, if present</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>orgName</string>
+					<key>Name</key>
+					<string>Corporate or Organization</string>
+					<key>TypeID</key>
+					<string>corporate</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>orgName</string>
+							<key>PropertyTitle</key>
+							<string>Organization Name</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>title</string>
+					<key>Name</key>
+					<string>Book With No Author</string>
+					<key>TypeID</key>
+					<string>noAuthor</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Translated Book</string>
+					<key>TypeID</key>
+					<string>translated</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>first name last name</string>
+							<key>PropertyID</key>
+							<string>translator</string>
+							<key>PropertyTitle</key>
+							<string>Translator</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>editor</string>
+					<key>Name</key>
+					<string>Anthology or Collection</string>
+					<key>TypeID</key>
+					<string>anthology</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>editor</string>
+							<key>PropertyTitle</key>
+							<string>Editor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Article in Anthology, Reference or Collection</string>
+					<key>TypeID</key>
+					<string>articleInReference</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author of Article</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>of Article</string>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfCollection</string>
+							<key>PropertyTitle</key>
+							<string>Title of Collection</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>first name, last name</string>
+							<key>PropertyID</key>
+							<string>editor</string>
+							<key>PropertyTitle</key>
+							<string>Editor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>authorOfIntro</string>
+					<key>Name</key>
+					<string>Introduction</string>
+					<key>TypeID</key>
+					<string>introduction</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>authorOfIntro</string>
+							<key>PropertyTitle</key>
+							<string>Author of Introduction</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>of Work</string>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>Forward/Introduction/Preface/Afterword</string>
+							<key>PropertyID</key>
+							<string>type</string>
+							<key>PropertyTitle</key>
+							<string>Type</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if different from author of intro</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author of Work</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>specEd</string>
+					<key>Name</key>
+					<string>Bible</string>
+					<key>TypeID</key>
+					<string>bible</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>e.g., The King James Bible</string>
+							<key>PropertyID</key>
+							<string>specEd</string>
+							<key>PropertyTitle</key>
+							<string>Specific Edition</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>first name last name</string>
+							<key>PropertyID</key>
+							<string>editor</string>
+							<key>PropertyTitle</key>
+							<string>Editor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>author</string>
+						<string>entity</string>
+					</array>
+					<key>Name</key>
+					<string>Government Publication</string>
+					<key>TypeID</key>
+					<string>govPub</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+							<key>Placeholder</key>
+							<string>if known, last name, first name</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>e.g., United States</string>
+							<key>PropertyID</key>
+							<string>entity</string>
+							<key>PropertyTitle</key>
+							<string>Government Entity</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>e.g., Government Accountability Office</string>
+							<key>PropertyID</key>
+							<string>agency</string>
+							<key>PropertyTitle</key>
+							<string>Agency</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+							<key>Placeholder</key>
+							<string>e.g., GPO</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>author</string>
+						<string>title</string>
+					</array>
+					<key>Name</key>
+					<string>Pamphlet</string>
+					<key>TypeID</key>
+					<string>pamphlet</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>if known, last name, first name</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+							<key>PropertyID</key>
+							<string>author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>sponsor</string>
+							<key>PropertyID</key>
+							<string>orgName</string>
+							<key>PropertyTitle</key>
+							<string>Organization</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Dissertation or Thesis</string>
+					<key>TypeID</key>
+					<string>thesis</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>type</string>
+							<key>PropertyTitle</key>
+							<string>Type</string>
+							<key>Placeholder</key>
+							<string>Diss/MA Thesis/MS Thesis</string>
+						</dict>
+						<dict>
+							<key>PropertyTitle</key>
+							<string>Educational Institution</string>
+							<key>PropertyID</key>
+							<string>institution</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfGrant</string>
+							<key>PropertyTitle</key>
+							<string>Year of Degree Grant</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Dissertation or Thesis (Unpublished)</string>
+					<key>TypeID</key>
+					<string>thesisUnpub</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>type</string>
+							<key>PropertyTitle</key>
+							<string>Type</string>
+							<key>Placeholder</key>
+							<string>Diss/MA Thesis/MS Thesis</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>institution</string>
+							<key>PropertyTitle</key>
+							<string>Educational Institution</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfGrant</string>
+							<key>PropertyTitle</key>
+							<string>Year of Degree Grant</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>CatName</key>
+			<string>Periodical</string>
+			<key>SubCats</key>
+			<array>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Magazine Article</string>
+					<key>TypeID</key>
+					<string>magazineArticle</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfPer</string>
+							<key>PropertyTitle</key>
+							<string>Title of Periodical</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Day Month Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Newspaper Article</string>
+					<key>TypeID</key>
+					<string>newspaperArticle</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>paperName</string>
+							<key>PropertyTitle</key>
+							<string>Newspaper Name</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>only for small publications</string>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Day Month Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>reviewAuthor</string>
+					<key>Name</key>
+					<string>Review</string>
+					<key>TypeID</key>
+					<string>review</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>reviewAuthor</string>
+							<key>PropertyTitle</key>
+							<string>Author of Review</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if available</string>
+							<key>PropertyID</key>
+							<string>reviewTitle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Review</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>reviewedTitle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Work Reviewed</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>of reviewed work</string>
+							<key>PropertyID</key>
+							<string>reviewedAuthor</string>
+							<key>PropertyTitle</key>
+							<string>Author/Performer</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfPer</string>
+							<key>PropertyTitle</key>
+							<string>Title of Periodical</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Day Month Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>author</string>
+						<string>title</string>
+						<string>type</string>
+					</array>
+					<key>Name</key>
+					<string>Editorial or Letter to the Editor</string>
+					<key>TypeID</key>
+					<string>editorial</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name, if known</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if known</string>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article or Letter</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>paperName</string>
+							<key>PropertyTitle</key>
+							<string>Newspaper Name</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>type</string>
+							<key>PropertyTitle</key>
+							<string>Type</string>
+							<key>Placeholder</key>
+							<string>Editorial/Letter</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Day Month Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>title</string>
+					<key>Name</key>
+					<string>Anonymous Article</string>
+					<key>TypeID</key>
+					<string>anonymous</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfPer</string>
+							<key>PropertyTitle</key>
+							<string>Title of Periodical</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Day Month Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Scholarly Journal</string>
+					<key>TypeID</key>
+					<string>journal</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name(s), first name(s)</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author(s)</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfJournal</string>
+							<key>PropertyTitle</key>
+							<string>Title of Journal</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>volume.issue (e.g., 10.1)</string>
+							<key>PropertyID</key>
+							<string>volume</string>
+							<key>PropertyTitle</key>
+							<string>Volume.Issue</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Issue</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Scholarly Journal Special Issue</string>
+					<key>TypeID</key>
+					<string>journalSpecial</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfJournal</string>
+							<key>PropertyTitle</key>
+							<string>Title of Journal</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>nameOfSpecIssue</string>
+							<key>PropertyTitle</key>
+							<string>Name of Special Issue</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>volume.issue (e.g., 10.1)</string>
+							<key>PropertyID</key>
+							<string>volume</string>
+							<key>PropertyTitle</key>
+							<string>Volume.Issue</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Issue</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>CatName</key>
+			<string>Web</string>
+			<key>SubCats</key>
+			<array>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>author</string>
+						<string>nameOfSite</string>
+					</array>
+					<key>Name</key>
+					<string>Web Site</string>
+					<key>TypeID</key>
+					<string>webSite</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>or editor/compiler, if known</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>nameOfSite</string>
+							<key>PropertyTitle</key>
+							<string>Name of Site</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>version</string>
+							<key>PropertyTitle</key>
+							<string>Version No.</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>orgName</string>
+							<key>PropertyTitle</key>
+							<string>Sponsor</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if known</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Creation</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>instructor</string>
+						<string>courseName</string>
+					</array>
+					<key>Name</key>
+					<string>Course or Department Web Site</string>
+					<key>TypeID</key>
+					<string>departmentWebSite</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>New item</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>instructor</string>
+							<key>PropertyTitle</key>
+							<string>Instructor</string>
+						</dict>
+						<dict>
+							<key>PropertyTitle</key>
+							<string>Course Name</string>
+							<key>PropertyID</key>
+							<string>courseName</string>
+						</dict>
+						<dict>
+							<key>PropertyTitle</key>
+							<string>Department Name</string>
+							<key>PropertyID</key>
+							<string>deptName</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>institution</string>
+							<key>PropertyTitle</key>
+							<string>Institution</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if known</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Creation</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>titleOfArticle</string>
+					<key>Name</key>
+					<string>Web Page</string>
+					<key>TypeID</key>
+					<string>webPage</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Article Title</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name, if known</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>nameOfSite</string>
+							<key>PropertyTitle</key>
+							<string>Name of Site</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>version</string>
+							<key>PropertyTitle</key>
+							<string>Version No.</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>orgName</string>
+							<key>PropertyTitle</key>
+							<string>Sponsor</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if known</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Creation</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>artist</string>
+					<key>Name</key>
+					<string>Image on Web</string>
+					<key>TypeID</key>
+					<string>image</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>artist</string>
+							<key>PropertyTitle</key>
+							<string>Artist</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>work</string>
+							<key>PropertyTitle</key>
+							<string>Work of Art</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>for the work</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Creation</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>where the work is housed</string>
+							<key>PropertyID</key>
+							<string>institution</string>
+							<key>PropertyTitle</key>
+							<string>Institution and City</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>nameOfSite</string>
+							<key>PropertyTitle</key>
+							<string>Name of Website</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Web Magazine Article</string>
+					<key>TypeID</key>
+					<string>webMagazine</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Article Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfPer</string>
+							<key>PropertyTitle</key>
+							<string>Magazine Title</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if known</string>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>New item</key>
+							<string>if known</string>
+							<key>PropertyID</key>
+							<string>pubDate</string>
+							<key>PropertyTitle</key>
+							<string>Date of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Online Scholarly Journal Article</string>
+					<key>TypeID</key>
+					<string>onlineScholarlyJournalArticle</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Article Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfJournal</string>
+							<key>PropertyTitle</key>
+							<string>Publication Title</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>volume.issue</string>
+							<key>PropertyID</key>
+							<string>volume</string>
+							<key>PropertyTitle</key>
+							<string>Volume and Issue No.</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if print version exists</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>Online Database Article</string>
+					<key>TypeID</key>
+					<string>onlineDatabase</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Article</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfJournal</string>
+							<key>PropertyTitle</key>
+							<string>Title of Journal</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>volume</string>
+							<key>PropertyTitle</key>
+							<string>Volume.Issue</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Issue</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfDB</string>
+							<key>PropertyTitle</key>
+							<string>Title of Database</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>author</string>
+					<key>Name</key>
+					<string>E-mail</string>
+					<key>TypeID</key>
+					<string>email</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>subject</string>
+							<key>PropertyTitle</key>
+							<string>Subject Line</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if other than author (you)</string>
+							<key>PropertyID</key>
+							<string>recipient</string>
+							<key>PropertyTitle</key>
+							<string>Message Recipient</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>messageDate</string>
+							<key>PropertyTitle</key>
+							<string>Date of Message</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>author</string>
+						<string>title</string>
+					</array>
+					<key>Name</key>
+					<string>Listserv, Discussion Group, or Blog</string>
+					<key>TypeID</key>
+					<string>listserv</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>or editor, screen name, etc. if available</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyTitle</key>
+							<string>Posting Title</string>
+							<key>PropertyID</key>
+							<string>title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>nameOfSite</string>
+							<key>PropertyTitle</key>
+							<string>Name of Site</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>publisher/affiliate, if known</string>
+							<key>PropertyID</key>
+							<string>orgName</string>
+							<key>PropertyTitle</key>
+							<string>Sponsor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Posting Date</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>CatName</key>
+			<string>Other</string>
+			<key>SubCats</key>
+			<array>
+				<dict>
+					<key>SortBy</key>
+					<string>interviewee</string>
+					<key>Name</key>
+					<string>Personal Interview</string>
+					<key>TypeID</key>
+					<string>interview</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>interviewee</string>
+							<key>PropertyTitle</key>
+							<string>Interviewee</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Date of Interview</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>interviewee</string>
+					<key>Name</key>
+					<string>Published Interview</string>
+					<key>TypeID</key>
+					<string>publishedInterview</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>if titled</string>
+							<key>PropertyTitle</key>
+							<string>Interview Title</string>
+							<key>PropertyID</key>
+							<string>title</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>interviewee</string>
+							<key>PropertyTitle</key>
+							<string>Interviewee</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if exists</string>
+							<key>PropertyID</key>
+							<string>containingWork</string>
+							<key>PropertyTitle</key>
+							<string>Containing Work</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>medium</string>
+							<key>PropertyTitle</key>
+							<string>Medium of Publication</string>
+							<key>Placeholder</key>
+							<string>Web/Print/DVD</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if present, first name last name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author/Editor</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>interviewee</string>
+					<key>Name</key>
+					<string>Online-only Published Interview</string>
+					<key>TypeID</key>
+					<string>onlineOnlyPublishedInterview</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>interviewee</string>
+							<key>PropertyTitle</key>
+							<string>Interviewee</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if present</string>
+							<key>PropertyID</key>
+							<string>interviewTitle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Interview</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+							<key>PropertyTitle</key>
+							<string>Article Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>nameOfSite</string>
+							<key>PropertyTitle</key>
+							<string>Name of Site</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if present</string>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Sponsor</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if present</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Creation</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateAccess</string>
+							<key>PropertyTitle</key>
+							<string>Date of Access</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>speaker</string>
+					<key>Name</key>
+					<string>Oral Presentation</string>
+					<key>TypeID</key>
+					<string>oral</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>speaker</string>
+							<key>PropertyTitle</key>
+							<string>Name of Speaker</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if available</string>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title of Speech</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>meetingName</string>
+							<key>PropertyTitle</key>
+							<string>Name of Meeting</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>orgName</string>
+							<key>PropertyTitle</key>
+							<string>Name of Organization</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>meetingLoc</string>
+							<key>PropertyTitle</key>
+							<string>Location of Meeting</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>presentationDate</string>
+							<key>PropertyTitle</key>
+							<string>Date of Presentation</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>type</string>
+							<key>PropertyTitle</key>
+							<string>Presentation Type</string>
+							<key>Placeholder</key>
+							<string>Keynote/Address/Lecture</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<array>
+						<string>presenter</string>
+						<string>editor</string>
+					</array>
+					<key>Name</key>
+					<string>Published Conference Proceedings</string>
+					<key>TypeID</key>
+					<string>publishedConference</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>of proceedings, last, first</string>
+							<key>PropertyID</key>
+							<string>editor</string>
+							<key>PropertyTitle</key>
+							<string>Editor</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>to cite a presentation</string>
+							<key>PropertyID</key>
+							<string>presenter</string>
+							<key>PropertyTitle</key>
+							<string>Presenter</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>to cite a presentation</string>
+							<key>PropertyTitle</key>
+							<string>Title of Presentation</string>
+							<key>PropertyID</key>
+							<string>titleOfArticle</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Conference Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>confDate</string>
+							<key>PropertyTitle</key>
+							<string>Conference Date</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>confLocation</string>
+							<key>PropertyTitle</key>
+							<string>Conference Location</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Place of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>yearOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Year of Publication</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>artist</string>
+					<key>Name</key>
+					<string>Painting, Sculpture, or Photograph</string>
+					<key>TypeID</key>
+					<string>painting</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>artist</string>
+							<key>PropertyTitle</key>
+							<string>Artist</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>work</string>
+							<key>PropertyTitle</key>
+							<string>Title of Work</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>year</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Composition</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>institution</string>
+							<key>PropertyTitle</key>
+							<string>Name of Institution</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>institutionLoc</string>
+							<key>PropertyTitle</key>
+							<string>Location of Institution</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>artist</string>
+					<key>Name</key>
+					<string>Artwork Photographic Reproduction</string>
+					<key>TypeID</key>
+					<string>artworkRepro</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>last name, first name</string>
+							<key>PropertyID</key>
+							<string>artist</string>
+							<key>PropertyTitle</key>
+							<string>Artist</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>work</string>
+							<key>PropertyTitle</key>
+							<string>Title of Work</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>year, if known</string>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Date of Composition</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>institution</string>
+							<key>PropertyTitle</key>
+							<string>Name of Institution</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>institutionLoc</string>
+							<key>PropertyTitle</key>
+							<string>Location of Institution</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>first name last name</string>
+							<key>PropertyID</key>
+							<string>author</string>
+							<key>PropertyTitle</key>
+							<string>Author</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>placeOfPub</string>
+							<key>PropertyTitle</key>
+							<string>Location of Publication</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>publisher</string>
+							<key>PropertyTitle</key>
+							<string>Publisher</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>pageRange</string>
+							<key>PropertyTitle</key>
+							<string>Page Range</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>title</string>
+					<key>Name</key>
+					<string>Current Film or Movie</string>
+					<key>TypeID</key>
+					<string>currentFilm</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>director</string>
+							<key>PropertyTitle</key>
+							<string>Director</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>studio</string>
+							<key>PropertyTitle</key>
+							<string>Studio or Distributor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Release Year</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyID</key>
+							<string>performers</string>
+							<key>PropertyTitle</key>
+							<string>List of Performers</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>title</string>
+					<key>Name</key>
+					<string>Recorded Film or Movie</string>
+					<key>TypeID</key>
+					<string>recordedFilm</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>title</string>
+							<key>PropertyTitle</key>
+							<string>Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>director</string>
+							<key>PropertyTitle</key>
+							<string>Director</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>studio</string>
+							<key>PropertyTitle</key>
+							<string>Studio or Distributor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Release Year</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyID</key>
+							<string>performers</string>
+							<key>PropertyTitle</key>
+							<string>List of Performers</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>medium</string>
+							<key>PropertyTitle</key>
+							<string>Medium of Publication</string>
+							<key>Placeholder</key>
+							<string>DVD/VHS</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>episodeTitle</string>
+					<key>Name</key>
+					<string>Broadcast Television or Radio Program</string>
+					<key>TypeID</key>
+					<string>broadcastTV</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>PropertyID</key>
+							<string>episodeTitle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Episode</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>seriesTitle</string>
+							<key>PropertyTitle</key>
+							<string>Series or Program Name</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>network</string>
+							<key>PropertyTitle</key>
+							<string>Network Name</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>station</string>
+							<key>PropertyTitle</key>
+							<string>Station Call Letters</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>city</string>
+							<key>PropertyTitle</key>
+							<string>City of Broadcast</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>date</string>
+							<key>PropertyTitle</key>
+							<string>Date of Broadcast</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>medium</string>
+							<key>PropertyTitle</key>
+							<string>Medium of Broadcast</string>
+							<key>Placeholder</key>
+							<string>TV/Radio</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>episodeTitle</string>
+					<key>Name</key>
+					<string>Recorded Television Episode</string>
+					<key>TypeID</key>
+					<string>recordedTV</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyTitle</key>
+							<string>Director</string>
+							<key>PropertyID</key>
+							<string>director</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>episodeTitle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Episode</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>seriesTitle</string>
+							<key>PropertyTitle</key>
+							<string>Series or Program Name</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyID</key>
+							<string>collectionTitle</string>
+							<key>PropertyTitle</key>
+							<string>Title of Collection</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyTitle</key>
+							<string>Writer(s)</string>
+							<key>PropertyID</key>
+							<string>composer</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyTitle</key>
+							<string>Producer</string>
+							<key>PropertyID</key>
+							<string>producer</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>performers</string>
+							<key>PropertyTitle</key>
+							<string>List of Performers</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>studio</string>
+							<key>PropertyTitle</key>
+							<string>Studio or Distributor</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Release Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>medium</string>
+							<key>PropertyTitle</key>
+							<string>Medium of Publication</string>
+							<key>Placeholder</key>
+							<string>DVD/VHS</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>SortBy</key>
+					<string>artist</string>
+					<key>Name</key>
+					<string>Album</string>
+					<key>TypeID</key>
+					<string>album</string>
+					<key>Properties</key>
+					<array>
+						<dict>
+							<key>Placeholder</key>
+							<string>artist/performer/composer/group</string>
+							<key>PropertyID</key>
+							<string>artist</string>
+							<key>PropertyTitle</key>
+							<string>Artist</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>albumTitle</string>
+							<key>PropertyTitle</key>
+							<string>Album Title</string>
+						</dict>
+						<dict>
+							<key>Placeholder</key>
+							<string>if applicable</string>
+							<key>PropertyID</key>
+							<string>songTitle</string>
+							<key>PropertyTitle</key>
+							<string>Song Title</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>performers</string>
+							<key>PropertyTitle</key>
+							<string>Performer</string>
+							<key>Placeholder</key>
+							<string>if applicable, first last</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>composer</string>
+							<key>PropertyTitle</key>
+							<string>Composer</string>
+							<key>Placeholder</key>
+							<string>if applicable, first last</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>manufacturer</string>
+							<key>PropertyTitle</key>
+							<string>Recording Manufacturer</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>dateCreation</string>
+							<key>PropertyTitle</key>
+							<string>Release Year</string>
+						</dict>
+						<dict>
+							<key>PropertyID</key>
+							<string>medium</string>
+							<key>PropertyTitle</key>
+							<string>Medium of Publication</string>
+							<key>Placeholder</key>
+							<string>CD/DVD/Tape/LP</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,5 +1,5 @@
 //
-//  TPViewController.h
+//  TPAppDelegate.h
 //  TermPaper
 //
 //  Created by daltman on 2/22/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPViewController : UIViewController
+@interface TermPaperAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

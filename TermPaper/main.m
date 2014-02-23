@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TPAppDelegate.h"
+#import "TermPaperAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
 	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([TPAppDelegate class]));
+	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([TermPaperAppDelegate class]));
 	}
 }

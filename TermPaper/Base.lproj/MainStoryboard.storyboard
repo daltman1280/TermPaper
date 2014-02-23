@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Term Paper Text View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TermPaperTextViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IOx-cI-FeW">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="SVY-Md-vTV" customClass="FormattedTextView">
+                                <rect key="frame" x="78" y="-4498" width="612" height="10000"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="c5P-9f-ynn" userLabel="Formatted background">
+                                <rect key="frame" x="-10" y="34" width="768" height="985"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Format background.png" id="33I-oL-sEA">
+                                        <rect key="frame" x="10" y="10" width="776" height="980"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" id="wuh-1K-h1R" userLabel="Plain Text" customClass="PlainTextScrollView">
+                                <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="Hfn-Hq-Krc" userLabel="Tile container view">
+                                        <rect key="frame" x="192" y="229" width="384" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view userInteractionEnabled="NO" contentMode="TopLeft" id="ceg-kn-uyN" userLabel="view 0" customClass="BackgroundPaperTileView">
+                                                <rect key="frame" x="0.0" y="-1100" width="1100" height="1100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="TopLeft" id="gQF-lt-2HM" userLabel="view 1" customClass="BackgroundPaperTileView">
+                                                <rect key="frame" x="0.0" y="0.0" width="1100" height="1100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="TopLeft" id="JhZ-Np-uMH" userLabel="view 2" customClass="BackgroundPaperTileView">
+                                                <rect key="frame" x="0.0" y="1100" width="1100" height="1100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view userInteractionEnabled="NO" contentMode="TopLeft" id="oxG-se-G5j" userLabel="view 3" customClass="BackgroundPaperTileView">
+                                                <rect key="frame" x="0.0" y="2200" width="1100" height="1100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" id="s0R-uT-vzC" userLabel="Plain text view">
+                                        <rect key="frame" x="74" y="45" width="679" height="879"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="yq2-aR-bai"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="paperView0" destination="ceg-kn-uyN" id="fFZ-PM-SN2"/>
+                                    <outlet property="paperView1" destination="gQF-lt-2HM" id="XvE-IR-qMo"/>
+                                    <outlet property="paperView2" destination="JhZ-Np-uMH" id="tPz-Dm-mce"/>
+                                    <outlet property="paperView3" destination="oxG-se-G5j" id="7u3-3z-flg"/>
+                                    <outlet property="tileContainerView" destination="Hfn-Hq-Krc" id="9gi-Ww-Y17"/>
+                                </connections>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" bouncesZoom="NO" id="AEy-5J-wwR" userLabel="Formatted Text" customClass="FormattedTextScrollView">
+                                <rect key="frame" x="78" y="34" width="612" height="995"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="AeD-FI-8CH" userLabel="Tile container view">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="502"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="fow-lu-T4W" customClass="FormattedTextTileView">
+                                                <rect key="frame" x="0.0" y="0.0" width="612" height="792"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="SVY-Md-vTV" id="zqK-Kf-0Sl"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="jHJ-u1-eLL" customClass="FormattedTextTileView">
+                                                <rect key="frame" x="0.0" y="807" width="612" height="792"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="SVY-Md-vTV" id="iCg-y6-RV5"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="hKI-TJ-E2O" customClass="FormattedTextTileView">
+                                                <rect key="frame" x="0.0" y="1614" width="612" height="792"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="SVY-Md-vTV" id="jCi-Mx-uFs"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MBJ-oz-wk4"/>
+                                    <outlet property="tileContainerView" destination="AeD-FI-8CH" id="Alc-Ye-fTv"/>
+                                    <outlet property="tileView0" destination="fow-lu-T4W" id="Cat-Ei-1rS"/>
+                                    <outlet property="tileView1" destination="jHJ-u1-eLL" id="UxA-JL-Vtp"/>
+                                    <outlet property="tileView2" destination="hKI-TJ-E2O" id="0BS-nV-b77"/>
+                                </connections>
+                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FYe-Aa-BEE">
+                                <rect key="frame" x="0.0" y="22" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem title="Papers" id="4E3-GM-Aq8"/>
+                                    <barButtonItem title="Settings" id="ba4-wf-V8n"/>
+                                    <barButtonItem width="146" style="plain" systemItem="flexibleSpace" id="f62-aB-v4F"/>
+                                    <barButtonItem title="Title" style="plain" id="ZAd-nQ-KoR"/>
+                                    <barButtonItem width="90" style="plain" systemItem="flexibleSpace" id="qDa-ch-JDl"/>
+                                    <barButtonItem style="plain" id="QpG-9T-cYw">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="W61-oT-eok">
+                                            <rect key="frame" x="513" y="7" width="161" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Draft"/>
+                                                <segment title="Page"/>
+                                            </segments>
+                                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem title="Citations" id="jgQ-Tm-QOK"/>
+                                </items>
+                                <color key="tintColor" red="0.28937381509999999" green="0.37749290470000002" blue="0.46081766489999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="formattedTextView" destination="SVY-Md-vTV" id="5P3-Rs-kPx"/>
+                        <outlet property="paperView" destination="ceg-kn-uyN" id="YVO-2u-JeF"/>
+                        <outlet property="plainTextView" destination="s0R-uT-vzC" id="UlW-QE-X1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Format background.png" width="384" height="512"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

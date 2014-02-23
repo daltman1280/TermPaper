@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Format</key>
+	<string>MLA</string>
+	<key>ApplicationVersion</key>
+	<string>1.1</string>
+	<key>ShortTitle</key>
+	<string>Short Title</string>
+	<key>Keywords</key>
+	<string>example, sample</string>
+	<key>Institution</key>
+	<string>Institute of Higher Learning</string>
+	<key>Abstract</key>
+	<string>This is a sample abstract. It should consist of a single paragraph which summarizes the main points and purpose of the paper. Its length should be between 150 and 250 words. Abbreviations and acronyms used in the paper should be defined here. This paragraph will not be indented in the formatted output. Do not include a title here.</string>
+	<key>Author</key>
+	<string>Your Name</string>
+	<key>CitationPages</key>
+	<true/>
+	<key>Citations</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Bryson</string>
+			<key>Properties</key>
+			<array>
+				<dict>
+					<key>PropertyID</key>
+					<string>author</string>
+					<key>Value</key>
+					<string>Bryson, Bill</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>title</string>
+					<key>Value</key>
+					<string>Notes From A Small Island</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>placeOfPub</string>
+					<key>Value</key>
+					<string>New York, NY</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>publisher</string>
+					<key>Value</key>
+					<string>Harper Collins</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>yearOfPub</string>
+					<key>Value</key>
+					<string>1995</string>
+				</dict>
+			</array>
+			<key>TypeID</key>
+			<string>singleAuthor</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Seaver</string>
+			<key>Properties</key>
+			<array>
+				<dict>
+					<key>PropertyID</key>
+					<string>editor</string>
+					<key>Value</key>
+					<string>Seaver, Jeffery</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>title</string>
+					<key>Value</key>
+					<string>A Hot and Sultry Night for Crime</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>placeOfPub</string>
+					<key>Value</key>
+					<string>New York, NY</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>publisher</string>
+					<key>Value</key>
+					<string>Berkley Prime Crime</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>yearOfPub</string>
+					<key>Value</key>
+					<string>2003</string>
+				</dict>
+			</array>
+			<key>TypeID</key>
+			<string>anthology</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Stegner</string>
+			<key>Properties</key>
+			<array>
+				<dict>
+					<key>PropertyID</key>
+					<string>author</string>
+					<key>Value</key>
+					<string>Stegner, Wallace</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>title</string>
+					<key>Value</key>
+					<string>Angle of Repose</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>placeOfPub</string>
+					<key>Value</key>
+					<string>New York, NY</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>publisher</string>
+					<key>Value</key>
+					<string>Doubleday &amp; Company</string>
+				</dict>
+				<dict>
+					<key>PropertyID</key>
+					<string>yearOfPub</string>
+					<key>Value</key>
+					<string>1971</string>
+				</dict>
+			</array>
+			<key>TypeID</key>
+			<string>singleAuthor</string>
+		</dict>
+	</array>
+	<key>ContentPages</key>
+	<true/>
+	<key>Contents</key>
+	<string>This is a small sample paper, with just enough information to get you started. It has five paragraphs, just to show you how the plain text is supposed to look. Just insert a Return key at the end of this paragraph, right here.
+And we are now in the second paragraph. That&apos;s all there is to it! Press on the button labeled Formatted at the top of the screen to see how your paper will appear when you print it. When you&apos;re ready to make changes to the text, press the button labeled Plain, to return to this view.
+Try inserting a reference in this sample. Just press and hold on some text. Remove your finger. See the menu that says &quot;Insert Citation Reference&quot;? Press it and see what happens. Now press on one of the authors. You have just inserted a reference! 
+When you&apos;re ready to print or send out your completed paper, use the Export button in the Documents menu to export it with iTunes or email it, in printable PDF format. For more info on using TermPaper, go to http://www.homebodyapps.com.
+Once you delete this Sample Paper, it&apos;s gone!</string>
+	<key>Course</key>
+	<string>Ancient History</string>
+	<key>Date</key>
+	<string>1 June 2010</string>
+	<key>DoubleSpace</key>
+	<true/>
+	<key>FontName</key>
+	<string>Helvetica</string>
+	<key>FontSize</key>
+	<string>Medium</string>
+	<key>HeaderOnFirst</key>
+	<true/>
+	<key>HeaderTitle</key>
+	<string>Your Name</string>
+	<key>Instructor</key>
+	<string>Your Instructor</string>
+	<key>Name</key>
+	<string>Sample Paper</string>
+	<key>Title</key>
+	<string>Sample Paper Title</string>
+</dict>
+</plist>

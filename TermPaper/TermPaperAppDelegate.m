@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Don Altman. All rights reserved.
 //
 
-#import "TPAppDelegate.h"
+#import "TermPaperAppDelegate.h"
 
-@implementation TPAppDelegate
+@implementation TermPaperAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
