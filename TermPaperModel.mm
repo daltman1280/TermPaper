@@ -9,6 +9,7 @@
 //	Implements access to persistent representation of term paper
 
 #import "TermPaperModel.h"
+#import "CitationModel.h"
 #import "DocXFormatter.h"
 #import "zip.h"
 

@@ -53,7 +53,7 @@ static BOOL gIsPlainMode = YES;
 {
 	if ([segue.identifier isEqualToString:@"papers"]) {
 		UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
-		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).delegate = self;			// set up ourselves as delegate
+		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).viewController = self;// set up ourselves as delegate
 		((UIStoryboardPopoverSegue *)segue).popoverController.delegate = (id) self;																	// popover controller delegate
 		self.popover = popoverSegue.popoverController;																								// so we can dismiss the popover
 		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).paperNames = [TermPaperModel termPapers];
@@ -61,6 +61,12 @@ static BOOL gIsPlainMode = YES;
 		PaperDetailTableViewController *controller = (PaperDetailTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController;
 		[controller setTitle:[NSString stringWithFormat:@"%@ Info", [TermPaperModel activeTermPaper].name]];
 		controller.paperName = [TermPaperModel activeTermPaper].name;	// tell him which paper to manage
+	} else if ([segue.identifier isEqualToString:@"citations"]) {
+		NSString *paperName = [TermPaperModel activeTermPaper].name;
+		// initialize the navigation bar
+		CitationListTableViewController *controller = (CitationListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController;
+		[controller setTitle:[NSString stringWithFormat:@"%@ Citations", paperName]];
+		[controller.navigationItem setRightBarButtonItem:controller.addButton animated:NO];
 	}
 }
 

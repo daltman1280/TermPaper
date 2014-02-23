@@ -23,9 +23,9 @@
 @interface PaperListTableViewController : UITableViewController <UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate> {
 	IBOutlet TermPaperTextViewController*		viewController;
 	NSArray*									paperNames;					// paper name strings
-	IBOutlet PaperDetailTableViewController*	paperDetailTableController;
-	IBOutlet CitationListTableViewController*	citationTableController;
-	UIPopoverController*						popoverViewController;
+	IBOutlet PaperDetailTableViewController*	paperDetailTableController;	// TODO: initialize
+	IBOutlet CitationListTableViewController*	citationTableController;	// TODO: initialize
+	UIPopoverController*						popoverViewController;		// TODO: initialize
 
 	IBOutlet UIBarButtonItem*					addPaper;
 	IBOutlet UIBarButtonItem*					deletePaper;
@@ -37,13 +37,6 @@
 	UIActionSheet*								exportPaperActionSheet;
 	BOOL										exportPaperActionSheetVisible;
 	
-	IBOutlet UINavigationController*			parentNavigationController;
-	RenameViewController*						renameDocumentViewController;
-	IBOutlet UIView*							renameDialog;
-	IBOutlet UITextField*						renameText;
-	IBOutlet UIButton*							renameOKButton;
-	IBOutlet UIButton*							renameCancelButton;
-	
 	IBOutlet UIToolbar*							toolbar;
 }
 
@@ -51,7 +44,6 @@
 - (IBAction)handleAddPaper:(id)sender;
 - (IBAction)handleDeletePaper:(id)sender;
 - (IBAction)handleRenamePaper:(id)sender;
-- (IBAction)handleRenameConfirm:(id)sender;
 - (IBAction)handleDuplicatePaper:(id)sender;
 - (IBAction)handleActionPaper:(id)sender;
 - (IBAction)handleEmailFeedbackButton:(id)sender;
@@ -65,6 +57,6 @@
 @property (nonatomic, strong) NSArray* paperNames;
 @property (nonatomic, strong) UIPopoverController *popoverViewController;
 @property (nonatomic) BOOL exportPaperActionSheetVisible;
-@property id											delegate;
+@property (nonatomic, strong) TermPaperTextViewController*		viewController;
 @end
 

@@ -161,7 +161,7 @@ const static int kSGTextFieldTagNumber = 99;
 		}
 		[self setDeleteButtonEnabled];
 	} else if (actionSheet == exportPaperActionSheet) {
-		NSLog(@"buttonIndex = %ld", buttonIndex);
+		NSLog(@"buttonIndex = %ld", (long)buttonIndex);
 		switch (buttonIndex) {
 			case 0:
 				[self handleEmailFeedbackButton:self];
@@ -298,7 +298,7 @@ const static int kSGTextFieldTagNumber = 99;
 	NSString *pdfFile = [documentsFolder stringByAppendingFormat:@"/%@.pdf", [TermPaperModel activeTermPaper].name];
 	NSLog(@"pdffile = %@", pdfFile);
     NSData *myData = [NSData dataWithContentsOfFile:pdfFile];
-	NSLog(@"myData.length = %ld", myData.length);
+	NSLog(@"myData.length = %ld", (unsigned long)myData.length);
 	NSLog(@"name = %@", [[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]);
 	[picker addAttachmentData:myData mimeType:@"application/pdf" fileName:[[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]];
 	

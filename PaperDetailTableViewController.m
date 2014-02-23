@@ -8,6 +8,10 @@
 
 #import "PaperDetailTableViewController.h"
 
+@interface PaperDetailTableViewController ()
+
+@end
+
 @implementation PaperDetailTableViewController
 
 @synthesize titleCell, shortTitleCell, authorCell, instructorCell, courseCell, institutionCell, keywordsCell, dateCell, headerTitleCell, abstractCell, wordCountCell;
@@ -255,29 +259,16 @@
 	return @"";
 }
 
-#pragma mark -
-#pragma mark Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if ([indexPath indexAtPosition:0] == 0) {																		// first section
-		unsigned int infoRow = ([mTermPaper.format isEqualToString:@"MLA"]) ? infoEnumMLA : infoEnumAPA;
-		infoRow |= [indexPath indexAtPosition:1];
-		if (infoRow == rowAPAAbstract) {																			// the position of the Abstract disclosure cell
-			abstractViewController.mTermPaper = mTermPaper;
-			// set the title in the Navigation bar
-			[abstractViewController setTitle:[NSString stringWithFormat:@"%@ Abstract", paperName]];
-			[self.navigationController pushViewController:abstractViewController animated:YES];
-		}
-	}
-	if ([indexPath indexAtPosition:0] == 1) {																		// second section
-		unsigned int optionRow = ([mTermPaper.format isEqualToString:@"MLA"]) ? optionEnumMLA : optionEnumAPA;
-		optionRow |= [indexPath indexAtPosition:1];
-		if (optionRow == rowMLAFont) {																				// the position of the Fonts disclosure cell
-			fontsTableController.mTermPaper = mTermPaper;
-			// set the title in the Navigation bar
-			[fontsTableController setTitle:[NSString stringWithFormat:@"%@ Font", paperName]];
-			[self.navigationController pushViewController:fontsTableController animated:YES];
-		}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"fonts"]) {
+		PaperFontsTableViewController *controller = (PaperFontsTableViewController *) segue.destinationViewController;
+		controller.title = [NSString stringWithFormat:@"%@ Font", paperName];
+		controller.mTermPaper = mTermPaper;
+	} else if ([segue.identifier isEqualToString:@"abstract"]) {
+		AbstractViewController *controller = (AbstractViewController *) segue.destinationViewController;
+		controller.title = [NSString stringWithFormat:@"%@ Font", paperName];
+		controller.mTermPaper = mTermPaper;
 	}
 }
 
