@@ -20,7 +20,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	self.contentSizeForViewInPopover = CGSizeMake(338, 580);					// TODO: get the appropriate size
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

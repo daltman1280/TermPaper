@@ -18,7 +18,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	self.contentSizeForViewInPopover = CGSizeMake(250, 700);										// TODO: get the appropriate size
 	mTermPaper = [TermPaperModel activeTermPaper];
 }
 

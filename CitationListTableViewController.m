@@ -17,7 +17,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	self.contentSizeForViewInPopover = CGSizeMake(550, 700);										// TODO: get the appropriate size
 	mTermPaper = [TermPaperModel activeTermPaper];
 	[self.tableView reloadData];																	// in case user has edited the name and saved it, returning here
 	self.navigationController.navigationBar.topItem.leftBarButtonItem = self.editButtonItem;
