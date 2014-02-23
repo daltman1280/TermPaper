@@ -57,6 +57,10 @@ static BOOL gIsPlainMode = YES;
 		((UIStoryboardPopoverSegue *)segue).popoverController.delegate = (id) self;																	// popover controller delegate
 		self.popover = popoverSegue.popoverController;																								// so we can dismiss the popover
 		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).paperNames = [TermPaperModel termPapers];
+	} else if ([segue.identifier isEqualToString:@"settings"]) {
+		PaperDetailTableViewController *controller = (PaperDetailTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController;
+		[controller setTitle:[NSString stringWithFormat:@"%@ Info", [TermPaperModel activeTermPaper].name]];
+		controller.paperName = [TermPaperModel activeTermPaper].name;	// tell him which paper to manage
 	}
 }
 
