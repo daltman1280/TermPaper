@@ -156,6 +156,7 @@
                         <outlet property="barTitle" destination="ZAd-nQ-KoR" id="rdk-Qd-lKS"/>
                         <outlet property="formattedTextScrollView" destination="AEy-5J-wwR" id="3cF-Ru-6Xy"/>
                         <outlet property="formattedTextView" destination="SVY-Md-vTV" id="5P3-Rs-kPx"/>
+                        <outlet property="modeControl" destination="W61-oT-eok" id="Olc-Sq-bx5"/>
                         <outlet property="paperView" destination="ceg-kn-uyN" id="YVO-2u-JeF"/>
                         <outlet property="plainTextScrollView" destination="wuh-1K-h1R" id="JU0-01-5aJ"/>
                         <outlet property="plainTextView" destination="s0R-uT-vzC" id="UlW-QE-X1U"/>

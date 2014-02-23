@@ -19,11 +19,11 @@
 	IBOutlet PlainTextScrollView*			plainTextScrollView;
 	IBOutlet UIToolbar*						toolbar;
 	IBOutlet UIBarButtonItem*				barTitle;
+#pragma mark TODO: maybe don't need this
 	IBOutlet UIBarButtonItem*				tabControl;
 	IBOutlet FormattedTextView*				formattedTextView;						// never visible, only for layout purposes
 	IBOutlet FormattedTextScrollView*		formattedTextScrollView;
-	UISegmentedControl*						modeControl;
-	IBOutlet id								appDelegate;
+	IBOutlet UISegmentedControl*			modeControl;
 	
 	float									mPreviousContentHeight;
 	BOOL									mBKeyboardIsShowing;
