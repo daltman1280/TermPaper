@@ -15,7 +15,7 @@
 
 #pragma mark TODO: fix this
 
-static CitationFormatter *gSharedFormatter;// = [[CitationFormatter alloc] init];
+static CitationFormatter *gSharedFormatter = [[CitationFormatter alloc] init];
 
 @implementation CitationFormatter
 

@@ -10,7 +10,7 @@
 
 #pragma mark TODO: fix this
 
-static NSArray *CitationTypes;// = [CitationModel loadCitationTypes];									// static initializer
+static NSArray *CitationTypes = [CitationModel loadCitationTypes];									// static initializer
 
 @implementation CitationModel
 
