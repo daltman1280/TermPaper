@@ -152,7 +152,7 @@
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="o5f-Sw-UTg"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="300" height="640"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="350" height="700"/>
                     <connections>
                         <outlet property="abstractCell" destination="SdR-i4-96j" id="fEX-4F-9qe"/>
                         <outlet property="authorCell" destination="Oh1-zc-or7" id="8qL-lh-vge"/>
@@ -477,7 +477,7 @@
                         <outlet property="accessoryView" destination="Vl2-19-zK9" id="Y3G-KK-glb"/>
                     </connections>
                 </tableViewCell>
-                <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" id="3sN-Qe-Y84" userLabel="Fonts">
+                <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="3sN-Qe-Y84" userLabel="Fonts">
                     <rect key="frame" x="0.0" y="0.0" width="338" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sN-Qe-Y84" id="uAh-FU-uub">
@@ -627,7 +627,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="&lt;author>" textAlignment="right" minimumFontSize="17" id="4xW-b6-3qd">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="&lt;your name>" textAlignment="right" minimumFontSize="17" id="4xW-b6-3qd">
                                 <rect key="frame" x="125" y="8" width="193" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
@@ -999,7 +999,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fonts" id="NpA-Ux-eCA"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="300" height="640"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="350" height="700"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRy-8m-1Uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1035,7 +1035,7 @@
                         <color key="backgroundColor" white="0.90210843090000004" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8hN-qm-UZ8"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="300" height="640"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="350" height="700"/>
                     <connections>
                         <outlet property="textView" destination="bU4-gt-cN2" id="dXU-dc-ARR"/>
                         <outlet property="wordCountLabel" destination="BTJ-8g-Odw" id="fIH-C6-DfT"/>

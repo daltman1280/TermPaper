@@ -43,10 +43,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	if ([mTermPaper.format isEqualToString:@"MLA"])
-		self.contentSizeForViewInPopover = CGSizeMake(338, 670);									// TODO: get the appropriate size
-	else
-		self.contentSizeForViewInPopover = CGSizeMake(338, 626);									// TODO: get the appropriate size
 }
 
 - (void)loadViews
@@ -254,13 +250,13 @@
 {
 	switch (section) {
 		case 0:
-			return @"Info";
+			return @"Settings";
 			break;
 		case 1:
 			return @"Options";
 			break;
 		case 2:
-			return @"Formatted Output";
+			return @"Page Output";
 			break;
 	}
 	return @"";

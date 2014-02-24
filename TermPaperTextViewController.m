@@ -67,7 +67,7 @@ static BOOL gIsPlainMode = YES;
 		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).paperNames = [TermPaperModel termPapers];
 	} else if ([segue.identifier isEqualToString:@"settings"]) {
 		PaperDetailTableViewController *controller = (PaperDetailTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController;
-		[controller setTitle:[NSString stringWithFormat:@"%@ Info", [TermPaperModel activeTermPaper].name]];
+		[controller setTitle:[NSString stringWithFormat:@"%@ Settings", [TermPaperModel activeTermPaper].name]];
 		controller.paperName = [TermPaperModel activeTermPaper].name;	// tell him which paper to manage
 	} else if ([segue.identifier isEqualToString:@"citations"]) {
 		NSString *paperName = [TermPaperModel activeTermPaper].name;
@@ -170,6 +170,13 @@ static BOOL gIsPlainMode = YES;
 	self.settingsButton.enabled = YES;
 	self.modeButton.enabled = YES;
 	self.citationsButton.enabled = YES;
+	if (!gIsPlainMode) {																				// we're in page mode, redisplay pages
+		// notification for when formatted view is available to display
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(formattedTextViewReady:) name:kDWFormattedViewCompleteNotificationName object:nil];
+		[formattedTextView setNeedsDisplayInRect:CGRectMake(0, 0, formattedTextView.frame.size.width, 150000)];
+		[formattedTextScrollView invalidate];
+		formattedTextView.mode = multiPageMode;
+	}
 }
 
 #pragma mark UIViewController overrides
