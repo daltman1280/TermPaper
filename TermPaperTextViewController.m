@@ -98,9 +98,9 @@ static BOOL gIsPlainMode = YES;
 	CGRect keyboardRect = [self.view convertRect:rawKeyboardRect fromView:nil];							// to account for interface rotation
 	float keyboardHeight = keyboardRect.size.height;
 	if (keyboardHeight + heightOfText >= heightOfView) {												// only if the keyboard forces text to be covered
-		int selection = plainTextView.selectedRange.location;
-		int count = plainTextView.text.length;
-		int countFromEnd = count - selection;
+		NSUInteger selection = plainTextView.selectedRange.location;
+		NSUInteger count = plainTextView.text.length;
+		NSUInteger countFromEnd = count - selection;
 		if (countFromEnd < 300) {																		// TODO: why doesn't scrollRectToVisible work?
 			[plainTextScrollView scrollRectToVisible:CGRectMake(0, heightOfText-10, 10, 10) animated:YES];
 		}

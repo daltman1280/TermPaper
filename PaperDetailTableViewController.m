@@ -186,10 +186,10 @@
 				case rowAPAWordCount:
 				case rowMLAWordCount:
 					words = [mTermPaper.content componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-					int count = words.count;
+					NSUInteger count = words.count;
 					if (((NSString *)[words objectAtIndex:0]).length == 0) --count;
 					if (count > 0 && ((NSString *)[words lastObject]).length == 0) --count;
-					((UITextField *)wordCountCell.accessoryView).text = [NSString stringWithFormat:@"%d", count];
+					((UITextField *)wordCountCell.accessoryView).text = [NSString stringWithFormat:@"%ld", count];
 					return wordCountCell;
 					break;
 				case rowAPAInstitution:

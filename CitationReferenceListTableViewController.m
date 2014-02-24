@@ -46,7 +46,7 @@
     }
     
     // Configure the cell...
-    int index = [indexPath indexAtPosition:1];
+    NSUInteger index = [indexPath indexAtPosition:1];
 	NSString *name = [[mTermPaper.citations objectAtIndex:index] objectForKey:@"Name"];
 	cell.textLabel.text = name;
 	cell.textLabel.enabled = YES;
@@ -58,7 +58,7 @@
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    int index = [indexPath indexAtPosition:1];
+    NSUInteger index = [indexPath indexAtPosition:1];
 	NSString *name = [[mTermPaper.citations objectAtIndex:index] objectForKey:@"Name"];
 	[self.textViewController pasteReferenceText:name];
 	[self.textViewController.citationReferenceListPopoverController dismissPopoverAnimated:NO];

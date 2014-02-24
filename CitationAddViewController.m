@@ -20,8 +20,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-	self.contentSizeForViewInPopover = CGSizeMake(550, 214);		// TODO: get the appropriate size
-	self.navigationController.navigationBar.topItem.rightBarButtonItem = 
+	self.navigationController.navigationBar.topItem.rightBarButtonItem =
 	[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(handleAddCitation:)];
 }
 

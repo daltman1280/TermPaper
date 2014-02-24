@@ -21,7 +21,7 @@
 	NSString*									name;
 }
 
-- (id)initWithTypeIndex:(int)typeIndex subTypeIndex:(int)subTypeIndex;
+- (id)initWithTypeIndex:(NSInteger)typeIndex subTypeIndex:(NSInteger)subTypeIndex;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 + (NSArray *)loadCitationTypes;
 + (NSArray *)citationTypes;

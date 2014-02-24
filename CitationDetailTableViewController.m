@@ -114,7 +114,6 @@ static SelectableTextField *gFirstResponder;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	self.contentSizeForViewInPopover = CGSizeMake(550, self.tableView.rowHeight*(((NSArray *)[citation.propertySchemaDict objectForKey:@"Properties"]).count+3));		// TODO: get the appropriate size
 	switch (section) {
 		case 0:
 			return 1;

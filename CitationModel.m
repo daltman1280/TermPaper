@@ -18,7 +18,7 @@ static NSArray *CitationTypes = [CitationModel loadCitationTypes];									// st
 
 //	create a new citation with empty values
 
-- (id)initWithTypeIndex:(int)typeIndex subTypeIndex:(int)subTypeIndex
+- (id)initWithTypeIndex:(NSInteger)typeIndex subTypeIndex:(NSInteger)subTypeIndex
 {
 	if (self = [super init]) {
 		properties = [[NSMutableArray alloc] init];

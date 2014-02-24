@@ -278,7 +278,7 @@ const static int kSGTextFieldTagNumber = 99;
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error 
 {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)handleEmailCompletion:(NSNotificationCenter *)notification
@@ -302,7 +302,7 @@ const static int kSGTextFieldTagNumber = 99;
 	NSLog(@"name = %@", [[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]);
 	[picker addAttachmentData:myData mimeType:@"application/pdf" fileName:[[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]];
 	
-	[self presentModalViewController:picker animated:YES];
+	[self presentViewController:picker animated:YES completion:NULL];
 }
 
 - (IBAction)handleEmailFeedbackButton:(id)sender
@@ -318,7 +318,7 @@ const static int kSGTextFieldTagNumber = 99;
 	NSString *emailBody = [NSString stringWithFormat:@"TermPaper 1.2 for iPad v%f\n\nDear HomebodyApps Support:\n", NSFoundationVersionNumber];
 	[picker setMessageBody:emailBody isHTML:NO];
 	
-	[self presentModalViewController:picker animated:YES];
+	[self presentViewController:picker animated:YES completion:NULL];
 }
 
 - (IBAction)handleEmailPDFButton:(id)sender
@@ -346,7 +346,7 @@ const static int kSGTextFieldTagNumber = 99;
     NSData *myData = [NSData dataWithContentsOfFile:wordFile];
 	[picker addAttachmentData:myData mimeType:@"application/doc" fileName:[[TermPaperModel activeTermPaper].name stringByAppendingString:@".docx"]];
 	
-	[self presentModalViewController:picker animated:YES];
+	[self presentViewController:picker animated:YES completion:NULL];
 }
 
 - (IBAction)handleActionPaper:(id)sender

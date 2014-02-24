@@ -53,7 +53,7 @@
     
     // Configure the cell...
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    int index = [indexPath indexAtPosition:1];
+    NSUInteger index = [indexPath indexAtPosition:1];
 	NSString *name = [[mTermPaper.citations objectAtIndex:index] objectForKey:@"Name"];
 	if (name == nil || strcmp("NSCFString", object_getClassName(name))) {
 		NSLog(@"name = %u, class = %s", (unsigned int) name, object_getClassName(name));
