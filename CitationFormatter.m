@@ -89,7 +89,7 @@ static CitationFormatter *gSharedFormatter = [[CitationFormatter alloc] init];
 	if (outputMode == modeAttributedText) {
 		CFMutableAttributedStringRef tmpAttrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(tmpAttrString, CFRangeMake(0, 0), (CFStringRef)input);
-		NSString *italicFontname = [NSString stringWithFormat:@"%@%@", [model.fontName isEqualToString:@"Times New Roman"] ? @"TimesNewRomanPS-ItalicMT" : model.fontName, [model.fontName isEqualToString:@"Helvetica"] ? @" Oblique" : ![model.fontName isEqualToString:@"Times New Roman"] ? @" Italic" : @""];
+		NSString *italicFontname = [NSString stringWithFormat:@"%@%@", [model.fontName isEqualToString:@"Times New Roman"] ? @"TimesNewRomanPS-ItalicMT" : model.fontName, [model.fontName isEqualToString:@"Helvetica"] ? @"-Oblique" : ![model.fontName isEqualToString:@"Times New Roman"] ? @"-Italic" : @""];
 		CTFontRef font;
 		if ([model.format isEqualToString:@"MLA"])
 			font = CTFontCreateWithName((__bridge CFStringRef) italicFontname, FONT_SIZE, NULL);

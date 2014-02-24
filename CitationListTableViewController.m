@@ -82,7 +82,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"citationDetail"]) {
-		citationDetailController = (CitationDetailTableViewController *)(UINavigationController *)segue.destinationViewController;
+		citationDetailController = (CitationDetailTableViewController *) segue.destinationViewController;
 		citationDetailController.mTermPaper = mTermPaper;
 		citationDetailController.paperName = paperName;
 		// get the selected citation
@@ -93,6 +93,11 @@
 		citationDetailController.citationListIndex = [indexPath indexAtPosition:1];							// to replace the citation
 		// initialize the navigation bar
 		[citationDetailController setTitle:[NSString stringWithFormat:@"%@ Citation", citation.citationType]];
+	} else if ([segue.identifier isEqualToString:@"addCitation"]) {
+		self.citationAddController = (CitationAddViewController *) (UINavigationController *)segue.destinationViewController;
+		self.citationAddController.mTermPaper = mTermPaper;
+		self.citationAddController.paperName = paperName;
+		self.citationAddController.citationDetailController = self.citationDetailController;
 	}
 }
 
@@ -112,13 +117,6 @@
 }
 
 #pragma mark -
-
-- (IBAction)handleAddButton:(id)sender
-{
-	citationAddController.mTermPaper = mTermPaper;
-	citationAddController.paperName = paperName;
-	[self.navigationController pushViewController:citationAddController animated:YES];
-}
 
 #pragma mark Memory management
 

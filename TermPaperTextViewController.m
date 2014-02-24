@@ -220,7 +220,7 @@ static BOOL gIsPlainMode = YES;
 {
 	TermPaperModel *termPaper = [TermPaperModel activeTermPaper];
 	plainTextView.text = termPaper.content;
-	plainTextView.font = [UIFont systemFontOfSize:18.035713];							// to make the leading match the line spacing (22 pixels) of the background paper
+	plainTextView.font = [UIFont systemFontOfSize:18.440904];							// to make the leading match the line spacing (22 pixels) of the background paper
 	barTitle.title = termPaper.name;
 	formattedTextView.calculatedHeight = 0;												// force him to recalculate his height
 	[self calculateTextViewBounds];

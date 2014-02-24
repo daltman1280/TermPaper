@@ -91,6 +91,9 @@
 
 - (IBAction)handleAddCitation:(id)sender
 {
+	if (!citationDetailController) {
+		citationDetailController = [self.storyboard instantiateViewControllerWithIdentifier:@"citationDetail"];
+	}
 	citationDetailController.mTermPaper = mTermPaper;
 	citationDetailController.paperName = paperName;
 	// create a citation
