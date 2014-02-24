@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		258DDE4C18BC0C0100982471 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 258DDE4B18BC0C0100982471 /* Default-Landscape@2x~ipad.png */; };
+		258DDE4E18BC0C0C00982471 /* Default@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 258DDE4D18BC0C0C00982471 /* Default@2x~ipad.png */; };
 		25C0DC1818B9480B00AE93EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1718B9480B00AE93EF /* Foundation.framework */; };
 		25C0DC1A18B9480B00AE93EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */; };
 		25C0DC1C18B9480B00AE93EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1B18B9480B00AE93EF /* UIKit.framework */; };
@@ -63,6 +65,9 @@
 
 /* Begin PBXFileReference section */
 		258DDE4A18BBCD8A00982471 /* TermPaperNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermPaperNotifications.h; sourceTree = "<group>"; };
+		258DDE4B18BC0C0100982471 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
+		258DDE4D18BC0C0C00982471 /* Default@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
+		258DDE4F18BC0D1700982471 /* sample text.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "sample text.rtf"; sourceTree = "<group>"; };
 		25C0DC1418B9480B00AE93EF /* TermPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C0DC1718B9480B00AE93EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -243,10 +248,13 @@
 		25C0DC5518B958A300AE93EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				258DDE4D18BC0C0C00982471 /* Default@2x~ipad.png */,
+				258DDE4B18BC0C0100982471 /* Default-Landscape@2x~ipad.png */,
 				25C0DCB418B95C6300AE93EF /* CitationTypes.plist */,
 				25C0DCB618B95C7000AE93EF /* DefaultTermPaper.TermPaper */,
 				25C0DCB818B95C7D00AE93EF /* Sample Paper.TermPaper */,
 				25C0DC5618B958AE00AE93EF /* Images */,
+				258DDE4F18BC0D1700982471 /* sample text.rtf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -455,9 +463,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258DDE4E18BC0C0C00982471 /* Default@2x~ipad.png in Resources */,
 				25C0DCB518B95C6300AE93EF /* CitationTypes.plist in Resources */,
 				25C0DC3018B9480B00AE93EF /* Images.xcassets in Resources */,
 				25C0DC5418B9588F00AE93EF /* Format background.png in Resources */,
+				258DDE4C18BC0C0100982471 /* Default-Landscape@2x~ipad.png in Resources */,
 				25C0DCB718B95C7000AE93EF /* DefaultTermPaper.TermPaper in Resources */,
 				25C0DC2218B9480B00AE93EF /* InfoPlist.strings in Resources */,
 				25C0DCB918B95C7D00AE93EF /* Sample Paper.TermPaper in Resources */,

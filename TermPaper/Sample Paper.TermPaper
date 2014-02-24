@@ -2,18 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Format</key>
-	<string>MLA</string>
-	<key>ApplicationVersion</key>
-	<string>1.1</string>
-	<key>ShortTitle</key>
-	<string>Short Title</string>
-	<key>Keywords</key>
-	<string>example, sample</string>
-	<key>Institution</key>
-	<string>Institute of Higher Learning</string>
 	<key>Abstract</key>
 	<string>This is a sample abstract. It should consist of a single paragraph which summarizes the main points and purpose of the paper. Its length should be between 150 and 250 words. Abbreviations and acronyms used in the paper should be defined here. This paragraph will not be indented in the formatted output. Do not include a title here.</string>
+	<key>ApplicationVersion</key>
+	<string>1.2</string>
 	<key>Author</key>
 	<string>Your Name</string>
 	<key>CitationPages</key>
@@ -141,11 +133,13 @@
 	<key>ContentPages</key>
 	<true/>
 	<key>Contents</key>
-	<string>This is a small sample paper, with just enough information to get you started. It has five paragraphs, just to show you how the plain text is supposed to look. Just insert a Return key at the end of this paragraph, right here.
-And we are now in the second paragraph. That&apos;s all there is to it! Press on the button labeled Formatted at the top of the screen to see how your paper will appear when you print it. When you&apos;re ready to make changes to the text, press the button labeled Plain, to return to this view.
-Try inserting a reference in this sample. Just press and hold on some text. Remove your finger. See the menu that says &quot;Insert Citation Reference&quot;? Press it and see what happens. Now press on one of the authors. You have just inserted a reference! 
-When you&apos;re ready to print or send out your completed paper, use the Export button in the Documents menu to export it with iTunes or email it, in printable PDF format. For more info on using TermPaper, go to http://www.homebodyapps.com.
-Once you delete this Sample Paper, it&apos;s gone!</string>
+	<string>This is a sample TermPaper to help you get started. It has some settings, and some sample citations.
+The idea of paragraphs is important. To start a new paragraph from the current insertion point, press the &lt;return&gt; key.
+Use the Settings menu to control for format of your paper. You can select from either MLA or APA format, and will be able to access the appropriate settings for either.
+Press the Page button to preview your printed paper. Press Draft button to return to the text entry view.
+The Citations menu lets you manage your bibliographic references. You can add, delete, and modify citations here.
+As a short-cut, you can insert a reference by pressing on text in the Draft view. The keyboard will appear, and a menu next to the insertion point. The Insert Citation Reference… menu will make a popup menu from which you can select a reference to insert in the body of your paper.
+The Papers menu is used to manage your documents. Here, you can also export printable PDF versions of your paper, either to iTunes (requiring you to sync your iPad), email, or Dropbox.</string>
 	<key>Course</key>
 	<string>Ancient History</string>
 	<key>Date</key>
@@ -156,14 +150,24 @@ Once you delete this Sample Paper, it&apos;s gone!</string>
 	<string>Helvetica</string>
 	<key>FontSize</key>
 	<string>Medium</string>
+	<key>Format</key>
+	<string>MLA</string>
 	<key>HeaderOnFirst</key>
 	<true/>
 	<key>HeaderTitle</key>
 	<string>Your Name</string>
+	<key>InsertDoubleSpaces</key>
+	<false/>
+	<key>Institution</key>
+	<string>Institute of Higher Learning</string>
 	<key>Instructor</key>
 	<string>Your Instructor</string>
+	<key>Keywords</key>
+	<string>example, sample</string>
 	<key>Name</key>
 	<string>Sample Paper</string>
+	<key>ShortTitle</key>
+	<string>Short Title</string>
 	<key>Title</key>
 	<string>Sample Paper Title</string>
 </dict>
