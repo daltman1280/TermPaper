@@ -60,9 +60,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     int index = [indexPath indexAtPosition:1];
 	NSString *name = [[mTermPaper.citations objectAtIndex:index] objectForKey:@"Name"];
-	[textViewController pasteReferenceText:name];
-#pragma mark TODO: fix this
-//	[appDelegate dismissCitationReferenceListPopover];
+	[self.textViewController pasteReferenceText:name];
+	[self.textViewController.citationReferenceListPopoverController dismissPopoverAnimated:NO];
 }
 
 #pragma mark -

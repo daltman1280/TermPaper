@@ -35,6 +35,7 @@
 - (IBAction)handleExportPDFButton:(id)sender;
 - (void)pasteReferenceText:(NSString *)referenceText;
 @property (unsafe_unretained, nonatomic, readonly) NSString *content;
+@property (nonatomic, strong) UIPopoverController *citationReferenceListPopoverController;
 
 @end
 

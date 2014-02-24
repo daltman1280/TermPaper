@@ -12,10 +12,9 @@
 
 @interface CitationReferenceListTableViewController : UITableViewController {
 	TermPaperModel*									mTermPaper;
-	IBOutlet TermPaperTextViewController*			textViewController;
-	IBOutlet id										appDelegate;
 }
 
 @property (nonatomic, strong) TermPaperModel *mTermPaper;
+@property (nonatomic, strong) TermPaperTextViewController *textViewController;
 
 @end

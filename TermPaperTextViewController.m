@@ -9,6 +9,7 @@
 #import "TermPaperTextViewController.h"
 #import "TermPaperAppDelegate.h"
 #import "PaperListTableViewController.h"
+#import "CitationReferenceListTableViewController.h"
 
 static BOOL gIsPlainMode = YES;
 
@@ -74,8 +75,16 @@ static BOOL gIsPlainMode = YES;
 
 - (IBAction)handleInsertCitationReference:(id)sender
 {
-#pragma mark TOD: fix this
-//	[(TermPaperAppDelegate *)appDelegate handleInsertCitationReferenceButton:sender];
+	CitationReferenceListTableViewController *controller = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"citationReference"];
+	controller.textViewController = self;
+	controller.mTermPaper = [TermPaperModel activeTermPaper];
+	CGRect rect = ((UIMenuController *)sender).menuFrame;
+	rect.origin.x += rect.size.width/2;												// center of menu
+	rect.origin.y += 50;															// bottom of menu
+	rect.size.height = 1;
+	rect.size.width = 1;
+	self.citationReferenceListPopoverController = [[UIPopoverController alloc] initWithContentViewController:controller];
+	[self.citationReferenceListPopoverController presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 //	We've resized the text scroll view in keyboardWillShow. We can't get the selection until keyboardDidShow. We will decide whether we need to scroll
