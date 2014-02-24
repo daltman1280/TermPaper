@@ -293,8 +293,7 @@ static NSString*				gPapersFolder;
 
 - (void)save
 {
-	NSString *versionNumber = [[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"]] objectForKey:(id)kCFBundleVersionKey];
-	[mDictionary setObject:versionNumber forKey:kDWPaperTagVersion];
+	[mDictionary setObject:@"1.2" forKey:kDWPaperTagVersion];
 	[mDictionary writeToFile:mPlistFilepath atomically:YES];
 }
 
@@ -305,7 +304,6 @@ static NSString*				gPapersFolder;
 	[[NSFileManager defaultManager] removeItemAtPath:mPlistFilepath error:nil];
 	[gTermPapersList removeObject:self.name];
 	gActiveTermPaper = nil;
-//	[self release];							// TODO: test
 }
 
 #pragma mark -
