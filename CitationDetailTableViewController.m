@@ -19,18 +19,6 @@ static SelectableTextField *gFirstResponder;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	UIImage *buttonImageNormal = [UIImage imageNamed:@"blueButton.png"];
-	UIImage *stretchableButtonImageNormal = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	UIImage *buttonImagePressed = [UIImage imageNamed:@"darkBlueButton.png"];
-	UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	
-	[nextButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
-	[nextButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
-	[prevButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
-	[prevButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
-	[removeButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
-	[removeButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
-	
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
  
@@ -201,12 +189,14 @@ static SelectableTextField *gFirstResponder;
 {
 	NSIndexPath *nextIndex = ((SelectableTextField *)gFirstResponder).nextIndex;
 	[[self.tableView cellForRowAtIndexPath:nextIndex].accessoryView becomeFirstResponder];
+	[gFirstResponder selectAll:self];
 }
 
 - (IBAction)selectPrevResponder:(id)sender
 {
 	NSIndexPath *prevIndex = ((SelectableTextField *)gFirstResponder).prevIndex;
 	[[self.tableView cellForRowAtIndexPath:prevIndex].accessoryView becomeFirstResponder];
+	[gFirstResponder selectAll:self];
 }
 
 - (IBAction)handleRemoveText:(id)sender
