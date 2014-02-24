@@ -267,12 +267,12 @@ const static int kSGTextFieldTagNumber = 99;
 
 - (IBAction)handleExportPDFButton:(id)sender
 {
-	[viewController handleExportPDFButton:self];
+	[self.viewController handleExportPDFButton:self];
 }
 
 - (IBAction)handleExportDOCXButton:(id)sender
 {
-	[viewController saveActivePaper];
+	[self.viewController saveActivePaper];
 	[[TermPaperModel activeTermPaper] exportDocxFile];
 }
 
@@ -324,12 +324,12 @@ const static int kSGTextFieldTagNumber = 99;
 - (IBAction)handleEmailPDFButton:(id)sender
 {
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEmailCompletion:) name:kDWPDFCompleteNotificationName object:nil];
-	[viewController handleExportPDFButton:self];
+	[self.viewController handleExportPDFButton:self];
 }
 
 - (IBAction)handleEmailDOCXButton:(id)sender
 {
-	[viewController saveActivePaper];
+	[self.viewController saveActivePaper];
 	[[TermPaperModel activeTermPaper] exportDocxFile];
 	if (![MFMailComposeViewController canSendMail])
 		;
@@ -360,10 +360,10 @@ const static int kSGTextFieldTagNumber = 99;
 
 - (IBAction)handlePaperPick:(NSString *)selectedPaperName
 {
-	[viewController saveActivePaper];
+	[self.viewController saveActivePaper];
 	[[NSUserDefaults standardUserDefaults] setObject:selectedPaperName forKey:@"activePaper"];
 	[TermPaperModel makeActive:selectedPaperName];
-	[viewController openPaper];
+	[self.viewController openPaper];
 	[paperDetailTableController.navigationController popToRootViewControllerAnimated:NO];					// force popover navigationcontrollers back to their root views
 	[citationTableController.navigationController popToRootViewControllerAnimated:NO];
 }

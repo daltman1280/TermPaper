@@ -13,20 +13,108 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GPh-0f-Qne">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GPh-0f-Qne">
                                 <rect key="frame" x="0.0" y="86" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GPh-0f-Qne" id="Ffu-ig-ajA">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="701" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="RBi-1H-nIX"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="600" height="600"/>
+                    <connections>
+                        <segue destination="h23-sn-Sz7" kind="push" identifier="citationDetail" id="MDz-4b-w9q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01o-um-Wiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="409" y="2267"/>
+        </scene>
+        <!--Citation Detail Table View Controller-->
+        <scene sceneID="y48-jT-U5M">
+            <objects>
+                <tableViewController id="h23-sn-Sz7" customClass="CitationDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="WP5-LX-oQN">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="h23-sn-Sz7" id="UpL-TG-zqA"/>
+                            <outlet property="delegate" destination="h23-sn-Sz7" id="V3C-ql-5Kl"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="jmT-PM-8SP"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="accessoryView" destination="z9Y-gf-bQJ" id="Efp-D1-mTL"/>
+                        <outlet property="nextButton" destination="Bit-Fu-wh1" id="6gq-d7-ddd"/>
+                        <outlet property="prevButton" destination="gbh-Zq-LWc" id="7fg-gv-ysP"/>
+                        <outlet property="removeButton" destination="TEJ-zF-Y8a" id="b8w-Bu-jN6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ap6-kN-vUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="z9Y-gf-bQJ" userLabel="Accessory view for citation detail">
+                    <rect key="frame" x="0.0" y="0.0" width="691" height="48"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bit-Fu-wh1">
+                            <rect key="frame" x="416" y="10" width="72" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal" title="Next">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectNextResponder:" destination="h23-sn-Sz7" eventType="touchUpInside" id="9yD-b6-vXW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gbh-Zq-LWc">
+                            <rect key="frame" x="301" y="10" width="83" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal" title="Previous">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="selectPrevResponder:" destination="h23-sn-Sz7" eventType="touchUpInside" id="Vk7-oH-DOx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TEJ-zF-Y8a">
+                            <rect key="frame" x="203" y="10" width="72" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                            <state key="normal" title="Remove">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="handleRemoveText:" destination="h23-sn-Sz7" eventType="touchUpInside" id="f2q-5x-uXd"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.78467154500000003" alpha="1" colorSpace="calibratedWhite"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1455" y="2235"/>
         </scene>
         <!--Navigation Controller Citation List-->
         <scene sceneID="FEZ-sp-URV">
@@ -41,6 +129,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69m-U5-XCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-649" y="2259"/>
         </scene>
         <!--Paper Detail Table View Controller - Settings-->
         <scene sceneID="qgv-N7-T7B">
@@ -543,6 +632,7 @@
                 </tableViewCell>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KvT-EX-QQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="494" y="911"/>
         </scene>
         <!--Navigation Controller Paper Detail-->
         <scene sceneID="myq-2F-S51">
@@ -557,6 +647,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdD-YT-qaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-640" y="931"/>
         </scene>
         <!--Term Paper Text View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -741,6 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1928" y="1683"/>
         </scene>
         <!--Paper List Table View Controller - Papers-->
         <scene sceneID="BFk-gl-wIY">
@@ -808,6 +900,7 @@
                     </items>
                 </toolbar>
             </objects>
+            <point key="canvasLocation" x="552" y="-453"/>
         </scene>
         <!--Navigation Controller - Papers List-->
         <scene sceneID="h9S-Bt-s0W">
@@ -826,6 +919,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqb-mi-6JO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-521" y="-445"/>
         </scene>
         <!--Paper Fonts Table View Controller - Fonts-->
         <scene sceneID="bc6-qU-ZuW">
@@ -854,6 +948,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRy-8m-1Uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2424" y="1463"/>
         </scene>
         <!--View Controller Abstract-->
         <scene sceneID="ZhO-wH-xYJ">
@@ -892,6 +987,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wZ-gj-dZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1961" y="163"/>
         </scene>
     </scenes>
     <resources>

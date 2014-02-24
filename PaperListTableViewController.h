@@ -21,7 +21,7 @@
 @end
 
 @interface PaperListTableViewController : UITableViewController <UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate> {
-	IBOutlet TermPaperTextViewController*		viewController;
+//	IBOutlet TermPaperTextViewController*		viewController;
 	NSArray*									paperNames;					// paper name strings
 	IBOutlet PaperDetailTableViewController*	paperDetailTableController;	// TODO: initialize
 	IBOutlet CitationListTableViewController*	citationTableController;	// TODO: initialize

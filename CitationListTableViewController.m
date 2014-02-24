@@ -79,17 +79,25 @@
 #pragma mark -
 #pragma mark Table view delegate
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"citationDetail"]) {
+		citationDetailController = (CitationDetailTableViewController *)(UINavigationController *)segue.destinationViewController;
+		citationDetailController.mTermPaper = mTermPaper;
+		citationDetailController.paperName = paperName;
+		// get the selected citation
+		NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+		NSDictionary *citationDictionary = [mTermPaper.citations objectAtIndex:[indexPath indexAtPosition:1]];
+		CitationModel *citation = [[CitationModel alloc] initWithDictionary:citationDictionary];
+		citationDetailController.citation = citation;
+		citationDetailController.citationListIndex = [indexPath indexAtPosition:1];							// to replace the citation
+		// initialize the navigation bar
+		[citationDetailController setTitle:[NSString stringWithFormat:@"%@ Citation", citation.citationType]];
+	}
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	citationDetailController.mTermPaper = mTermPaper;
-	citationDetailController.paperName = paperName;
-	// get the selected citation
-	NSDictionary *citationDictionary = [mTermPaper.citations objectAtIndex:[indexPath indexAtPosition:1]];
-	CitationModel *citation = [[CitationModel alloc] initWithDictionary:citationDictionary];
-	citationDetailController.citation = citation;
-	citationDetailController.citationListIndex = [indexPath indexAtPosition:1];							// to replace the citation
-	// initialize the navigation bar
-	[citationDetailController setTitle:[NSString stringWithFormat:@"%@ Citation", citation.citationType]];
-	[self.navigationController pushViewController:citationDetailController animated:YES];
+	[self performSegueWithIdentifier:@"citationDetail" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
