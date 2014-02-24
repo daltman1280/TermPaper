@@ -7,6 +7,7 @@
 //
 
 #import "PaperDetailTableViewController.h"
+#import "TermPaperNotifications.h"
 
 @interface PaperDetailTableViewController ()
 
@@ -33,6 +34,11 @@
 	 [self.tableView reloadData];																	// needed, in case font name/size settings have changed
 	 [super viewWillAppear:animated];
 	 [self loadViews];
+}
+
+- (void)viewDidLoad
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupVisibleNotification object:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -89,6 +95,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	// save the values
 	[self saveViews];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupNotVisibleNotification object:self];
     [super viewWillDisappear:animated];
 }
 

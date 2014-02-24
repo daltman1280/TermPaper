@@ -10,12 +10,17 @@
 #import "TermPaperAppDelegate.h"
 #import "PaperListTableViewController.h"
 #import "CitationReferenceListTableViewController.h"
+#import "TermPaperNotifications.h"
 
 static BOOL gIsPlainMode = YES;
 
 @interface TermPaperTextViewController ()
 
 @property UIPopoverController *popover;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *papersButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *modeButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *citationsButton;
 
 @end
 
@@ -32,6 +37,8 @@ static BOOL gIsPlainMode = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuWillShow:) name:UIMenuControllerWillHideMenuNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuWillShow:) name:UIMenuControllerDidShowMenuNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuWillShow:) name:UIMenuControllerMenuFrameDidChangeNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePopupVisible:) name:kTPPopupVisibleNotification object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePopupNotVisible:) name:kTPPopupNotVisibleNotification object:nil];
 	formattedTextView.mode = multiPageMode;
 	// look for new documents to import
 	[TermPaperModel importExternalDocuments];
@@ -147,6 +154,22 @@ static BOOL gIsPlainMode = YES;
 - (void)menuWillShow:(NSNotification *)aNotification
 {
 	NSLog(@"menuWillShow");														// TODO: how to detect menus
+}
+
+- (void)handlePopupVisible:(id)sender
+{
+	self.papersButton.enabled = NO;
+	self.settingsButton.enabled = NO;
+	self.modeButton.enabled = NO;
+	self.citationsButton.enabled = NO;
+}
+
+- (void)handlePopupNotVisible:(id)sender
+{
+	self.papersButton.enabled = YES;
+	self.settingsButton.enabled = YES;
+	self.modeButton.enabled = YES;
+	self.citationsButton.enabled = YES;
 }
 
 #pragma mark UIViewController overrides

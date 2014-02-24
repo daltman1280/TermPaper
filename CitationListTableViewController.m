@@ -7,6 +7,7 @@
 //
 
 #import "CitationListTableViewController.h"
+#import "TermPaperNotifications.h"
 
 @implementation CitationListTableViewController
 
@@ -22,8 +23,14 @@
 	self.navigationController.navigationBar.topItem.leftBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidLoad
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupVisibleNotification object:self];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupNotVisibleNotification object:self];
 	self.editing = NO;
 }
 

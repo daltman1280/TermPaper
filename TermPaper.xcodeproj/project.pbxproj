@@ -62,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		258DDE4A18BBCD8A00982471 /* TermPaperNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TermPaperNotifications.h; sourceTree = "<group>"; };
 		25C0DC1418B9480B00AE93EF /* TermPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C0DC1718B9480B00AE93EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -267,6 +268,7 @@
 				25C0DC9818B95B6400AE93EF /* Popover View Controllers */,
 				25C0DC2618B9480B00AE93EF /* TermPaperAppDelegate.h */,
 				25C0DC2718B9480B00AE93EF /* TermPaperAppDelegate.m */,
+				258DDE4A18BBCD8A00982471 /* TermPaperNotifications.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";

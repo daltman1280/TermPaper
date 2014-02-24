@@ -837,12 +837,16 @@
                     </view>
                     <connections>
                         <outlet property="barTitle" destination="ZAd-nQ-KoR" id="rdk-Qd-lKS"/>
+                        <outlet property="citationsButton" destination="jgQ-Tm-QOK" id="OYA-uo-ccb"/>
                         <outlet property="formattedTextScrollView" destination="AEy-5J-wwR" id="3cF-Ru-6Xy"/>
                         <outlet property="formattedTextView" destination="SVY-Md-vTV" id="5P3-Rs-kPx"/>
+                        <outlet property="modeButton" destination="QpG-9T-cYw" id="boL-zx-n4F"/>
                         <outlet property="modeControl" destination="W61-oT-eok" id="Olc-Sq-bx5"/>
                         <outlet property="paperView" destination="ceg-kn-uyN" id="YVO-2u-JeF"/>
+                        <outlet property="papersButton" destination="4E3-GM-Aq8" id="VEf-gI-KUI"/>
                         <outlet property="plainTextScrollView" destination="wuh-1K-h1R" id="JU0-01-5aJ"/>
                         <outlet property="plainTextView" destination="s0R-uT-vzC" id="UlW-QE-X1U"/>
+                        <outlet property="settingsButton" destination="ba4-wf-V8n" id="Vg9-zY-aTj"/>
                         <outlet property="tabControl" destination="QpG-9T-cYw" id="bO4-VR-8iq"/>
                         <outlet property="toolbar" destination="FYe-Aa-BEE" id="2RM-bg-33h"/>
                     </connections>

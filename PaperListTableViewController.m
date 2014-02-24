@@ -7,6 +7,7 @@
 //
 
 #import "PaperListTableViewController.h"
+#import "TermPaperNotifications.h"
 
 const static int kSGTextFieldTagNumber = 99;
 
@@ -37,6 +38,7 @@ const static int kSGTextFieldTagNumber = 99;
 						 nil];
     self.clearsSelectionOnViewWillAppear = NO;
 	exportPaperActionSheetVisible = NO;
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupVisibleNotification object:self];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -48,6 +50,12 @@ const static int kSGTextFieldTagNumber = 99;
 	NSIndexPath *indexPath = [NSIndexPath indexPathWithIndexes:indexes length:2];
 	[self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
 	[self setDeleteButtonEnabled];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupNotVisibleNotification object:self];
 }
 
 - (void)setDeleteButtonEnabled
