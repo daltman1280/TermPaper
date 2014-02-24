@@ -17,7 +17,6 @@
 	IBOutlet CitationAddViewController*				citationAddController;
 	IBOutlet CitationDetailTableViewController*		citationDetailController;
 }
-- (IBAction)handleAddButton:(id)sender;
 
 @property (nonatomic, strong) NSString *paperName;
 @property (nonatomic, strong) TermPaperModel *mTermPaper;
