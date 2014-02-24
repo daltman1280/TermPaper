@@ -20,6 +20,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+	[textView becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
