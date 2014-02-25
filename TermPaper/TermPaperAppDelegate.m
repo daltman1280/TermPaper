@@ -8,15 +8,34 @@
 
 #import "TermPaperAppDelegate.h"
 #import "TermPaperModel.h"
+#import <DropboxSDK/DropboxSDK.h>
+#import <Crashlytics/Crashlytics.h>
 
 @implementation TermPaperAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+	DBSession *dbSession = [[DBSession alloc] initWithAppKey:@"8bl7vk5gw0vlksk" appSecret:@"64e5j2b9u40igiu" root:kDBRootAppFolder];
+	[DBSession setSharedSession:dbSession];
+	if (![[DBSession sharedSession] isLinked])
+		[[DBSession sharedSession] linkFromController:[[[UIApplication sharedApplication] keyWindow] rootViewController]];
+	[Crashlytics startWithAPIKey:@"3a5d33a7fbf7ecf443588919477cd2b62d50cafa"];
     return YES;
 }
 							
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

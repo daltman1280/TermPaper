@@ -293,7 +293,7 @@ static NSString*				gPapersFolder;
 
 - (void)save
 {
-	[mDictionary setObject:@"1.2" forKey:kDWPaperTagVersion];
+	[mDictionary setObject:@"1.3" forKey:kDWPaperTagVersion];
 	[mDictionary writeToFile:mPlistFilepath atomically:YES];
 }
 

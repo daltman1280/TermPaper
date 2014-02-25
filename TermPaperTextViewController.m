@@ -298,13 +298,9 @@ static BOOL gIsPlainMode = YES;
 
 - (IBAction)handleExportPDFButton:(id)sender
 {
-	if (gIsPlainMode) {
-		[self saveActivePaper];
-		[formattedTextView setNeedsDisplayInRect:CGRectMake(0, 0, formattedTextView.frame.size.width, 150000)];
-		[formattedTextScrollView setContentSize:CGSizeMake(formattedTextView.frame.size.width, fmin(formattedTextView.frame.size.height, formattedTextView.calculatedHeight))];
-	}
-	[formattedTextView setNeedsDisplayInRect:CGRectMake(0, 0, formattedTextView.frame.size.width, 150000)];
-	formattedTextView.mode = PDFMode;
+	FormattedTextView *view = [[FormattedTextView alloc] initWithFrame:formattedTextView.frame];
+	view.mode = PDFMode;
+	[view drawRect:CGRectZero];
 }
 
 - (void)pasteReferenceText:(NSString *)referenceText

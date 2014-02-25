@@ -184,13 +184,16 @@ const static int kSGTextFieldTagNumber = 99;
 				[self handleExportDOCXButton:self];
 				break;
 			case 3:
-				[self handleEmailPDFButton:self];
+				[self handleDropboxPDFButton:self];
 				break;
 			case 4:
+				[self handleEmailPDFButton:self];
+				break;
+			case 5:
 				[self handleExportPDFButton:self];
 				break;
 #if CONSOLE
-			case 5:
+			case 6:
 				NSLog(@"console output");
 				[self handleEmailConsoleButton:self];
 				break;
@@ -276,6 +279,41 @@ const static int kSGTextFieldTagNumber = 99;
 	[self setDeleteButtonEnabled];
 }
 
+- (IBAction)handleDropboxPDFButton:(id)sender
+{
+	dispatch_queue_t exportQueue = dispatch_queue_create("dropbox queue", NULL);
+	dispatch_async(exportQueue, ^{
+		[self.viewController handleExportPDFButton:self];
+		NSString *documentsFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+		NSString *pdfFile = [NSString stringWithFormat:@"%@.pdf", [TermPaperModel activeTermPaper].name];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.restClient uploadFile:pdfFile toPath:@"/" withParentRev:nil fromPath:[documentsFolder stringByAppendingPathComponent:pdfFile]];
+		});
+	});
+}
+
+- (DBRestClient *)restClient {
+	if (!_restClient) {
+		_restClient =
+		[[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+		_restClient.delegate = self;
+	}
+	return _restClient;
+}
+
+- (void)restClient:(DBRestClient*)client uploadedFile:(NSString*)destPath
+			  from:(NSString*)srcPath metadata:(DBMetadata*)metadata
+{
+	
+}
+
+- (void)restClient:(DBRestClient*)client uploadFileFailedWithError:(NSError*)error {
+    NSLog(@"File upload failed with error - %@", error);
+	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Can\'t access Dropbox." delegate:nil cancelButtonTitle:@"" destructiveButtonTitle:@"OK" otherButtonTitles:@"", nil];
+	sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	[sheet showInView:[[[UIApplication sharedApplication] keyWindow] rootViewController].view];
+}
+
 - (IBAction)handleExportPDFButton:(id)sender
 {
 	[self.viewController handleExportPDFButton:self];
@@ -326,7 +364,7 @@ const static int kSGTextFieldTagNumber = 99;
 	[picker setToRecipients:[NSArray arrayWithObject:@"support@homebodyapps.com"]];
 	[picker setSubject:[NSString stringWithFormat:@"TermPaper Question/Bug/Suggestion/Feedback"]];
 	
-	NSString *emailBody = [NSString stringWithFormat:@"TermPaper 1.2 for iPad v%f\n\nDear HomebodyApps Support:\n", NSFoundationVersionNumber];
+	NSString *emailBody = [NSString stringWithFormat:@"TermPaper 1.3 for iPad v%f\n\nDear HomebodyApps Support:\n", NSFoundationVersionNumber];
 	[picker setMessageBody:emailBody isHTML:NO];
 	
 	[self presentViewController:picker animated:YES completion:NULL];

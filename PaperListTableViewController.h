@@ -13,6 +13,7 @@
 #import "PaperDetailTableViewController.h"
 #import "CitationListTableViewController.h"
 #import "TermPaperTextViewController.h"
+#import <DropboxSDK/DropboxSDK.h>
 
 @interface RenameViewController : UIViewController {
 
@@ -20,7 +21,7 @@
 
 @end
 
-@interface PaperListTableViewController : UITableViewController <UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate> {
+@interface PaperListTableViewController : UITableViewController <UIPopoverControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate, DBRestClientDelegate> {
 //	IBOutlet TermPaperTextViewController*		viewController;
 	NSArray*									paperNames;					// paper name strings
 	IBOutlet PaperDetailTableViewController*	paperDetailTableController;	// TODO: initialize
@@ -38,6 +39,8 @@
 	BOOL										exportPaperActionSheetVisible;
 	
 	IBOutlet UIToolbar*							toolbar;
+
+	DBRestClient*								_restClient;
 }
 
 - (void)setDeleteButtonEnabled;
@@ -58,5 +61,6 @@
 @property (nonatomic, strong) UIPopoverController *popoverViewController;
 @property (nonatomic) BOOL exportPaperActionSheetVisible;
 @property (nonatomic, strong) TermPaperTextViewController*		viewController;
+@property (nonatomic, readonly) DBRestClient*			restClient;							// Dropbox
 @end
 
