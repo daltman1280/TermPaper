@@ -39,6 +39,7 @@ const static int kSGTextFieldTagNumber = 99;
     self.clearsSelectionOnViewWillAppear = NO;
 	exportPaperActionSheetVisible = NO;
 	[[NSNotificationCenter defaultCenter] postNotificationName:kTPPopupVisibleNotification object:self];
+	self.activeEditingSessionIndex = -1;																		// initially, no active editing session. Will have row index whenever a session begins
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -127,6 +128,8 @@ const static int kSGTextFieldTagNumber = 99;
 			visibleCell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	if (self.activeEditingSessionIndex >= 0)
+		[self deselectedActiveEditingSession];																// need to handle deselected row BEFORE calling active document setter!
 	[self performSelector:@selector(handlePaperPick:) withObject:cell.textLabel.text];	// open the selected paper
 }
 
@@ -359,7 +362,7 @@ const static int kSGTextFieldTagNumber = 99;
 
 - (IBAction)handleActionPaper:(id)sender
 {
-	exportPaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Feedback…", @"Email .docx", @"Export .docx", @"Email PDF", @"Export PDF",nil];
+	exportPaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Feedback…", @"Email .docx", @"Export .docx", @"Dropbox PDF", @"Email PDF", @"Export PDF",nil];
 	[exportPaperActionSheet showFromBarButtonItem:actionPaper animated:YES];
 	exportPaperActionSheetVisible = YES;
 }
