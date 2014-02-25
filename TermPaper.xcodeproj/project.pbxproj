@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		258DDE4C18BC0C0100982471 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 258DDE4B18BC0C0100982471 /* Default-Landscape@2x~ipad.png */; };
 		258DDE4E18BC0C0C00982471 /* Default@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 258DDE4D18BC0C0C00982471 /* Default@2x~ipad.png */; };
+		258DDE5318BC261400982471 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5218BC261300982471 /* Crashlytics.framework */; };
+		258DDE5518BC297000982471 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5418BC297000982471 /* DropboxSDK.framework */; };
+		258DDE5718BC29B600982471 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5618BC29B600982471 /* Security.framework */; };
+		258DDE5918BC29C700982471 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5818BC29C700982471 /* QuartzCore.framework */; };
 		25C0DC1818B9480B00AE93EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1718B9480B00AE93EF /* Foundation.framework */; };
 		25C0DC1A18B9480B00AE93EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */; };
 		25C0DC1C18B9480B00AE93EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1B18B9480B00AE93EF /* UIKit.framework */; };
@@ -68,6 +72,10 @@
 		258DDE4B18BC0C0100982471 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
 		258DDE4D18BC0C0C00982471 /* Default@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~ipad.png"; sourceTree = SOURCE_ROOT; };
 		258DDE4F18BC0D1700982471 /* sample text.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "sample text.rtf"; sourceTree = "<group>"; };
+		258DDE5218BC261300982471 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		258DDE5418BC297000982471 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		258DDE5618BC29B600982471 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		258DDE5818BC29C700982471 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		25C0DC1418B9480B00AE93EF /* TermPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C0DC1718B9480B00AE93EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,12 +157,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258DDE5918BC29C700982471 /* QuartzCore.framework in Frameworks */,
+				258DDE5718BC29B600982471 /* Security.framework in Frameworks */,
+				258DDE5518BC297000982471 /* DropboxSDK.framework in Frameworks */,
 				25C0DCBF18B95D7A00AE93EF /* MessageUI.framework in Frameworks */,
 				25C0DCBD18B95D6900AE93EF /* CoreText.framework in Frameworks */,
 				25C0DCBB18B95D4800AE93EF /* libz.1.1.3.dylib in Frameworks */,
 				25C0DC1A18B9480B00AE93EF /* CoreGraphics.framework in Frameworks */,
 				25C0DC1C18B9480B00AE93EF /* UIKit.framework in Frameworks */,
 				25C0DC1818B9480B00AE93EF /* Foundation.framework in Frameworks */,
+				258DDE5318BC261400982471 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +206,11 @@
 		25C0DC1618B9480B00AE93EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				258DDE5818BC29C700982471 /* QuartzCore.framework */,
+				258DDE5618BC29B600982471 /* Security.framework */,
 				25C0DCBA18B95D4800AE93EF /* libz.1.1.3.dylib */,
+				258DDE5418BC297000982471 /* DropboxSDK.framework */,
+				258DDE5218BC261300982471 /* Crashlytics.framework */,
 				25C0DC1718B9480B00AE93EF /* Foundation.framework */,
 				25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */,
 				25C0DC1B18B9480B00AE93EF /* UIKit.framework */,
@@ -393,6 +409,7 @@
 				25C0DC1018B9480B00AE93EF /* Sources */,
 				25C0DC1118B9480B00AE93EF /* Frameworks */,
 				25C0DC1218B9480B00AE93EF /* Resources */,
+				258DDE5118BC245700982471 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -484,6 +501,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		258DDE5118BC245700982471 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 3a5d33a7fbf7ecf443588919477cd2b62d50cafa f96fafe4150c670e53197b4d88a32cdffb35f66097407f9f8c00f40a6a235145";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25C0DC1018B9480B00AE93EF /* Sources */ = {
@@ -649,6 +682,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/daltman/Documents/projects/iPad/TermPaper\\ iOS7/TermPaper",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TermPaper/TermPaper-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -670,6 +707,10 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/daltman/Documents/projects/iPad/TermPaper\\ iOS7/TermPaper",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TermPaper/TermPaper-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
