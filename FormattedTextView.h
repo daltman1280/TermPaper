@@ -45,7 +45,7 @@ typedef enum {
 	int								pageNumberToDraw;						// draw a single page
 }
 
-- (void)assignParagraphAttributesToString:(CFMutableAttributedStringRef)attrString stylePreset:(stylePresetEnum)stylePreset;
+- (void)assignParagraphAttributesToString:(CFMutableAttributedStringRef)attrString stylePreset:(stylePresetEnum)stylePreset withLineSpacing:(BOOL)withLineSpacing;
 - (void)initializeStringWithContent:(CFMutableAttributedStringRef)attrString;
 - (void)drawPage;
 

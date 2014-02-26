@@ -44,7 +44,7 @@ typedef enum {
 
 - (UIFont *)createStyledFont:(fontStyleEnum)style
 {
-	float fontSize = FONT_SIZE;
+	float fontSize = ([model.format isEqualToString:@"APA"]) ? 12 : FONT_SIZE;
 	UIFontDescriptorSymbolicTraits trait = (style == kBold) ? UIFontDescriptorTraitBold : (style == kItalic) ? UIFontDescriptorTraitItalic : 0;
 	UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:@{ UIFontDescriptorFamilyAttribute : model.fontName, UIFontDescriptorTraitsAttribute : @{UIFontSymbolicTrait: @(trait)} }];
 	UIFont *font = [UIFont fontWithDescriptor:fontDescriptor size:fontSize];
@@ -60,17 +60,17 @@ typedef enum {
 	CFAttributedStringReplaceString(attrString, CFRangeMake(CFAttributedStringGetLength(attrString), 0), (CFStringRef) [NSString stringWithFormat:@"\n%@\n%@", author, institution]);
 	CTFontRef font = [self createDefaultFont];
 	CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
-	[self assignParagraphAttributesToString:attrString stylePreset:centerJust];
+	[self assignParagraphAttributesToString:attrString stylePreset:centerJust withLineSpacing:NO];
 	CFRelease(font);
 }
 
 - (void)replaceStringWithAPAAbstract:(CFMutableAttributedStringRef)attrString
 {
 	CFAttributedStringReplaceString(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), (CFStringRef) @"Abstract\n");
-	[self assignParagraphAttributesToString:attrString stylePreset:centerJust];
+	[self assignParagraphAttributesToString:attrString stylePreset:centerJust withLineSpacing:NO];
 	CFMutableAttributedStringRef abstractString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 	CFAttributedStringReplaceString(abstractString, CFRangeMake(0, 0), ([model.format isEqualToString:@"APA"] && model.insertDoubleSpaces) ? (__bridge CFStringRef) [model.abstract insertDoubleSpaces] : (__bridge CFStringRef) model.abstract);
-	[self assignParagraphAttributesToString:abstractString stylePreset:leftJust];
+	[self assignParagraphAttributesToString:abstractString stylePreset:leftJust withLineSpacing:NO];
 	CFAttributedStringReplaceAttributedString(attrString, CFRangeMake(CFAttributedStringGetLength(attrString), 0), abstractString);
 	CTFontRef font = [self createDefaultFont];
 	CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
@@ -79,7 +79,7 @@ typedef enum {
 		CFAttributedStringReplaceString(keywordTitleString, CFRangeMake(0, 0), (CFStringRef) @"\nKeywords: ");
 		CFAttributedStringReplaceString(keywordTitleString, CFRangeMake(CFAttributedStringGetLength(keywordTitleString), 0), (CFStringRef) model.keywords);
 		CFAttributedStringSetAttribute(keywordTitleString, CFRangeMake(0, CFAttributedStringGetLength(keywordTitleString)), kCTFontAttributeName, font);
-		[self assignParagraphAttributesToString:keywordTitleString stylePreset:firstIndent];
+		[self assignParagraphAttributesToString:keywordTitleString stylePreset:firstIndent withLineSpacing:NO];
 		CTFontRef fontItalic = CTFontCreateWithName((CFStringRef) @"TimesNewRomanPS-ItalicMT", 12, NULL);
 		CFAttributedStringSetAttribute(keywordTitleString, CFRangeMake(0, CFStringGetLength((CFStringRef) @"\nKeywords: ")), kCTFontAttributeName, fontItalic);
 		CFAttributedStringReplaceAttributedString(attrString, CFRangeMake(CFAttributedStringGetLength(attrString), 0), keywordTitleString);
@@ -98,9 +98,9 @@ typedef enum {
 	CFAttributedStringReplaceString(attrTitleString, CFRangeMake(0, 0), ([model.format isEqualToString:@"MLA"]) ? (CFStringRef) @"Works Cited\n" : (CFStringRef) @"References\n");
 	CTFontRef font = [self createDefaultFont];
 	CFAttributedStringSetAttribute(attrTitleString, CFRangeMake(0, CFAttributedStringGetLength(attrTitleString)), kCTFontAttributeName, font);
-	[self assignParagraphAttributesToString:attrTitleString stylePreset:centerJust];
+	[self assignParagraphAttributesToString:attrTitleString stylePreset:centerJust withLineSpacing:NO];
 	// make citations hanging indents
-	[self assignParagraphAttributesToString:citationsAttrString stylePreset:firstHanging];
+	[self assignParagraphAttributesToString:citationsAttrString stylePreset:firstHanging withLineSpacing:NO];
 	// replace with contents of citations
 	CFAttributedStringReplaceAttributedString(attrContentString, CFRangeMake(0, CFAttributedStringGetLength(attrContentString)), (CFMutableAttributedStringRef)citationsAttrString);
 	// insert title at beginning of citation text
@@ -109,7 +109,7 @@ typedef enum {
 	CFRelease(font);
 }
 
-- (void)assignParagraphAttributesToString:(CFMutableAttributedStringRef)attrString stylePreset:(stylePresetEnum)stylePreset
+- (void)assignParagraphAttributesToString:(CFMutableAttributedStringRef)attrString stylePreset:(stylePresetEnum)stylePreset withLineSpacing:(BOOL)withLineSpacing
 {
 	CTParagraphStyleSetting setting[3];
 	CTTextAlignment align;
@@ -145,7 +145,7 @@ typedef enum {
 			break;
 	}
 	// always set the line spacing
-	CGFloat lineHeightMultiple = 2.0;
+	CGFloat lineHeightMultiple = ([model.format isEqualToString:@"APA"] && model.insertDoubleSpaces && withLineSpacing) ? 3.0 : 2.0;
 	setting[1].spec = kCTParagraphStyleSpecifierLineHeightMultiple;					// line spacing
 	setting[1].valueSize = sizeof(CGFloat);
 	setting[1].value = (void *) &lineHeightMultiple;
@@ -168,7 +168,7 @@ typedef enum {
 		CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		NSString *headerTitle = model.headerTitle.length > 0 ? model.headerTitle : @"<header title>";
 		CFAttributedStringReplaceString(attrString, CFRangeMake(0, 0), (CFStringRef) [NSString stringWithFormat:@"%@ %d\n", headerTitle, pageNumber]);
-		[self assignParagraphAttributesToString:attrString stylePreset:rightJust];
+		[self assignParagraphAttributesToString:attrString stylePreset:rightJust withLineSpacing:NO];
 		// create a font and add it as an attribute to the string
 		CTFontRef font = [self createDefaultFont];
 		CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
@@ -178,7 +178,7 @@ typedef enum {
 		CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		NSString *headerTitle = (model.shortTitle.length > 0) ? [model.shortTitle uppercaseString] : [model.title uppercaseString];
 		CFAttributedStringReplaceString(attrString, CFRangeMake(0, 0), (CFStringRef) [NSString stringWithFormat:@"Running head: %@\t%d\n", headerTitle, pageNumber]);
-		[self assignParagraphAttributesToString:attrString stylePreset:leftJust];
+		[self assignParagraphAttributesToString:attrString stylePreset:leftJust withLineSpacing:NO];
 		// create a font and add it as an attribute to the string
 		CTFontRef font = [self createDefaultFont];
 		CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
@@ -199,11 +199,11 @@ typedef enum {
 	CFMutableAttributedStringRef attrHeadingString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 	NSString *blockHeading = [author stringByAppendingFormat:@"\n%@\n%@\n%@\n", instructor, course, date];
 	CFAttributedStringReplaceString(attrHeadingString, CFRangeMake(0, 0), (CFStringRef) blockHeading);
-	[self assignParagraphAttributesToString:attrHeadingString stylePreset:leftJust];
+	[self assignParagraphAttributesToString:attrHeadingString stylePreset:leftJust withLineSpacing:NO];
 	// make the title centered
 	CFMutableAttributedStringRef attrTitleString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 	CFAttributedStringReplaceString(attrTitleString, CFRangeMake(0, 0), (CFStringRef) [NSString stringWithFormat:@"%@\n", title]);
-	[self assignParagraphAttributesToString:attrTitleString stylePreset:centerJust];
+	[self assignParagraphAttributesToString:attrTitleString stylePreset:centerJust withLineSpacing:NO];
 	// insert the title into attrTitleString
 	CFAttributedStringReplaceAttributedString(attrTitleString, CFRangeMake(0, 0), attrHeadingString);
 	// create a font and add it as an attribute to the string
@@ -218,27 +218,24 @@ typedef enum {
 
 - (void)initializeStringWithContent:(CFMutableAttributedStringRef)attrString
 {
-	CFStringRef string = (__bridge CFStringRef) model.content;
-	if ([model.format isEqualToString:@"APA"] && model.insertDoubleSpaces)
-		string = (__bridge CFStringRef) [model.content insertDoubleSpaces];
 	CFAttributedStringReplaceAttributedString(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), (CFAttributedStringRef) model.attributedContent);
 	// paragraph style
-	[self assignParagraphAttributesToString:attrString stylePreset:firstIndent];
+	[self assignParagraphAttributesToString:attrString stylePreset:firstIndent withLineSpacing:YES];
+	// create a font and add it as an attribute to the string
+	CTFontRef font = [self createDefaultFont];												// based on the document setting
+	CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
+	[self applyFontTraitsFromDocument:attrString];
 	// in APA, title goes on first content page
 	if ([model.format isEqualToString:@"APA"]) {
 		NSString *title = model.title.length > 0 ? model.title : @"<title>";
 		NSString *titleLine = [title stringByAppendingString:@"\n"];
 		CFMutableAttributedStringRef attrTitleString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
 		CFAttributedStringReplaceString(attrTitleString, CFRangeMake(0, 0), (CFStringRef) titleLine);
-		[self assignParagraphAttributesToString:attrTitleString stylePreset:centerJust];
+		[self assignParagraphAttributesToString:attrTitleString stylePreset:centerJust withLineSpacing:NO];
 		CFAttributedStringReplaceAttributedString(attrString, CFRangeMake(0, 0), attrTitleString);
 		CFRelease(attrTitleString);
 	}
-	// create a font and add it as an attribute to the string
-	CTFontRef font = [self createDefaultFont];
-	CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
 	CFRelease(font);
-	[self applyFontTraitsFromDocument:attrString];
 }
 
 /*
