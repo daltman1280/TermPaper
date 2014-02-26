@@ -32,6 +32,25 @@ typedef enum {
 		return  CTFontCreateWithName((__bridge CFStringRef) ([model.fontName isEqualToString:@"Times New Roman"] ? @"TimesNewRomanPSMT" : model.fontName), FONT_SIZE, NULL);
 }
 
+typedef enum {
+	kPlain,
+	kBold,
+	kItalic
+} fontStyleEnum;
+
+/*
+ Create a font with the requested traits (bold, italic), in the correct font (name and size).
+ */
+
+- (UIFont *)createStyledFont:(fontStyleEnum)style
+{
+	float fontSize = FONT_SIZE;
+	UIFontDescriptorSymbolicTraits trait = (style == kBold) ? UIFontDescriptorTraitBold : (style == kItalic) ? UIFontDescriptorTraitItalic : 0;
+	UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithFontAttributes:@{ UIFontDescriptorFamilyAttribute : model.fontName, UIFontDescriptorTraitsAttribute : @{UIFontSymbolicTrait: @(trait)} }];
+	UIFont *font = [UIFont fontWithDescriptor:fontDescriptor size:fontSize];
+	return font;
+}
+
 - (void)replaceStringWithAPATitlePage:(CFMutableAttributedStringRef)attrString
 {
 	CFAttributedStringReplaceString(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), (CFStringRef) model.title);
@@ -202,7 +221,7 @@ typedef enum {
 	CFStringRef string = (__bridge CFStringRef) model.content;
 	if ([model.format isEqualToString:@"APA"] && model.insertDoubleSpaces)
 		string = (__bridge CFStringRef) [model.content insertDoubleSpaces];
-	CFAttributedStringReplaceString(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), string);
+	CFAttributedStringReplaceAttributedString(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), (CFAttributedStringRef) model.attributedContent);
 	// paragraph style
 	[self assignParagraphAttributesToString:attrString stylePreset:firstIndent];
 	// in APA, title goes on first content page
@@ -219,6 +238,34 @@ typedef enum {
 	CTFontRef font = [self createDefaultFont];
 	CFAttributedStringSetAttribute(attrString, CFRangeMake(0, CFAttributedStringGetLength(attrString)), kCTFontAttributeName, font);
 	CFRelease(font);
+	[self applyFontTraitsFromDocument:attrString];
+}
+
+/*
+ Apply the symbolic traits (bold, italic) from model.attributedContent ot attrString.
+ 
+ Important: this assumes that the underlying strings are in synch, so this must be called before modifying the string contents of attrString, or the font settings will be offset.
+ */
+
+- (void)applyFontTraitsFromDocument:(CFMutableAttributedStringRef)attrString
+{
+	UIFont *boldFont = [self createStyledFont:kBold];
+	UIFont *italicFont = [self createStyledFont:kItalic];
+	NSAttributedString *string = model.attributedContent;
+	NSMutableAttributedString *contentString = (__bridge NSMutableAttributedString *) attrString;
+	NSUInteger length = string.length;
+	NSRange effectiveRange = NSMakeRange(0, 0);
+	id attributeValue;
+	while (NSMaxRange(effectiveRange) < length) {
+		attributeValue = [string attribute:NSFontAttributeName atIndex:NSMaxRange(effectiveRange) effectiveRange:&effectiveRange];
+		UIFont *font = (UIFont *) attributeValue;
+		UIFontDescriptor *descriptor = font.fontDescriptor;
+		NSLog(@"word = %@, descriptor = %@", [[string string] substringWithRange:effectiveRange], descriptor.symbolicTraits & UIFontDescriptorTraitItalic ? @"italic" : descriptor.symbolicTraits & UIFontDescriptorTraitBold ? @"bold" : @"plain");
+		if (descriptor.symbolicTraits & UIFontDescriptorTraitItalic)
+			[contentString addAttribute:NSFontAttributeName value:italicFont range:effectiveRange];
+		else if (descriptor.symbolicTraits & UIFontDescriptorTraitBold)
+			[contentString addAttribute:NSFontAttributeName value:boldFont range:effectiveRange];
+	}
 }
 
 //	Draws a single page, indicated by pageNumberToDraw. Uses cached CTFrameRef, prepared in drawRect.

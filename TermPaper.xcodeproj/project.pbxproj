@@ -119,7 +119,7 @@
 		25C0DC8518B95B2D00AE93EF /* FormattedTextTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedTextTileView.h; sourceTree = "<group>"; };
 		25C0DC8618B95B2D00AE93EF /* FormattedTextTileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormattedTextTileView.m; sourceTree = "<group>"; };
 		25C0DC8718B95B2D00AE93EF /* FormattedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormattedTextView.h; sourceTree = "<group>"; };
-		25C0DC8818B95B2D00AE93EF /* FormattedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormattedTextView.m; sourceTree = "<group>"; };
+		25C0DC8818B95B2D00AE93EF /* FormattedTextView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = FormattedTextView.m; sourceTree = "<group>"; };
 		25C0DC8918B95B2D00AE93EF /* TermPaperTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermPaperTextViewController.h; sourceTree = "<group>"; };
 		25C0DC8A18B95B2D00AE93EF /* TermPaperTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermPaperTextViewController.m; sourceTree = "<group>"; };
 		25C0DC8B18B95B2D00AE93EF /* BackgroundPaperTileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundPaperTileView.h; sourceTree = "<group>"; };
