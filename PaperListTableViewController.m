@@ -178,22 +178,16 @@ const static int kSGTextFieldTagNumber = 99;
 				[self handleEmailFeedbackButton:self];
 				break;
 			case 1:
-				[self handleEmailDOCXButton:self];
-				break;
-			case 2:
-				[self handleExportDOCXButton:self];
-				break;
-			case 3:
 				[self handleDropboxPDFButton:self];
 				break;
-			case 4:
+			case 2:
 				[self handleEmailPDFButton:self];
 				break;
-			case 5:
+			case 3:
 				[self handleExportPDFButton:self];
 				break;
 #if CONSOLE
-			case 6:
+			case 4:
 				NSLog(@"console output");
 				[self handleEmailConsoleButton:self];
 				break;
@@ -400,7 +394,7 @@ const static int kSGTextFieldTagNumber = 99;
 
 - (IBAction)handleActionPaper:(id)sender
 {
-	exportPaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Feedback…", @"Email .docx", @"Export .docx", @"Dropbox PDF", @"Email PDF", @"Export PDF",nil];
+	exportPaperActionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Feedback…", @"Dropbox PDF", @"Email PDF", @"Export PDF",nil];
 	[exportPaperActionSheet showFromBarButtonItem:actionPaper animated:YES];
 	exportPaperActionSheetVisible = YES;
 }
