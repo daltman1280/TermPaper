@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 const static NSString *kDWPaperTagContent = @"Contents";										// plain text content
+const static NSString *kDWPaperTagAttributedContent = @"AttributedContents";					// styled content
 const static NSString *kDWPaperTagAbstract = @"Abstract";										// plain text abstract (for APA only)
 const static NSString *kDWPaperTagName = @"Name";												// should be same as model file name
 const static NSString *kDWPaperTagTitle = @"Title";												// 
@@ -41,7 +42,7 @@ const static NSString *kDWPaperTagVersion = @"ApplicationVersion";								//
 
 - (BOOL)rename:(NSString *)newName;
 - (NSString *)duplicate;
-+ (void)makeActive:(NSString *)selectedPaperName;
++ (BOOL)makeActive:(NSString *)selectedPaperName;
 + (TermPaperModel *)activeTermPaper;
 + (NSArray *)termPapers;
 + (void)importExternalDocuments;
@@ -50,13 +51,14 @@ const static NSString *kDWPaperTagVersion = @"ApplicationVersion";								//
 - (TermPaperModel *)initWithName:(NSString *)name;
 - (void)save;
 + (NSString *)newPaper;
-- (void)termPaperFromContentsOfFile;
+- (BOOL)termPaperFromContentsOfFile;
 - (void)remove;
 - (NSString *)format;
 - (void)setFormat:(NSString *)format;
 - (void)exportDocxFile;
 
 @property (nonatomic, strong) NSString* content;
+@property (nonatomic, strong) NSAttributedString* attributedContent;
 @property (nonatomic, strong) NSString* abstract;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *title;

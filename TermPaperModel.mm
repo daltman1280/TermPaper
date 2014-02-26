@@ -195,10 +195,11 @@ static NSString*				gPapersFolder;
 
 //	make the paper whose name is selectedPaperName active
 
-+ (void)makeActive:(NSString *)selectedPaperName
++ (BOOL)makeActive:(NSString *)selectedPaperName
 {
 	gActiveTermPaper = [[TermPaperModel alloc] initWithName:selectedPaperName];
-	[gActiveTermPaper termPaperFromContentsOfFile];
+	BOOL success = [gActiveTermPaper termPaperFromContentsOfFile];
+	return success;
 }
 
 //	returns a list of term paper names
@@ -266,11 +267,13 @@ static NSString*				gPapersFolder;
 
 //	Read the contents from file-system
 
-- (void)termPaperFromContentsOfFile
+- (BOOL)termPaperFromContentsOfFile
 {
 	gActiveTermPaper = self;
 	self.mDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:mPlistFilepath];
+	if (!self.mDictionary) return NO;
 	[self upgradeToCurrentVersion];
+	return YES;
 }
 
 //	Create a new paper, with default settings, return its name
@@ -385,6 +388,24 @@ static NSString*				gPapersFolder;
 - (void)setContent:(NSString *)content
 {
 	[mDictionary setObject:content forKey:kDWPaperTagContent];
+}
+
+// represented in NSDictionary as NSData
+
+- (NSAttributedString *)attributedContent
+{
+	NSData *data = [mDictionary objectForKey:kDWPaperTagAttributedContent];
+	if (!data) return nil;
+	NSAttributedString *string = [[NSAttributedString alloc] initWithData:data options:nil documentAttributes:nil error:nil];
+	return string;
+}
+
+// must convert to NSData before populating NSMutableDictionary
+
+- (void)setAttributedContent:(NSAttributedString *)attributedContent
+{
+	NSData *data = [attributedContent dataFromRange:NSMakeRange(0, attributedContent.length) documentAttributes:@{ NSDocumentTypeDocumentAttribute : NSRTFTextDocumentType } error:nil];
+	[mDictionary setObject:data forKey:kDWPaperTagAttributedContent];
 }
 
 - (NSString *)abstract
