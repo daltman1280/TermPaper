@@ -13,6 +13,7 @@
 #import "TermPaperNotifications.h"
 
 static BOOL gIsPlainMode = YES;
+static float kSystemFontSizeForPlainText = 18.440904;
 
 @interface TermPaperTextViewController ()
 
@@ -44,7 +45,11 @@ static BOOL gIsPlainMode = YES;
 	[TermPaperModel importExternalDocuments];
 	// initialize text contents of textView
 	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"activePaper"]) {
-		[TermPaperModel makeActive:[[NSUserDefaults standardUserDefaults] objectForKey:@"activePaper"]];
+		if (![TermPaperModel makeActive:[[NSUserDefaults standardUserDefaults] objectForKey:@"activePaper"]]) {
+			NSString *newPaperName = [TermPaperModel newPaper];
+			[[NSUserDefaults standardUserDefaults] setObject:newPaperName forKey:@"activePaper"];
+			[TermPaperModel makeActive:newPaperName];
+		}
 		[self openPaper];
 	} else if ([TermPaperModel termPapers].count > 0) {												// just select the first one
 		[TermPaperModel makeActive:[[TermPaperModel termPapers] objectAtIndex:0]];
@@ -60,6 +65,7 @@ static BOOL gIsPlainMode = YES;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"papers"]) {
+		[self saveActivePaper];
 		UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
 		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).viewController = self;// set up ourselves as delegate
 		((UIStoryboardPopoverSegue *)segue).popoverController.delegate = (id) self;																	// popover controller delegate
@@ -249,10 +255,19 @@ static BOOL gIsPlainMode = YES;
 - (void)openPaper
 {
 	TermPaperModel *termPaper = [TermPaperModel activeTermPaper];
-	plainTextView.text = termPaper.content;
-	plainTextView.font = [UIFont systemFontOfSize:18.440904];							// to make the leading match the line spacing (22 pixels) of the background paper
+	NSMutableAttributedString *string;
+	if (termPaper.attributedContent) string = [[NSMutableAttributedString alloc] initWithAttributedString:termPaper.attributedContent];
+	if (!string) {
+		string = [[NSMutableAttributedString alloc] initWithString:termPaper.content ? termPaper.content : @""];
+		[string setAttributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:kSystemFontSizeForPlainText] } range:NSMakeRange(0, string.length)];
+		termPaper.attributedContent = string;
+	}
+	plainTextView.attributedText = string;
+	plainTextView.allowsEditingTextAttributes = YES;
+	plainTextView.typingAttributes = @{ NSFontAttributeName : [UIFont systemFontOfSize:kSystemFontSizeForPlainText] };
 	barTitle.title = termPaper.name;
-	formattedTextView.calculatedHeight = 0;												// force him to recalculate his height
+	formattedTextView.calculatedHeight = 0;
+	// force him to recalculate his height
 	[self calculateTextViewBounds];
 	if (!gIsPlainMode)																	// if we're in formatted mode, switch back to plain mode
 		modeControl.selectedSegmentIndex = 0;
@@ -261,6 +276,7 @@ static BOOL gIsPlainMode = YES;
 - (void)saveActivePaper
 {
 	[[TermPaperModel activeTermPaper] setContent:plainTextView.text];
+	[[TermPaperModel activeTermPaper] setAttributedContent:plainTextView.attributedText];
 	[[TermPaperModel activeTermPaper] save];
 }
 
