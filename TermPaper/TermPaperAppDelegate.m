@@ -8,6 +8,7 @@
 
 #import "TermPaperAppDelegate.h"
 #import "TermPaperModel.h"
+#import "TermPaperTextViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -46,7 +47,7 @@
 {
 	// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
 	// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-	[[TermPaperModel activeTermPaper] save];
+	[(TermPaperTextViewController *)[[[UIApplication sharedApplication] keyWindow] rootViewController] saveActivePaper];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
