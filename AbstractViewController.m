@@ -54,7 +54,7 @@
 	NSUInteger count = words.count;
 	if (((NSString *)[words objectAtIndex:0]).length == 0) --count;
 	if (count > 0 && ((NSString *)[words lastObject]).length == 0) --count;
-	wordCountLabel.text = [NSString stringWithFormat:@"Word count: %ld  (recommended 150-250)", count];
+	wordCountLabel.text = [NSString stringWithFormat:@"Word count: %ld  (recommended 150-250)", (unsigned long)count];
 }
 
 @end

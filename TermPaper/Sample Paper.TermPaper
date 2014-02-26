@@ -5,7 +5,56 @@
 	<key>Abstract</key>
 	<string>This is a sample abstract. It should consist of a single paragraph which summarizes the main points and purpose of the paper. Its length should be between 150 and 250 words. Abbreviations and acronyms used in the paper should be defined here. This paragraph will not be indented in the formatted output. Do not include a title here.</string>
 	<key>ApplicationVersion</key>
-	<string>1.2</string>
+	<string>1.3</string>
+	<key>AttributedContents</key>
+	<data>
+	e1xydGYxXGFuc2lcYW5zaWNwZzEyNTIKe1xmb250dGJsXGYwXGZuaWxcZmNoYXJzZXQw
+	IC5IZWx2ZXRpY2FOZXVlSW50ZXJmYWNlLU0zO1xmMVxmbmlsXGZjaGFyc2V0MCAuSGVs
+	dmV0aWNhTmV1ZUludGVyZmFjZS1NZWRpdW1QNDtcZjJcZm5pbFxmY2hhcnNldDAgLkhl
+	bHZldGljYU5ldWVJbnRlcmZhY2UtSXRhbGljTTM7Cn0Ke1xjb2xvcnRibDtccmVkMjU1
+	XGdyZWVuMjU1XGJsdWUyNTU7fQpcZGVmdGFiNzIwClxwYXJkXHR4NTYwXHR4MTEyMFx0
+	eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1
+	NjAwXHR4NjE2MFx0eDY3MjBccGFyZGVmdGFiNzIwXHBhcmRpcm5hdHVyYWxccGFydGln
+	aHRlbmZhY3RvcjAKClxmMFxmczM2XGZzbWlsbGkxODQ0MSBcY2YwIFRoaXMgaXMgYSBz
+	YW1wbGUgVGVybVBhcGVyIHRvIGhlbHAgeW91IGdldCBzdGFydGVkLiBJdCBoYXMgc29t
+	ZSBzZXR0aW5ncywgYW5kIHNvbWUgc2FtcGxlIGNpdGF0aW9ucy5cClRoZSBpZGVhIG9m
+	IHBhcmFncmFwaHMgaXMgaW1wb3J0YW50LiBUbyBzdGFydCBhIG5ldyBwYXJhZ3JhcGgg
+	ZnJvbSB0aGUgY3VycmVudCBpbnNlcnRpb24gcG9pbnQsIHByZXNzIHRoZSA8cmV0dXJu
+	PiBrZXkuXApVc2UgdGhlIFNldHRpbmdzIG1lbnUgdG8gY29udHJvbCBmb3IgZm9ybWF0
+	IG9mIHlvdXIgcGFwZXIuIFlvdSBjYW4gc2VsZWN0IGZyb20gZWl0aGVyIE1MQSBvciBB
+	UEEgZm9ybWF0LCBhbmQgd2lsbCBiZSBhYmxlIHRvIGFjY2VzcyB0aGUgYXBwcm9wcmlh
+	dGUgc2V0dGluZ3MgZm9yIGVpdGhlci5cClByZXNzIHRoZSBQYWdlIGJ1dHRvbiB0byBw
+	cmV2aWV3IHlvdXIgcHJpbnRlZCBwYXBlci4gUHJlc3MgRHJhZnQgYnV0dG9uIHRvIHJl
+	dHVybiB0byB0aGUgdGV4dCBlbnRyeSB2aWV3LlwKVGhlIENpdGF0aW9ucyBtZW51IGxl
+	dHMgeW91IG1hbmFnZSB5b3VyIGJpYmxpb2dyYXBoaWMgcmVmZXJlbmNlcy4gWW91IGNh
+	biBhZGQsIGRlbGV0ZSwgYW5kIG1vZGlmeSBjaXRhdGlvbnMgaGVyZS5cCkFzIGEgc2hv
+	cnQtY3V0LCB5b3UgY2FuIGluc2VydCBhIHJlZmVyZW5jZSBieSBwcmVzc2luZyBvbiB0
+	ZXh0IGluIHRoZSBEcmFmdCB2aWV3LiBUaGUga2V5Ym9hcmQgd2lsbCBhcHBlYXIsIGFu
+	ZCBhIG1lbnUgbmV4dCB0byB0aGUgaW5zZXJ0aW9uIHBvaW50LiBUaGUgSW5zZXJ0IENp
+	dGF0aW9uIFJlZmVyZW5jZVwnODUgbWVudSB3aWxsIG1ha2UgYSBwb3B1cCBtZW51IGZy
+	b20gd2hpY2ggeW91IGNhbiBzZWxlY3QgYSByZWZlcmVuY2UgdG8gaW5zZXJ0IGluIHRo
+	ZSBib2R5IG9mIHlvdXIgcGFwZXIuXApccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4
+	MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYx
+	NjBcdHg2NzIwXHBhcmRlZnRhYjcyMFxwYXJ0aWdodGVuZmFjdG9yMApcY2YwIFRoZSBt
+	ZW51IHRoYXQgYXBwZWFycyBhYm92ZSB0aGUgaW5zZXJ0aW9uIHBvaW50IGlzIGFsc28g
+	dXNlZCB0byBzdXBwb3J0IHN0eWxlZCB0ZXh0LiBUaGUgQklVIChCb2xkLCBJdGFsaWMs
+	IFVuZGVybGluZSkgbWVudSBpdGVtIGxldHMgeW91IHNlbGVjdCB0ZXh0IGFuZCBhc3Np
+	Z24gaXQgYm9sZCwgaXRhbGljLCBhbmQgdW5kZXJsaW5lIHRleHQgY2hhcmFjdGVyaXN0
+	aWNzLiBTZWxlY3Qgc29tZSB0ZXh0IGFuZCB0YXAgb24gdGhlIEJJVSBpdGVtLiBUaGUg
+	QklVIGl0ZW0gd2lsbCBiZSByZXBsYWNlZCBieSBhIG1lbnUgdGhhdCBsZXRzIHlvdSBz
+	ZWxlY3QgClxmMVxiIEJvbGQKXGYwXGIwICwgClxmMlxpIEl0YWxpY3MKXGYwXGkwICwg
+	b3IgXHVsIFVuZGVybGluZVx1bG5vbmUgLiBVbmRlcmxpbmUgY2FuIGJlIHVzZWQgaW4g
+	Y29tYmluYXRpb24gd2l0aCBlaXRoZXIgYm9sZCBvciBpdGFsaWNzLiBUaGVzZSB0ZXh0
+	IHNldHRpbmdzIHdpbGwgYXBwZWFyIGluIFBhZ2UgbW9kZSAoYW5kIGluIGV4cG9ydGVk
+	IFBERnMpLlwKXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4
+	MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJk
+	ZWZ0YWI3MjBccGFyZGlybmF0dXJhbFxwYXJ0aWdodGVuZmFjdG9yMApcY2YwIFRoZSBQ
+	YXBlcnMgbWVudSBpcyB1c2VkIHRvIG1hbmFnZSB5b3VyIGRvY3VtZW50cy4gSGVyZSwg
+	eW91IGNhbiBhbHNvIGV4cG9ydCBwcmludGFibGUgUERGIHZlcnNpb25zIG9mIHlvdXIg
+	cGFwZXIsIGVpdGhlciB0byBpVHVuZXMgKHJlcXVpcmluZyB5b3UgdG8gc3luYyB5b3Vy
+	IGlQYWQgdG8geW91ciBjb21wdXRlciBpbiBpVHVuZXMpLCBlbWFpbCwgb3IgRHJvcGJv
+	eC59
+	</data>
 	<key>Author</key>
 	<string>Your Name</string>
 	<key>CitationPages</key>
@@ -139,7 +188,8 @@ Use the Settings menu to control for format of your paper. You can select from e
 Press the Page button to preview your printed paper. Press Draft button to return to the text entry view.
 The Citations menu lets you manage your bibliographic references. You can add, delete, and modify citations here.
 As a short-cut, you can insert a reference by pressing on text in the Draft view. The keyboard will appear, and a menu next to the insertion point. The Insert Citation Reference… menu will make a popup menu from which you can select a reference to insert in the body of your paper.
-The Papers menu is used to manage your documents. Here, you can also export printable PDF versions of your paper, either to iTunes (requiring you to sync your iPad), email, or Dropbox.</string>
+The menu that appears above the insertion point is also used to support styled text. The BIU (Bold, Italic, Underline) menu item lets you select text and assign it bold, italic, and underline text characteristics. Select some text and tap on the BIU item. The BIU item will be replaced by a menu that lets you select Bold, Italics, or Underline. Underline can be used in combination with either bold or italics. These text settings will appear in Page mode (and in exported PDFs).
+The Papers menu is used to manage your documents. Here, you can also export printable PDF versions of your paper, either to iTunes (requiring you to sync your iPad to your computer in iTunes), email, or Dropbox.</string>
 	<key>Course</key>
 	<string>Ancient History</string>
 	<key>Date</key>
