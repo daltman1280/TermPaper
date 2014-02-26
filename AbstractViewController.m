@@ -14,8 +14,15 @@
 @synthesize textView, mTermPaper;
 
 - (void)viewWillAppear:(BOOL)animated {
+#if 1
 	textView.text = mTermPaper.abstract;
+#else
+	NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:mTermPaper.abstract];
+	[string setAttributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:kSystemFontSizeForPlainText] } range:NSMakeRange(0, string.length)];
+	textView.attributedText = string;
+	textView.allowsEditingTextAttributes = YES;
 	[self updateWordCount];
+#endif
 }
 
 - (void)viewDidAppear:(BOOL)animated {
