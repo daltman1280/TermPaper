@@ -269,8 +269,6 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	formattedTextView.calculatedHeight = 0;
 	// force him to recalculate his height
 	[self calculateTextViewBounds];
-	if (!gIsPlainMode)																	// if we're in formatted mode, switch back to plain mode
-		modeControl.selectedSegmentIndex = 0;
 }
 
 - (void)saveActivePaper

@@ -21,39 +21,47 @@
 	IHBhcmFncmFwaHMgaXMgaW1wb3J0YW50LiBUbyBzdGFydCBhIG5ldyBwYXJhZ3JhcGgg
 	ZnJvbSB0aGUgY3VycmVudCBpbnNlcnRpb24gcG9pbnQsIHByZXNzIHRoZSA8cmV0dXJu
 	PiBrZXkuXApVc2UgdGhlIFNldHRpbmdzIG1lbnUgdG8gY29udHJvbCBmb3IgZm9ybWF0
-	IG9mIHlvdXIgcGFwZXIuIFlvdSBjYW4gc2VsZWN0IGZyb20gZWl0aGVyIE1MQSBvciBB
-	UEEgZm9ybWF0LCBhbmQgd2lsbCBiZSBhYmxlIHRvIGFjY2VzcyB0aGUgYXBwcm9wcmlh
-	dGUgc2V0dGluZ3MgZm9yIGVpdGhlci5cClByZXNzIHRoZSBQYWdlIGJ1dHRvbiB0byBw
-	cmV2aWV3IHlvdXIgcHJpbnRlZCBwYXBlci4gUHJlc3MgRHJhZnQgYnV0dG9uIHRvIHJl
-	dHVybiB0byB0aGUgdGV4dCBlbnRyeSB2aWV3LlwKVGhlIENpdGF0aW9ucyBtZW51IGxl
-	dHMgeW91IG1hbmFnZSB5b3VyIGJpYmxpb2dyYXBoaWMgcmVmZXJlbmNlcy4gWW91IGNh
-	biBhZGQsIGRlbGV0ZSwgYW5kIG1vZGlmeSBjaXRhdGlvbnMgaGVyZS5cCkFzIGEgc2hv
-	cnQtY3V0LCB5b3UgY2FuIGluc2VydCBhIHJlZmVyZW5jZSBieSBwcmVzc2luZyBvbiB0
-	ZXh0IGluIHRoZSBEcmFmdCB2aWV3LiBUaGUga2V5Ym9hcmQgd2lsbCBhcHBlYXIsIGFu
-	ZCBhIG1lbnUgbmV4dCB0byB0aGUgaW5zZXJ0aW9uIHBvaW50LiBUaGUgSW5zZXJ0IENp
-	dGF0aW9uIFJlZmVyZW5jZVwnODUgbWVudSB3aWxsIG1ha2UgYSBwb3B1cCBtZW51IGZy
-	b20gd2hpY2ggeW91IGNhbiBzZWxlY3QgYSByZWZlcmVuY2UgdG8gaW5zZXJ0IGluIHRo
-	ZSBib2R5IG9mIHlvdXIgcGFwZXIuXApccGFyZFx0eDU2MFx0eDExMjBcdHgxNjgwXHR4
-	MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYwMFx0eDYx
-	NjBcdHg2NzIwXHBhcmRlZnRhYjcyMFxwYXJ0aWdodGVuZmFjdG9yMApcY2YwIFRoZSBt
-	ZW51IHRoYXQgYXBwZWFycyBhYm92ZSB0aGUgaW5zZXJ0aW9uIHBvaW50IGlzIGFsc28g
-	dXNlZCB0byBzdXBwb3J0IHN0eWxlZCB0ZXh0LiBUaGUgQklVIChCb2xkLCBJdGFsaWMs
-	IFVuZGVybGluZSkgbWVudSBpdGVtIGxldHMgeW91IHNlbGVjdCB0ZXh0IGFuZCBhc3Np
-	Z24gaXQgYm9sZCwgaXRhbGljLCBhbmQgdW5kZXJsaW5lIHRleHQgY2hhcmFjdGVyaXN0
-	aWNzLiBTZWxlY3Qgc29tZSB0ZXh0IGFuZCB0YXAgb24gdGhlIEJJVSBpdGVtLiBUaGUg
-	QklVIGl0ZW0gd2lsbCBiZSByZXBsYWNlZCBieSBhIG1lbnUgdGhhdCBsZXRzIHlvdSBz
-	ZWxlY3QgClxmMVxiIEJvbGQKXGYwXGIwICwgClxmMlxpIEl0YWxpY3MKXGYwXGkwICwg
-	b3IgXHVsIFVuZGVybGluZVx1bG5vbmUgLiBVbmRlcmxpbmUgY2FuIGJlIHVzZWQgaW4g
-	Y29tYmluYXRpb24gd2l0aCBlaXRoZXIgYm9sZCBvciBpdGFsaWNzLiBUaGVzZSB0ZXh0
-	IHNldHRpbmdzIHdpbGwgYXBwZWFyIGluIFBhZ2UgbW9kZSAoYW5kIGluIGV4cG9ydGVk
-	IFBERnMpLlwKXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4
-	MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJk
-	ZWZ0YWI3MjBccGFyZGlybmF0dXJhbFxwYXJ0aWdodGVuZmFjdG9yMApcY2YwIFRoZSBQ
-	YXBlcnMgbWVudSBpcyB1c2VkIHRvIG1hbmFnZSB5b3VyIGRvY3VtZW50cy4gSGVyZSwg
-	eW91IGNhbiBhbHNvIGV4cG9ydCBwcmludGFibGUgUERGIHZlcnNpb25zIG9mIHlvdXIg
-	cGFwZXIsIGVpdGhlciB0byBpVHVuZXMgKHJlcXVpcmluZyB5b3UgdG8gc3luYyB5b3Vy
-	IGlQYWQgdG8geW91ciBjb21wdXRlciBpbiBpVHVuZXMpLCBlbWFpbCwgb3IgRHJvcGJv
-	eC59
+	IG9mIHlvdXIgcGFwZXIuIFlvdSBjYW4gc2VsZWN0IGVpdGhlciBNTEEgb3IgQVBBIGZv
+	cm1hdCwgYW5kIHdpbGwgYmUgYWJsZSB0byBhY2Nlc3MgdGhlIGFwcHJvcHJpYXRlIHNl
+	dHRpbmdzIGZvciBlaXRoZXIuXApQcmVzcyB0aGUgUGFnZSBidXR0b24gdG8gcHJldmll
+	dyB5b3VyIHByaW50ZWQgcGFwZXIuIFByZXNzIERyYWZ0IGJ1dHRvbiB0byByZXR1cm4g
+	dG8gdGhlIHRleHQgZW50cnkgdmlldy5cClRoZSBDaXRhdGlvbnMgbWVudSBsZXRzIHlv
+	dSBtYW5hZ2UgeW91ciBiaWJsaW9ncmFwaGljIHJlZmVyZW5jZXMuIFlvdSBjYW4gYWRk
+	LCBkZWxldGUsIGFuZCBtb2RpZnkgY2l0YXRpb25zIGhlcmUuXApBcyBhIHNob3J0LWN1
+	dCwgeW91IGNhbiBpbnNlcnQgYSByZWZlcmVuY2UgYnkgcHJlc3Npbmcgb24gdGV4dCBp
+	biB0aGUgRHJhZnQgdmlldy4gVGhlIGtleWJvYXJkIHdpbGwgYXBwZWFyLCBhbmQgYSBt
+	ZW51IG5leHQgdG8gdGhlIGluc2VydGlvbiBwb2ludC4gVGhlIEluc2VydCBDaXRhdGlv
+	biBSZWZlcmVuY2VcJzg1IG1lbnUgd2lsbCBtYWtlIGEgcG9wdXAgbWVudSBmcm9tIHdo
+	aWNoIHlvdSBjYW4gc2VsZWN0IGEgcmVmZXJlbmNlIHRvIGluc2VydCBpbiB0aGUgYm9k
+	eSBvZiB5b3VyIHBhcGVyLlwKXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBc
+	dHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4
+	NjcyMFxwYXJkZWZ0YWI3MjBccGFydGlnaHRlbmZhY3RvcjAKXGNmMCBUaGUgbWVudSB0
+	aGF0IGFwcGVhcnMgYWJvdmUgdGhlIGluc2VydGlvbiBwb2ludCBpcyBhbHNvIHVzZWQg
+	dG8gc3VwcG9ydCBzdHlsZWQgdGV4dC4gVGhlIApcZjFcYiBCClxmMlxpXGIwIEkKXGYw
+	XGkwIFx1bCBVXHVsbm9uZSAgKApcZjFcYiBCb2xkClxmMFxiMCAsIApcZjJcaSBJdGFs
+	aWNzClxmMFxpMCAsIFx1bCBVbmRlcmxpbmVcdWxub25lICkgbWVudSBpdGVtIGxldHMg
+	eW91IHNlbGVjdCB0ZXh0IGFuZCBhc3NpZ24gaXQgYm9sZCwgaXRhbGljcywgYW5kIHVu
+	ZGVybGluZSB0ZXh0IGNoYXJhY3RlcmlzdGljcy4gU2VsZWN0IHNvbWUgdGV4dCBhbmQg
+	dGFwIG9uIHRoZSBCSVUgaXRlbS4gVGhlIEJJVSBpdGVtIHdpbGwgYmUgcmVwbGFjZWQg
+	YnkgYSBtZW51IHRoYXQgbGV0cyB5b3Ugc2VsZWN0IApcZjFcYiBCb2xkClxmMFxiMCAs
+	IApcZjJcaSBJdGFsaWNzClxmMFxpMCAsIG9yIFx1bCBVbmRlcmxpbmVcdWxub25lIC4g
+	VW5kZXJsaW5lIGNhbiBiZSB1c2VkIGluIGNvbWJpbmF0aW9uIHdpdGggZWl0aGVyIGJv
+	bGQgb3IgaXRhbGljcy4gVGhlc2UgdGV4dCBzZXR0aW5ncyB3aWxsIGFwcGVhciBpbiBQ
+	YWdlIG1vZGUgKGFuZCBpbiBleHBvcnRlZCBQREZzKS5cClxwYXJkXHR4NTYwXHR4MTEy
+	MFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBc
+	dHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGVmdGFiNzIwXHBhcmRpcm5hdHVyYWxccGFy
+	dGlnaHRlbmZhY3RvcjAKXGNmMCBUaGUgUGFwZXJzIG1lbnUgaXMgdXNlZCB0byBtYW5h
+	Z2UgeW91ciBkb2N1bWVudHMuIEhlcmUsIHlvdSBjYW4gYWxzbyBleHBvcnQgcHJpbnRh
+	YmxlIFBERiB2ZXJzaW9ucyBvZiB5b3VyIHBhcGVyLCBlaXRoZXIgdG8gaVR1bmVzIChy
+	ZXF1aXJpbmcgeW91IHRvIHN5bmMgeW91ciBpUGFkIHRvIHlvdXIgY29tcHV0ZXIgaW4g
+	aVR1bmVzKSwgZW1haWwsIG9yIERyb3Bib3guXApccGFyZFx0eDU2MFx0eDExMjBcdHgx
+	NjgwXHR4MjI0MFx0eDI4MDBcdHgzMzYwXHR4MzkyMFx0eDQ0ODBcdHg1MDQwXHR4NTYw
+	MFx0eDYxNjBcdHg2NzIwXHBhcmRlZnRhYjcyMFxwYXJ0aWdodGVuZmFjdG9yMApcY2Yw
+	IElmIHlvdSBkZWxldGUgdGhpcyBTYW1wbGUgUGFwZXIgZG9jdW1lbnQsIHlvdSBjYW4g
+	cmVjb3ZlciBpdCBieSBkZWxldGluZyBhbmQgcmUtaW5zdGFsbGluZyBUZXJtUGFwZXIg
+	KGJlIHN1cmUgdG8gYmFja3VwIGFuZCByZXN0b3JlIGFueSAuVGVybVBhcGVyIGRvY3Vt
+	ZW50cyB5b3Ugd2FudCB0byBrZWVwLCB1c2luZyBpVHVuZXMpLiBNb3JlIGRldGFpbGVk
+	IGhlbHAgaXMgYXZhaWxhYmxlIGF0IGh0dHA6Ly93d3cuaG9tZWJvZHlhcHBzLmNvbS59
 	</data>
 	<key>Author</key>
 	<string>Your Name</string>
@@ -184,12 +192,13 @@
 	<key>Contents</key>
 	<string>This is a sample TermPaper to help you get started. It has some settings, and some sample citations.
 The idea of paragraphs is important. To start a new paragraph from the current insertion point, press the &lt;return&gt; key.
-Use the Settings menu to control for format of your paper. You can select from either MLA or APA format, and will be able to access the appropriate settings for either.
+Use the Settings menu to control for format of your paper. You can select either MLA or APA format, and will be able to access the appropriate settings for either.
 Press the Page button to preview your printed paper. Press Draft button to return to the text entry view.
 The Citations menu lets you manage your bibliographic references. You can add, delete, and modify citations here.
 As a short-cut, you can insert a reference by pressing on text in the Draft view. The keyboard will appear, and a menu next to the insertion point. The Insert Citation Reference… menu will make a popup menu from which you can select a reference to insert in the body of your paper.
-The menu that appears above the insertion point is also used to support styled text. The BIU (Bold, Italic, Underline) menu item lets you select text and assign it bold, italic, and underline text characteristics. Select some text and tap on the BIU item. The BIU item will be replaced by a menu that lets you select Bold, Italics, or Underline. Underline can be used in combination with either bold or italics. These text settings will appear in Page mode (and in exported PDFs).
-The Papers menu is used to manage your documents. Here, you can also export printable PDF versions of your paper, either to iTunes (requiring you to sync your iPad to your computer in iTunes), email, or Dropbox.</string>
+The menu that appears above the insertion point is also used to support styled text. The BIU (Bold, Italics, Underline) menu item lets you select text and assign it bold, italics, and underline text characteristics. Select some text and tap on the BIU item. The BIU item will be replaced by a menu that lets you select Bold, Italics, or Underline. Underline can be used in combination with either bold or italics. These text settings will appear in Page mode (and in exported PDFs).
+The Papers menu is used to manage your documents. Here, you can also export printable PDF versions of your paper, either to iTunes (requiring you to sync your iPad to your computer in iTunes), email, or Dropbox.
+If you delete this Sample Paper document, you can recover it by deleting and re-installing TermPaper (be sure to backup and restore any .TermPaper documents you want to keep, using iTunes). More detailed help is available at http://www.homebodyapps.com.</string>
 	<key>Course</key>
 	<string>Ancient History</string>
 	<key>Date</key>
