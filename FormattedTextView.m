@@ -257,7 +257,6 @@ typedef enum {
 		attributeValue = [string attribute:NSFontAttributeName atIndex:NSMaxRange(effectiveRange) effectiveRange:&effectiveRange];
 		UIFont *font = (UIFont *) attributeValue;
 		UIFontDescriptor *descriptor = font.fontDescriptor;
-		NSLog(@"word = %@, descriptor = %@", [[string string] substringWithRange:effectiveRange], descriptor.symbolicTraits & UIFontDescriptorTraitItalic ? @"italic" : descriptor.symbolicTraits & UIFontDescriptorTraitBold ? @"bold" : @"plain");
 		if (descriptor.symbolicTraits & UIFontDescriptorTraitItalic)
 			[contentString addAttribute:NSFontAttributeName value:italicFont range:effectiveRange];
 		else if (descriptor.symbolicTraits & UIFontDescriptorTraitBold)

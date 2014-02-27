@@ -62,14 +62,11 @@
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     NSUInteger index = [indexPath indexAtPosition:1];
 	NSString *name = [[mTermPaper.citations objectAtIndex:index] objectForKey:@"Name"];
-	if (name == nil || strcmp("NSCFString", object_getClassName(name))) {
-		NSLog(@"name = %u, class = %s", (unsigned int) name, object_getClassName(name));
-	}
-	if (name && !strcmp("NSCFString", object_getClassName(name)) && name.length > 0) {
+	if (name && name.length > 0) {
 		cell.textLabel.text = name;
 		cell.textLabel.enabled = YES;
 	} else {
-		cell.textLabel.enabled = NO;
+		cell.textLabel.enabled = YES;
 		for (NSDictionary *category in [CitationModel citationTypes]) {
 			NSArray *subcats = [category objectForKey:@"SubCats"];
 			for (NSDictionary *item in subcats) {
