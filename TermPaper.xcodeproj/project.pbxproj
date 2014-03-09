@@ -10,7 +10,6 @@
 		258DDE4C18BC0C0100982471 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 258DDE4B18BC0C0100982471 /* Default-Landscape@2x~ipad.png */; };
 		258DDE4E18BC0C0C00982471 /* Default@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 258DDE4D18BC0C0C00982471 /* Default@2x~ipad.png */; };
 		258DDE5318BC261400982471 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5218BC261300982471 /* Crashlytics.framework */; };
-		258DDE5518BC297000982471 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5418BC297000982471 /* DropboxSDK.framework */; };
 		258DDE5718BC29B600982471 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5618BC29B600982471 /* Security.framework */; };
 		258DDE5918BC29C700982471 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5818BC29C700982471 /* QuartzCore.framework */; };
 		25C0DC1818B9480B00AE93EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1718B9480B00AE93EF /* Foundation.framework */; };
@@ -55,6 +54,7 @@
 		25C0DCBB18B95D4800AE93EF /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DCBA18B95D4800AE93EF /* libz.1.1.3.dylib */; };
 		25C0DCBD18B95D6900AE93EF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DCBC18B95D6900AE93EF /* CoreText.framework */; };
 		25C0DCBF18B95D7A00AE93EF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DCBE18B95D7A00AE93EF /* MessageUI.framework */; };
+		25FAC19618CBF8E2007DDB82 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5418BC297000982471 /* DropboxSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,9 +157,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FAC19618CBF8E2007DDB82 /* DropboxSDK.framework in Frameworks */,
 				258DDE5918BC29C700982471 /* QuartzCore.framework in Frameworks */,
 				258DDE5718BC29B600982471 /* Security.framework in Frameworks */,
-				258DDE5518BC297000982471 /* DropboxSDK.framework in Frameworks */,
 				25C0DCBF18B95D7A00AE93EF /* MessageUI.framework in Frameworks */,
 				25C0DCBD18B95D6900AE93EF /* CoreText.framework in Frameworks */,
 				25C0DCBB18B95D4800AE93EF /* libz.1.1.3.dylib in Frameworks */,
@@ -684,7 +684,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/daltman/Documents/projects/iPad/TermPaper\\ iOS7/TermPaper",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TermPaper/TermPaper-Prefix.pch";
@@ -709,7 +709,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/daltman/Documents/projects/iPad/TermPaper\\ iOS7/TermPaper",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TermPaper/TermPaper-Prefix.pch";
