@@ -321,8 +321,12 @@ static float kSystemFontSizeForPlainText = 18.440904;
 {
 	NSRange selectedRange = plainTextView.selectedRange;
 	NSMutableString *text = [NSMutableString stringWithString:plainTextView.text];
-	NSString *preSpace = [[text substringWithRange:NSMakeRange(MAX(selectedRange.location-1,0), 1)] isEqualToString:@" "] ? @"" : @" ";
-	NSString *postSpace = [[text substringWithRange:NSMakeRange(MIN(selectedRange.location, text.length-1), 1)] isEqualToString:@" "] ? @"" : @" ";
+	NSString *preSpace, *postSpace;
+	if (text.length) {
+		preSpace = [[text substringWithRange:NSMakeRange(MAX(selectedRange.location-1,0), 1)] isEqualToString:@" "] ? @"" : @" ";
+		postSpace = [[text substringWithRange:NSMakeRange(MIN(selectedRange.location, text.length-1), 1)] isEqualToString:@" "] ? @"" : @" ";
+	} else
+		preSpace = postSpace = @"";
 	//	Make sure there is space before and after the reference
 	NSString *reference = [NSString stringWithFormat:@"%@(%@ )%@", preSpace, referenceText, postSpace];
 	[text insertString:reference atIndex:selectedRange.location];
