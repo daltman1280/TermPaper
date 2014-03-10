@@ -39,7 +39,7 @@
 		indexes[1] = i;
 		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathWithIndexes:indexes length:2]];
 		if (cell.accessoryType == UITableViewCellAccessoryCheckmark)
-			mTermPaper.fontSize = cell.textLabel.text;
+			mTermPaper.fontSize = [cell.textLabel.text isEqualToString:@"14"] ? @"Large" : [cell.textLabel.text isEqualToString:@"12"] ? @"Medium" : @"Small";
 	}
     [super viewWillDisappear:animated];
 }
@@ -102,17 +102,17 @@
 		case 1:																					// font sizes
 			switch ([indexPath indexAtPosition:1]) {
 				case 0:
-					cell.textLabel.text = @"Large";
+					cell.textLabel.text = @"14";
 					if ([mTermPaper.fontSize isEqualToString:@"Large"])
 						cell.accessoryType = UITableViewCellAccessoryCheckmark;
 					break;
 				case 1:
-					cell.textLabel.text = @"Medium";
+					cell.textLabel.text = @"12";
 					if ([mTermPaper.fontSize isEqualToString:@"Medium"])
 						cell.accessoryType = UITableViewCellAccessoryCheckmark;
 					break;
 				case 2:
-					cell.textLabel.text = @"Small";
+					cell.textLabel.text = @"10";
 					if ([mTermPaper.fontSize isEqualToString:@"Small"])
 						cell.accessoryType = UITableViewCellAccessoryCheckmark;
 					break;

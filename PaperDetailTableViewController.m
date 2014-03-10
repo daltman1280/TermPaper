@@ -214,7 +214,7 @@
 					return headerOnFirstCell;
 					break;
 				case rowMLAFont:
-					((UILabel *)[fontCell viewWithTag:1]).text = [NSString stringWithFormat:@"%@, %@", mTermPaper.fontName, mTermPaper.fontSize];
+					((UILabel *)[fontCell viewWithTag:1]).text = [NSString stringWithFormat:@"%@ %@", mTermPaper.fontName, [mTermPaper.fontSize isEqualToString:@"Large"] ? @"14" : [mTermPaper.fontSize isEqualToString:@"Medium"] ? @"12" : @"10"];
 					return fontCell;
 					break;
 				case rowAPAInsertDoubleSpaces:
