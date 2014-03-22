@@ -7,6 +7,7 @@
 //
 
 #import "CitationDetailTableViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 static SelectableTextField *gFirstResponder;
 
@@ -28,14 +29,14 @@ static SelectableTextField *gFirstResponder;
 
 - (IBAction)handleSave:(id)sender
 {
-	NSLog(@"CitationDetailTableViewController entered");
+	CLSLog(@"CitationDetailTableViewController entered");
 	int index = 0;
 	NSArray *sortByArray;
 	if ([[citation.propertySchemaDict objectForKey:@"SortBy"] isKindOfClass:[NSString class]]) {
-		NSLog(@"[citation.propertySchemaDict objectForKey:@\"SortBy\"] = %@", [citation.propertySchemaDict objectForKey:@"SortBy"]);
+		CLSLog(@"[citation.propertySchemaDict objectForKey:@\"SortBy\"] = %@", [citation.propertySchemaDict objectForKey:@"SortBy"]);
 		sortByArray = [NSArray arrayWithObject:[citation.propertySchemaDict objectForKey:@"SortBy"]];
 	} else if ([[citation.propertySchemaDict objectForKey:@"SortBy"] isKindOfClass:[NSArray class]]) {
-		NSLog(@"[citation.propertySchemaDict objectForKey:@\"SortBy\"] = %@", [citation.propertySchemaDict objectForKey:@"SortBy"]);
+		CLSLog(@"[citation.propertySchemaDict objectForKey:@\"SortBy\"] = %@", [citation.propertySchemaDict objectForKey:@"SortBy"]);
 		sortByArray = [NSArray arrayWithArray:[citation.propertySchemaDict objectForKey:@"SortBy"]];
 	} else
 		NSAssert1(NO, @"Invalid sortBy property in definition of citation type %@", [citation.propertySchemaDict objectForKey:@"Name"]);
@@ -51,7 +52,7 @@ static SelectableTextField *gFirstResponder;
 				UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathWithIndexes:indexes length:2]];
 				if (((UITextField *)cell.accessoryView).text.length > 0) {									// get the last name, if reference is lastname, firstname
 					citation.name = [[((UITextField *)cell.accessoryView).text componentsSeparatedByString:@","] objectAtIndex:0];
-					NSLog(@"sortby citation.name = %@", citation.name);
+					CLSLog(@"sortby citation.name = %@", citation.name);
 					found = YES;
 					break;
 				}
@@ -67,10 +68,10 @@ static SelectableTextField *gFirstResponder;
 		indexes[1] = index++;																			// iterate through rows
 		UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathWithIndexes:indexes length:2]];
 		property.value = ((UITextField *)cell.accessoryView).text;
-		NSLog(@"property.value = \"%@\"", property.value);
+		CLSLog(@"property.value = \"%@\"", property.value);
 	}
 	NSMutableDictionary *dict = [citation dictionaryFromInstance];
-	NSLog(@"dict = %@", dict);
+	CLSLog(@"dict = %@", dict);
 	NSMutableArray *citations = [[NSMutableArray alloc] init];
 	[citations addObjectsFromArray:mTermPaper.citations];
 	if (citationListIndex < 0) {																		// new citation, add it to the dictionary
@@ -207,7 +208,7 @@ static SelectableTextField *gFirstResponder;
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
+    // Navigation CLSic may go here. Create and push another view controller.
 	/*
 	 <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
@@ -221,7 +222,7 @@ static SelectableTextField *gFirstResponder;
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"CitationDetailTableViewController didReceiveMemoryWarning");
+	CLSLog(@"CitationDetailTableViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     

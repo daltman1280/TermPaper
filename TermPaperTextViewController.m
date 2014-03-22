@@ -11,6 +11,7 @@
 #import "PaperListTableViewController.h"
 #import "CitationReferenceListTableViewController.h"
 #import "TermPaperNotifications.h"
+#import <Crashlytics/Crashlytics.h>
 
 static BOOL gIsPlainMode = YES;
 static float kSystemFontSizeForPlainText = 18.440904;
@@ -159,7 +160,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 
 - (void)menuWillShow:(NSNotification *)aNotification
 {
-	NSLog(@"menuWillShow");														// TODO: how to detect menus
+	CLSLog(@"menuWillShow");														// TODO: how to detect menus
 }
 
 - (void)handlePopupVisible:(id)sender
@@ -193,7 +194,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 }
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"TermPaperTextViewController didReceiveMemoryWarning");
+	CLSLog(@"TermPaperTextViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     
@@ -223,13 +224,13 @@ static float kSystemFontSizeForPlainText = 18.440904;
 #if 0
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-	NSLog(@"textViewShouldBeginEditing, selection = %d, total = %d", textView.selectedRange.location, textView.text.length);
+	CLSLog(@"textViewShouldBeginEditing, selection = %d, total = %d", textView.selectedRange.location, textView.text.length);
 	return YES;
 }
 
 - (BOOL)textViewDidChangeSelection:(UITextView *)textView
 {
-	NSLog(@"textViewDidChangeSelection, selection = %d, total = %d", textView.selectedRange.location, textView.text.length);
+	CLSLog(@"textViewDidChangeSelection, selection = %d, total = %d", textView.selectedRange.location, textView.text.length);
 	return YES;
 }
 #endif

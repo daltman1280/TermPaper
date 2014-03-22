@@ -8,6 +8,7 @@
 
 #import "PaperDetailTableViewController.h"
 #import "TermPaperNotifications.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface PaperDetailTableViewController ()
 
@@ -296,7 +297,7 @@
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"PaperDetailTableViewController didReceiveMemoryWarning");
+	CLSLog(@"PaperDetailTableViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     

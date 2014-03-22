@@ -12,6 +12,7 @@
 #import "CitationModel.h"
 #import "DocXFormatter.h"
 #import "zip.h"
+#import <Crashlytics/Crashlytics.h>
 
 static TermPaperModel*			gTermPaper = [[TermPaperModel alloc] init];		// static initializer, to make sure init is called on startup. This is not the active term paper!
 static TermPaperModel*			gActiveTermPaper;								// this is the active TermPaper
@@ -31,90 +32,90 @@ static NSString*				gPapersFolder;
 	zipfi.tmz_date.tm_min = zipfi.tmz_date.tm_mon = zipfi.tmz_date.tm_sec = zipfi.tmz_date.tm_hour = zipfi.tmz_date.tm_mday = zipfi.tmz_date.tm_year = 0;
 	// _rels/
 	int status = zipOpenNewFileInZip(zipFileHandle, "_rels/.rels", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *relsString = [[NSBundle mainBundle] pathForResource:@".rels" ofType:@""];
 	NSData *relsData = [NSData dataWithContentsOfFile:relsString];
 	status = zipWriteInFileInZip(zipFileHandle, [relsData bytes], (int) [relsData length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	// [Content_Types].xml
 	status = zipOpenNewFileInZip(zipFileHandle, "[Content_Types].xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *contentTypesString = [[NSBundle mainBundle] pathForResource:@"[Content_Types]" ofType:@"xml"];
 	NSData *contentTypesData = [NSData dataWithContentsOfFile:contentTypesString];
 	status = zipWriteInFileInZip(zipFileHandle, [contentTypesData bytes], (int) [contentTypesData length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	// app.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "docProps/app.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *appString = [[NSBundle mainBundle] pathForResource:@"app" ofType:@"xml"];
 	NSData *appData = [NSData dataWithContentsOfFile:appString];
 	status = zipWriteInFileInZip(zipFileHandle, [appData bytes], (int) [appData length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	// core.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "docProps/core.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *coreString = [[NSBundle mainBundle] pathForResource:@"core" ofType:@"xml"];
 	NSData *coreData = [NSData dataWithContentsOfFile:coreString];
 	status = zipWriteInFileInZip(zipFileHandle, [coreData bytes], (int) [coreData length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	// meta.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "docProps/meta.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *metaString = [[NSBundle mainBundle] pathForResource:@"meta" ofType:@"xml"];
 	NSData *metaData = [NSData dataWithContentsOfFile:metaString];
 	status = zipWriteInFileInZip(zipFileHandle, [metaData bytes], (int) [metaData length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	// document.xml.rels
 	status = zipOpenNewFileInZip(zipFileHandle, "word/_rels/document.xml.rels", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *rels2String = [[NSBundle mainBundle] pathForResource:@"document.xml" ofType:@"rels"];
 	NSData *rels2Data = [NSData dataWithContentsOfFile:rels2String];
 	status = zipWriteInFileInZip(zipFileHandle, [rels2Data bytes], (int) [rels2Data length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	// document.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "word/document.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 //	NSString *docString = [[NSBundle mainBundle] pathForResource:@"document" ofType:@"xml"];
 //	NSData *docData = [NSData dataWithContentsOfFile:docString];
 	NSString *docxString = [[DocXFormatter sharedFormatter] formattedDocument];
-//	NSLog(@"docxString = %@", docxString);
+//	CLSLog(@"docxString = %@", docxString);
 	const char *string = [docxString cStringUsingEncoding:NSMacOSRomanStringEncoding];
 	status = zipWriteInFileInZip(zipFileHandle, string, (int) docxString.length);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 
 	// header1.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "word/header1.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *header1String = [[NSBundle mainBundle] pathForResource:@"header1" ofType:@"xml"];
 	NSData *header1Data = [NSData dataWithContentsOfFile:header1String];
 	status = zipWriteInFileInZip(zipFileHandle, [header1Data bytes], (int) [header1Data length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 
 	// header2.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "word/header2.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *header2String = [[NSBundle mainBundle] pathForResource:@"header2" ofType:@"xml"];
 	NSData *header2Data = [NSData dataWithContentsOfFile:header2String];
 	status = zipWriteInFileInZip(zipFileHandle, [header2Data bytes], (int) [header2Data length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	
 #if 0
 	// styles.xml
@@ -127,16 +128,16 @@ static NSString*				gPapersFolder;
 	
 	// theme1.xml
 	status = zipOpenNewFileInZip(zipFileHandle, "word/theme/theme1.xml", &zipfi, NULL, 0, NULL, 0, "comment", Z_DEFLATED, Z_DEFAULT_COMPRESSION);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	NSString *themeString = [[NSBundle mainBundle] pathForResource:@"theme1" ofType:@"xml"];
 	NSData *themeData = [NSData dataWithContentsOfFile:themeString];
 	status = zipWriteInFileInZip(zipFileHandle, [themeData bytes], (int) [themeData length]);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	status = zipCloseFileInZip(zipFileHandle);
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 	
 	status = zipClose(zipFileHandle, "comment");
-	NSLog(@"status = %d", status);
+	CLSLog(@"status = %d", status);
 }
 
 //	return TermPaperModel * to active paper
@@ -325,7 +326,7 @@ static NSString*				gPapersFolder;
 		else if (!isDirectory && [[filename pathExtension] isEqualToString:@"TermPaper"])
 			[TermPaperModel importPaperIfNewer:filename];
 		else
-			NSLog(@"extraneous document = %@, ignored", filename);												// not a txt file (could be a folder)
+			CLSLog(@"extraneous document = %@, ignored", filename);												// not a txt file (could be a folder)
 	}
 	//	Copy the Sample Paper from the application bundle, just the first time the app is launched
 	if (![[NSUserDefaults standardUserDefaults] objectForKey:@"copiedSamplePaper"]) {
@@ -348,7 +349,7 @@ static NSString*				gPapersFolder;
 		if ([dateOfPlainText compare:dateOfPaper] != NSOrderedDescending)
 			return;
 	}
-	NSLog(@"Importing %@", paperFilepath);
+	CLSLog(@"Importing %@", paperFilepath);
 	NSMutableDictionary *paperDict = [[NSMutableDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"DefaultTermPaper" ofType:@"TermPaper"]];
 	NSStringEncoding encoding;
 	NSString *text = [NSString stringWithContentsOfFile:[gDocumentsFolder stringByAppendingPathComponent:filename] usedEncoding:&encoding error:NULL];
@@ -370,7 +371,7 @@ static NSString*				gPapersFolder;
 		if ([dateOfExternalPaper compare:dateOfPaper] != NSOrderedDescending)
 			return;
 	}
-	NSLog(@"Importing %@", paperFilepath);
+	CLSLog(@"Importing %@", paperFilepath);
 	[[NSFileManager defaultManager] removeItemAtPath:paperFilepath error:nil];
 	[[NSFileManager defaultManager] moveItemAtPath:externalPaperFilePath toPath:paperFilepath error:nil];
 }

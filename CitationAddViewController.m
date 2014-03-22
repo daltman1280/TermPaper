@@ -7,6 +7,7 @@
 //
 
 #import "CitationAddViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation CitationAddViewController
 
@@ -112,7 +113,7 @@
 #pragma mark -
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"CitationAddViewController didReceiveMemoryWarning");
+	CLSLog(@"CitationAddViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     

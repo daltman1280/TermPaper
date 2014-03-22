@@ -8,6 +8,7 @@
 
 #import "CitationListTableViewController.h"
 #import "TermPaperNotifications.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation CitationListTableViewController
 
@@ -125,7 +126,7 @@
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"CitationListTableViewController didReceiveMemoryWarning");
+	CLSLog(@"CitationListTableViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     

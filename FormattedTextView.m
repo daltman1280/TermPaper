@@ -8,6 +8,7 @@
 
 #import "FormattedTextView.h"
 #import <CoreText/CoreText.h>
+#import <Crashlytics/Crashlytics.h>
 
 #define FONT_SIZE [model.fontSize isEqualToString:@"Large"] ? 14 : [model.fontSize isEqualToString:@"Medium"] ? 12 : 10
 
@@ -301,7 +302,7 @@ typedef enum {
 		CTFrameRef frame = [[frameForPage objectAtIndex:pageNumberToDraw-1] pointerValue];
 		CTFrameDraw(frame, context);
 	} else
-		NSLog(@"Illegal pageNumberToDraw = %d", pageNumberToDraw);
+		CLSLog(@"Illegal pageNumberToDraw = %d", pageNumberToDraw);
 }
 
 //	Does the text imaging for all pages in the document, both for Core Text and PDF. For Core Text layout, caches the CTFrameRef for each
@@ -323,7 +324,7 @@ typedef enum {
 		NSString *documentsFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 		NSString *pdfFile = [documentsFolder stringByAppendingFormat:@"/%@.pdf", model.name];
 		BOOL success = UIGraphicsBeginPDFContextToFile(pdfFile, CGRectZero, nil);
-		NSLog(@"success = %d, file = %@", success, pdfFile);
+		CLSLog(@"success = %d, file = %@", success, pdfFile);
 	}
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	// iPhoneOS graphics context is flipped. Graphics assumes lower left origin.

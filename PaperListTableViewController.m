@@ -8,6 +8,7 @@
 
 #import "PaperListTableViewController.h"
 #import "TermPaperNotifications.h"
+#import <Crashlytics/Crashlytics.h>
 
 const static int kSGTextFieldTagNumber = 99;
 
@@ -172,7 +173,7 @@ const static int kSGTextFieldTagNumber = 99;
 		}
 		[self setDeleteButtonEnabled];
 	} else if (actionSheet == exportPaperActionSheet) {
-		NSLog(@"buttonIndex = %ld", (long)buttonIndex);
+		CLSLog(@"buttonIndex = %ld", (long)buttonIndex);
 		switch (buttonIndex) {
 			case 0:
 				[self handleEmailFeedbackButton:self];
@@ -188,7 +189,7 @@ const static int kSGTextFieldTagNumber = 99;
 				break;
 #if CONSOLE
 			case 4:
-				NSLog(@"console output");
+				CLSLog(@"console output");
 				[self handleEmailConsoleButton:self];
 				break;
 #endif
@@ -302,7 +303,7 @@ const static int kSGTextFieldTagNumber = 99;
 }
 
 - (void)restClient:(DBRestClient*)client uploadFileFailedWithError:(NSError*)error {
-    NSLog(@"File upload failed with error - %@", error);
+    CLSLog(@"File upload failed with error - %@", error);
 	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Can\'t access Dropbox." delegate:nil cancelButtonTitle:@"" destructiveButtonTitle:@"OK" otherButtonTitles:@"", nil];
 	sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 	[sheet showInView:[[[UIApplication sharedApplication] keyWindow] rootViewController].view];
@@ -332,7 +333,7 @@ const static int kSGTextFieldTagNumber = 99;
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
 	if (!picker) {
-		NSLog(@"Failed to generate mail picker for PDF.");
+		CLSLog(@"Failed to generate mail picker for PDF.");
 		UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Can\'t access Mail." delegate:nil cancelButtonTitle:@"" destructiveButtonTitle:@"OK" otherButtonTitles:@"", nil];
 		sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 		[sheet showInView:[[[UIApplication sharedApplication] keyWindow] rootViewController].view];
@@ -345,10 +346,10 @@ const static int kSGTextFieldTagNumber = 99;
 	
 	NSString *documentsFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	NSString *pdfFile = [documentsFolder stringByAppendingFormat:@"/%@.pdf", [TermPaperModel activeTermPaper].name];
-	NSLog(@"pdffile = %@", pdfFile);
+	CLSLog(@"pdffile = %@", pdfFile);
     NSData *myData = [NSData dataWithContentsOfFile:pdfFile];
-	NSLog(@"myData.length = %ld", (unsigned long)myData.length);
-	NSLog(@"name = %@", [[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]);
+	CLSLog(@"myData.length = %ld", (unsigned long)myData.length);
+	CLSLog(@"name = %@", [[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]);
 	[picker addAttachmentData:myData mimeType:@"application/pdf" fileName:[[TermPaperModel activeTermPaper].name stringByAppendingString:@".pdf"]];
 	
 	[self presentViewController:picker animated:YES completion:NULL];
@@ -360,7 +361,7 @@ const static int kSGTextFieldTagNumber = 99;
 		;
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	if (!picker) {
-		NSLog(@"Failed to generate mail picker for feedback.");
+		CLSLog(@"Failed to generate mail picker for feedback.");
 		UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Can\'t access Mail." delegate:nil cancelButtonTitle:@"" destructiveButtonTitle:@"OK" otherButtonTitles:@"", nil];
 		sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
 		[sheet showInView:[[[UIApplication sharedApplication] keyWindow] rootViewController].view];
@@ -427,7 +428,7 @@ const static int kSGTextFieldTagNumber = 99;
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"PaperListTableViewController didReceiveMemoryWarning");
+	CLSLog(@"PaperListTableViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     

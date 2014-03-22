@@ -7,6 +7,7 @@
 //
 
 #import "PaperFontsTableViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation PaperFontsTableViewController
 
@@ -191,7 +192,7 @@
 #pragma mark Memory management
 
 - (void)didReceiveMemoryWarning {
-	NSLog(@"PaperFontsTableViewController didReceiveMemoryWarning");
+	CLSLog(@"PaperFontsTableViewController didReceiveMemoryWarning");
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
     

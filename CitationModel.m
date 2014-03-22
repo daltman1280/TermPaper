@@ -176,8 +176,8 @@ static NSArray *CitationTypes = [CitationModel loadCitationTypes];									// st
 
 - (NSComparisonResult)compareCitations:(NSMutableDictionary *)operand
 {
-//	NSLog(@"name1 = %@, name2 = %@, result = %d", [self objectForKey:@"Name"], [operand objectForKey:@"Name"], [(NSString *)[self objectForKey:@"Name"] compare:(NSString *)[self objectForKey:@"Name"]]);
-//	NSLog(@"classname = %s", object_getClassName([self objectForKey:@"Name"]));
+//	CLSLog(@"name1 = %@, name2 = %@, result = %d", [self objectForKey:@"Name"], [operand objectForKey:@"Name"], [(NSString *)[self objectForKey:@"Name"] compare:(NSString *)[self objectForKey:@"Name"]]);
+//	CLSLog(@"classname = %s", object_getClassName([self objectForKey:@"Name"]));
 	return [[self objectForKey:@"Name"] caseInsensitiveCompare:[operand objectForKey:@"Name"]];
 }
 
