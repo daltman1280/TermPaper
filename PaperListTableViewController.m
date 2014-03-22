@@ -331,6 +331,12 @@ const static int kSGTextFieldTagNumber = 99;
 		;
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 	picker.mailComposeDelegate = self;
+	if (!picker) {
+		NSLog(@"Failed to generate mail picker for PDF.");
+		UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Can\'t access Mail." delegate:nil cancelButtonTitle:@"" destructiveButtonTitle:@"OK" otherButtonTitles:@"", nil];
+		sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+		[sheet showInView:[[[UIApplication sharedApplication] keyWindow] rootViewController].view];
+	}
 	
 	[picker setSubject:[NSString stringWithFormat:@"Printable PDF for %@", [TermPaperModel activeTermPaper].name]];
 	
@@ -353,6 +359,12 @@ const static int kSGTextFieldTagNumber = 99;
 	if (![MFMailComposeViewController canSendMail])
 		;
 	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	if (!picker) {
+		NSLog(@"Failed to generate mail picker for feedback.");
+		UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Can\'t access Mail." delegate:nil cancelButtonTitle:@"" destructiveButtonTitle:@"OK" otherButtonTitles:@"", nil];
+		sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+		[sheet showInView:[[[UIApplication sharedApplication] keyWindow] rootViewController].view];
+	}
 	picker.mailComposeDelegate = self;
 	
 	[picker setToRecipients:[NSArray arrayWithObject:@"support@homebodyapps.com"]];
