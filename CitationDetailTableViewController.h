@@ -15,7 +15,7 @@
 	NSString*							paperName;
 	TermPaperModel*						mTermPaper;
 	IBOutlet UITableViewCell*			templateCell;
-	int									citationListIndex;
+	NSInteger							citationListIndex;
 	IBOutlet UIView*					accessoryView;
 	IBOutlet UIButton*					nextButton;
 	IBOutlet UIButton*					prevButton;
@@ -30,7 +30,7 @@
 @property (nonatomic, strong) NSString *paperName;
 @property (nonatomic, strong) TermPaperModel *mTermPaper;
 @property (nonatomic, strong) IBOutlet UITableViewCell *templateCell;
-@property (nonatomic) int citationListIndex;										// specifies which citation we're managing (-1 denotes a new citation)
+@property (nonatomic) NSInteger citationListIndex;									// specifies which citation we're managing (-1 denotes a new citation)
 @end
 
 @interface SelectableTextField : UITextField
