@@ -16,6 +16,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 #if 1
 	textView.text = mTermPaper.abstract;
+	[self updateWordCount];
 #else
 	NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:mTermPaper.abstract];
 	[string setAttributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:kSystemFontSizeForPlainText] } range:NSMakeRange(0, string.length)];
@@ -61,7 +62,7 @@
 	NSUInteger count = words.count;
 	if (((NSString *)[words objectAtIndex:0]).length == 0) --count;
 	if (count > 0 && ((NSString *)[words lastObject]).length == 0) --count;
-	wordCountLabel.text = [NSString stringWithFormat:@"Word count: %ld  (recommended 150-250)", (unsigned long)count];
+	wordCountLabel.text = [NSString stringWithFormat:@"Word count: %d (recommended 150-250)", count];
 }
 
 @end
