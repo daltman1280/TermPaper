@@ -32,7 +32,6 @@ static float kSystemFontSizeForPlainText = 18.440904;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// setup keyboard notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuWillShow:) name:UIMenuControllerWillShowMenuNotification object:nil];
@@ -101,8 +100,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	[self.citationReferenceListPopoverController presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
-//	We've resized the text scroll view in keyboardWillShow. We can't get the selection until keyboardDidShow. We will decide whether we need to scroll
-//	the view in order to make it visible after the resize.
+//	Set the contentInset height to be the keyboard height. If our selection is covered by the keyboard, set contenOffset to make it visible.
 
 - (void)keyboardDidShow:(NSNotification *)aNotification
 {
@@ -111,12 +109,15 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	CGRect rawKeyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
 	CGRect keyboardRect = [self.view convertRect:rawKeyboardRect fromView:nil];							// to account for interface rotation
 	float keyboardHeight = keyboardRect.size.height;
+	UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0, keyboardHeight, 0);
+	plainTextScrollView.contentInset = contentInsets;
+	plainTextScrollView.scrollIndicatorInsets = contentInsets;
 	if (keyboardHeight + heightOfText >= heightOfView) {												// only if the keyboard forces text to be covered
 		NSUInteger selection = plainTextView.selectedRange.location;
 		NSUInteger count = plainTextView.text.length;
 		NSUInteger countFromEnd = count - selection;
-		if (countFromEnd < 300) {																		// TODO: why doesn't scrollRectToVisible work?
-			[plainTextScrollView scrollRectToVisible:CGRectMake(0, heightOfText-10, 10, 10) animated:YES];
+		if (countFromEnd < 300) {
+			[plainTextScrollView setContentOffset:CGPointMake(0, heightOfText-heightOfView+keyboardHeight) animated:YES];
 		}
 	}
 	//	Add the citation reference button in the edit menu
@@ -124,36 +125,17 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	theMenu.menuItems = [NSArray arrayWithObject:[[UIMenuItem alloc] initWithTitle:@"Insert Citation Reference…" action:@selector(handleInsertCitationReference:)]];
 }
 
-- (void)keyboardWillShow:(NSNotification *)aNotification
-{
-	if (mBKeyboardIsShowing)
-		return;
-	mBKeyboardIsShowing = YES;
-	// the keyboard is showing so resize the table's height
-	CGRect rawKeyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-	CGRect keyboardRect = [self.view convertRect:rawKeyboardRect fromView:nil];							// to account for interface rotation
-    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = plainTextScrollView.frame;
-    frame.size.height -= keyboardRect.size.height;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    plainTextScrollView.frame = frame;
-    [UIView commitAnimations];
-}
+//	Reset the contentInset
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
-	mBKeyboardIsShowing = NO;
-    // the keyboard is hiding reset the table's height
-	CGRect rawKeyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-	CGRect keyboardRect = [self.view convertRect:rawKeyboardRect fromView:nil];							// to account for interface rotation
-    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = plainTextScrollView.frame;
-    frame.size.height += keyboardRect.size.height;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    plainTextScrollView.frame = frame;
-    [UIView commitAnimations];
+	NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+	[UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+	[UIView setAnimationDuration:animationDuration];
+	UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+	plainTextScrollView.contentInset = contentInsets;
+	plainTextScrollView.scrollIndicatorInsets = contentInsets;
+	[UIView commitAnimations];
 #pragma mark TODO: fix this
 //	[appDelegate dismissCitationReferenceListPopover];													// since there's no longer a selection, can't insert a reference
 }
@@ -210,41 +192,25 @@ static float kSystemFontSizeForPlainText = 18.440904;
 
 #pragma mark UITextViewDelegate methods
 
+//	Recalculate the frame height of plainTextView, whenever the text content changes
+
 - (void)textViewDidChange:(UITextView *)aTextView
 {
-	if (plainTextView.contentSize.height != mPreviousContentHeight)
-		[self calculateTextViewBounds];
-	mPreviousContentHeight = plainTextView.contentSize.height;
+	[self calculateTextViewBounds];
 	formattedTextView.calculatedHeight = 0;											// force it to recalculate its content height (for its scrollview)
 	[formattedTextScrollView invalidate];
 }
-
-// TODO: detect the user selection to determine whether it's necessary to scroll the text to make it visible
-
-#if 0
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
-{
-	CLSLog(@"textViewShouldBeginEditing, selection = %d, total = %d", textView.selectedRange.location, textView.text.length);
-	return YES;
-}
-
-- (BOOL)textViewDidChangeSelection:(UITextView *)textView
-{
-	CLSLog(@"textViewDidChangeSelection, selection = %d, total = %d", textView.selectedRange.location, textView.text.length);
-	return YES;
-}
-#endif
 
 #pragma mark Custom methods
 
 - (void)calculateTextViewBounds
 {
-	plainTextView.scrollEnabled = YES;
-	float contentHeight = plainTextView.contentSize.height+66;							// show some space at the end of content
+	//	based on the bounding rectangle of the text
+	CGRect rect = [plainTextView.attributedText boundingRectWithSize:CGSizeMake(plainTextView.frame.size.width, 1000000) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
+	float contentHeight = rect.size.height+166;										// show some space at the end of content
 	CGRect frame = plainTextView.frame;
 	frame.size.height = contentHeight;
 	plainTextView.frame = frame;
-	plainTextView.scrollEnabled = NO;
 	[plainTextScrollView setContentSize:CGSizeMake(plainTextScrollView.contentSize.width, contentHeight)];
 }
 
