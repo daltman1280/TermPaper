@@ -28,7 +28,7 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     if ([[DBSession sharedSession] handleOpenURL:url]) {
         if ([[DBSession sharedSession] isLinked]) {
-            NSLog(@"App linked successfully!");
+            CLSLog(@"App linked successfully!");
             // At this point you can start making API calls
         }
         return YES;
