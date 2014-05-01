@@ -12,10 +12,11 @@
 #import "FormattedTextView.h"
 #import "PlainTextScrollView.h"
 #import "FormattedTextScrollView.h"
+#import "PlainTextView.h"
 
 @interface TermPaperTextViewController : UIViewController {
 	IBOutlet BackgroundPaperTileView*		paperView;
-	IBOutlet UITextView*					plainTextView;
+	IBOutlet PlainTextView*					plainTextView;
 	IBOutlet PlainTextScrollView*			plainTextScrollView;
 	IBOutlet UIToolbar*						toolbar;
 	IBOutlet UIBarButtonItem*				barTitle;
@@ -31,6 +32,7 @@
 - (IBAction)handleTogglePlainFormattedButton:(id)sender;
 - (IBAction)handleExportPDFButton:(id)sender;
 - (void)pasteReferenceText:(NSString *)referenceText;
+- (void)paste:(id)sender;
 @property (unsafe_unretained, nonatomic, readonly) NSString *content;
 @property (nonatomic, strong) UIPopoverController *citationReferenceListPopoverController;
 

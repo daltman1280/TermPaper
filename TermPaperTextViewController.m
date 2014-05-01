@@ -201,6 +201,34 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	[formattedTextScrollView invalidate];
 }
 
+//	Called from paste method of PlainTextView class. Only called if pasteboard contains some form of text. PlainTextView has converted it to NSAttributedString
+
+- (void)paste:(id)sender
+{
+	NSAttributedString *rawString = plainTextView.pastedString;
+	NSMutableAttributedString *plainTextWithAttributes = [[NSMutableAttributedString alloc] initWithAttributedString:rawString];
+	[plainTextWithAttributes setAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kSystemFontSizeForPlainText]} range:NSMakeRange(0, rawString.length)];
+	UIFontDescriptor *fontDescriptorBold = [UIFontDescriptor fontDescriptorWithFontAttributes:@{ UIFontDescriptorFamilyAttribute : @"Helvetica", UIFontDescriptorTraitsAttribute : @{UIFontSymbolicTrait: @(UIFontDescriptorTraitBold)} }];
+	UIFont *boldFont = [UIFont fontWithDescriptor:fontDescriptorBold size:kSystemFontSizeForPlainText];
+	UIFontDescriptor *fontDescriptorItalic = [UIFontDescriptor fontDescriptorWithFontAttributes:@{ UIFontDescriptorFamilyAttribute : @"Helvetica", UIFontDescriptorTraitsAttribute : @{UIFontSymbolicTrait: @(UIFontDescriptorTraitItalic)} }];
+	UIFont *italicFont = [UIFont fontWithDescriptor:fontDescriptorItalic size:kSystemFontSizeForPlainText];
+	NSUInteger length = rawString.length;
+	NSRange effectiveRange = NSMakeRange(0, 0);
+	id attributeValue;
+	while (NSMaxRange(effectiveRange) < length) {
+		attributeValue = [rawString attribute:NSFontAttributeName atIndex:NSMaxRange(effectiveRange) effectiveRange:&effectiveRange];
+		UIFont *font = (UIFont *) attributeValue;
+		UIFontDescriptor *descriptor = font.fontDescriptor;
+		if (descriptor.symbolicTraits & UIFontDescriptorTraitItalic)
+			[plainTextWithAttributes addAttribute:NSFontAttributeName value:italicFont range:effectiveRange];
+		else if (descriptor.symbolicTraits & UIFontDescriptorTraitBold)
+			[plainTextWithAttributes addAttribute:NSFontAttributeName value:boldFont range:effectiveRange];
+	}
+	NSMutableAttributedString *textViewString = [[NSMutableAttributedString alloc] initWithAttributedString:plainTextView.attributedText];
+	[textViewString replaceCharactersInRange:plainTextView.selectedRange withAttributedString:plainTextWithAttributes];
+	plainTextView.attributedText = textViewString;
+}
+
 #pragma mark Custom methods
 
 - (void)calculateTextViewBounds

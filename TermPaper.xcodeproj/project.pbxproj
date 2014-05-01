@@ -12,6 +12,7 @@
 		258DDE5318BC261400982471 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5218BC261300982471 /* Crashlytics.framework */; };
 		258DDE5718BC29B600982471 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5618BC29B600982471 /* Security.framework */; };
 		258DDE5918BC29C700982471 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 258DDE5818BC29C700982471 /* QuartzCore.framework */; };
+		25B240BA191209840040C577 /* PlainTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B240B9191209840040C577 /* PlainTextView.m */; };
 		25C0DC1818B9480B00AE93EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1718B9480B00AE93EF /* Foundation.framework */; };
 		25C0DC1A18B9480B00AE93EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */; };
 		25C0DC1C18B9480B00AE93EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C0DC1B18B9480B00AE93EF /* UIKit.framework */; };
@@ -76,6 +77,8 @@
 		258DDE5418BC297000982471 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		258DDE5618BC29B600982471 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		258DDE5818BC29C700982471 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		25B240B8191209840040C577 /* PlainTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlainTextView.h; sourceTree = "<group>"; };
+		25B240B9191209840040C577 /* PlainTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlainTextView.m; sourceTree = "<group>"; };
 		25C0DC1418B9480B00AE93EF /* TermPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C0DC1718B9480B00AE93EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25C0DC1918B9480B00AE93EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -342,6 +345,8 @@
 				25C0DC8818B95B2D00AE93EF /* FormattedTextView.m */,
 				25C0DC8918B95B2D00AE93EF /* TermPaperTextViewController.h */,
 				25C0DC8A18B95B2D00AE93EF /* TermPaperTextViewController.m */,
+				25B240B8191209840040C577 /* PlainTextView.h */,
+				25B240B9191209840040C577 /* PlainTextView.m */,
 				25C0DC8B18B95B2D00AE93EF /* BackgroundPaperTileView.h */,
 				25C0DC8C18B95B2D00AE93EF /* BackgroundPaperTileView.m */,
 				25C0DC8D18B95B2D00AE93EF /* PlainTextScrollView.h */,
@@ -538,6 +543,7 @@
 				25C0DC8318B95B0800AE93EF /* CitationFormatter.m in Sources */,
 				25C0DC9618B95B2D00AE93EF /* FormattedTextScrollView.m in Sources */,
 				25C0DC8018B95B0800AE93EF /* CitationModel.m in Sources */,
+				25B240BA191209840040C577 /* PlainTextView.m in Sources */,
 				25C0DC8118B95B0800AE93EF /* DocXFormatter.m in Sources */,
 				25C0DC9518B95B2D00AE93EF /* PlainTextScrollView.m in Sources */,
 				25C0DC8218B95B0800AE93EF /* TermPaperModel.mm in Sources */,

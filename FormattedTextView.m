@@ -240,9 +240,9 @@ typedef enum {
 }
 
 /*
- Apply the symbolic traits (bold, italic) from model.attributedContent ot attrString.
+ Apply the symbolic traits (bold, italic) from model.attributedContent to attrString.
  
- Important: this assumes that the underlying strings are in synch, so this must be called before modifying the string contents of attrString, or the font settings will be offset.
+ Important: this assumes that the underlying strings are in sync, so this must be called before modifying the string contents of attrString, or the font settings will be offset.
  */
 
 - (void)applyFontTraitsFromDocument:(CFMutableAttributedStringRef)attrString
