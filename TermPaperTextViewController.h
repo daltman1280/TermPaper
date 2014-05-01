@@ -23,9 +23,6 @@
 	IBOutlet FormattedTextView*				formattedTextView;						// never visible, only for layout purposes
 	IBOutlet FormattedTextScrollView*		formattedTextScrollView;
 	IBOutlet UISegmentedControl*			modeControl;
-	
-	float									mPreviousContentHeight;
-	BOOL									mBKeyboardIsShowing;
 }
 
 - (void)calculateTextViewBounds;
