@@ -205,13 +205,16 @@ static float kSystemFontSizeForPlainText = 18.440904;
 
 - (void)paste:(id)sender
 {
-	NSAttributedString *rawString = plainTextView.pastedString;
-	NSMutableAttributedString *plainTextWithAttributes = [[NSMutableAttributedString alloc] initWithAttributedString:rawString];
+	NSAttributedString *rawString = plainTextView.pastedString;																					// pasted text
+	NSMutableAttributedString *plainTextWithAttributes = [[NSMutableAttributedString alloc] initWithAttributedString:rawString];				// mutable version of pasted text
+	// change the font of the pasted text to match our draft view
 	[plainTextWithAttributes setAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:kSystemFontSizeForPlainText]} range:NSMakeRange(0, rawString.length)];
+	// bold and italic fonts which match our draft view
 	UIFontDescriptor *fontDescriptorBold = [UIFontDescriptor fontDescriptorWithFontAttributes:@{ UIFontDescriptorFamilyAttribute : @"Helvetica", UIFontDescriptorTraitsAttribute : @{UIFontSymbolicTrait: @(UIFontDescriptorTraitBold)} }];
 	UIFont *boldFont = [UIFont fontWithDescriptor:fontDescriptorBold size:kSystemFontSizeForPlainText];
 	UIFontDescriptor *fontDescriptorItalic = [UIFontDescriptor fontDescriptorWithFontAttributes:@{ UIFontDescriptorFamilyAttribute : @"Helvetica", UIFontDescriptorTraitsAttribute : @{UIFontSymbolicTrait: @(UIFontDescriptorTraitItalic)} }];
 	UIFont *italicFont = [UIFont fontWithDescriptor:fontDescriptorItalic size:kSystemFontSizeForPlainText];
+	// apply bold and italic traits from rawString to plainTextWithAttributes
 	NSUInteger length = rawString.length;
 	NSRange effectiveRange = NSMakeRange(0, 0);
 	id attributeValue;
@@ -224,6 +227,15 @@ static float kSystemFontSizeForPlainText = 18.440904;
 		else if (descriptor.symbolicTraits & UIFontDescriptorTraitBold)
 			[plainTextWithAttributes addAttribute:NSFontAttributeName value:boldFont range:effectiveRange];
 	}
+	// apply underline style from rawString to plainTextWithAttributes
+	effectiveRange = NSMakeRange(0, 0);
+	while (NSMaxRange(effectiveRange) < length) {
+		attributeValue = [rawString attribute:NSUnderlineStyleAttributeName atIndex:NSMaxRange(effectiveRange) effectiveRange:&effectiveRange];
+		if (attributeValue) {
+			[plainTextWithAttributes addAttribute:NSUnderlineStyleAttributeName value:@1 range:effectiveRange];
+		}
+	}
+	// paste plainTextWithAttributes into our selection
 	NSMutableAttributedString *textViewString = [[NSMutableAttributedString alloc] initWithAttributedString:plainTextView.attributedText];
 	[textViewString replaceCharactersInRange:plainTextView.selectedRange withAttributedString:plainTextWithAttributes];
 	plainTextView.attributedText = textViewString;
