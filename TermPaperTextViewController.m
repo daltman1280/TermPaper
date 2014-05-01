@@ -239,6 +239,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	NSMutableAttributedString *textViewString = [[NSMutableAttributedString alloc] initWithAttributedString:plainTextView.attributedText];
 	[textViewString replaceCharactersInRange:plainTextView.selectedRange withAttributedString:plainTextWithAttributes];
 	plainTextView.attributedText = textViewString;
+	[self calculateTextViewBounds];																												// has changed, due to paste operation
 }
 
 #pragma mark Custom methods
