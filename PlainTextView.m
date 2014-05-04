@@ -26,7 +26,6 @@
 
 - (void)paste:(id)sender
 {
-	NSLog(@"types = %@", [[UIPasteboard generalPasteboard] pasteboardTypes]);
 	if ([[[UIPasteboard generalPasteboard] pasteboardTypes] containsObject:@"public.rtf"]) {						// styled text
 		NSData *data = [[UIPasteboard generalPasteboard] dataForPasteboardType:@"public.rtf"];
 		NSError *error;

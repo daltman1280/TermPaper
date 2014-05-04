@@ -14,7 +14,7 @@
 #import "FormattedTextScrollView.h"
 #import "PlainTextView.h"
 
-@interface TermPaperTextViewController : UIViewController {
+@interface TermPaperTextViewController : UIViewController <UIPopoverControllerDelegate> {
 	IBOutlet BackgroundPaperTileView*		paperView;
 	IBOutlet PlainTextView*					plainTextView;
 	IBOutlet PlainTextScrollView*			plainTextScrollView;

@@ -67,21 +67,33 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	if ([segue.identifier isEqualToString:@"papers"]) {
 		[self saveActivePaper];
 		UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
-		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).viewController = self;// set up ourselves as delegate
+		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).viewController = self;		// set up ourselves as delegate
 		((UIStoryboardPopoverSegue *)segue).popoverController.delegate = (id) self;																	// popover controller delegate
 		self.popover = popoverSegue.popoverController;																								// so we can dismiss the popover
+		self.popover.delegate = self;
 		((PaperListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController).paperNames = [TermPaperModel termPapers];
 	} else if ([segue.identifier isEqualToString:@"settings"]) {
 		PaperDetailTableViewController *controller = (PaperDetailTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController;
 		[controller setTitle:[NSString stringWithFormat:@"%@ Settings", [TermPaperModel activeTermPaper].name]];
 		controller.paperName = [TermPaperModel activeTermPaper].name;	// tell him which paper to manage
+		UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
+		self.popover = popoverSegue.popoverController;
+		self.popover.delegate = self;
 	} else if ([segue.identifier isEqualToString:@"citations"]) {
 		NSString *paperName = [TermPaperModel activeTermPaper].name;
 		// initialize the navigation bar
 		CitationListTableViewController *controller = (CitationListTableViewController *)((UINavigationController *)segue.destinationViewController).topViewController;
 		[controller setTitle:[NSString stringWithFormat:@"%@ Citations", paperName]];
 		[controller.navigationItem setRightBarButtonItem:controller.addButton animated:NO];
+		UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
+		self.popover = popoverSegue.popoverController;
+		self.popover.delegate = self;
 	}
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+	self.popover = nil;
 }
 
 #pragma mark UIWindow notifications
@@ -104,6 +116,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 
 - (void)keyboardDidShow:(NSNotification *)aNotification
 {
+	if (self.popover) return;
 	float heightOfView = [self.view convertRect:self.view.frame fromView:nil].size.height;				// taking screen rotation into account
 	float heightOfText = plainTextView.frame.size.height;
 	CGRect rawKeyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
@@ -129,6 +142,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
+	if (self.popover) return;
 	NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
 	[UIView beginAnimations:@"ResizeForKeyboard" context:nil];
 	[UIView setAnimationDuration:animationDuration];
@@ -136,8 +150,6 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	plainTextScrollView.contentInset = contentInsets;
 	plainTextScrollView.scrollIndicatorInsets = contentInsets;
 	[UIView commitAnimations];
-#pragma mark TODO: fix this
-	//	[appDelegate dismissCitationReferenceListPopover];													// since there's no longer a selection, can't insert a reference
 }
 
 - (void)menuWillShow:(NSNotification *)aNotification
@@ -248,7 +260,8 @@ static float kSystemFontSizeForPlainText = 18.440904;
 {
 	//	based on the bounding rectangle of the text
 	CGRect rect = [plainTextView.attributedText boundingRectWithSize:CGSizeMake(plainTextView.frame.size.width, 1000000) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
-	float contentHeight = rect.size.height+166;										// show some space at the end of content
+	// calculated height seems to be short by about 1%
+	float contentHeight = rect.size.height*1.01+166;										// show some space at the end of content
 	CGRect frame = plainTextView.frame;
 	frame.size.height = contentHeight;
 	plainTextView.frame = frame;
