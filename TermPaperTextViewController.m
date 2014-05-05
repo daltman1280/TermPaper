@@ -41,6 +41,11 @@ static float kSystemFontSizeForPlainText = 18.440904;
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePopupVisible:) name:kTPPopupVisibleNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePopupNotVisible:) name:kTPPopupNotVisibleNotification object:nil];
 	formattedTextView.mode = multiPageMode;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
 	// look for new documents to import
 	[TermPaperModel importExternalDocuments];
 	// initialize text contents of textView
@@ -60,6 +65,14 @@ static float kSystemFontSizeForPlainText = 18.440904;
 		[TermPaperModel makeActive:newPaperName];
 		[self openPaper];
 	}
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	// if the device starts up in landscape orientation, this is the first opportunity to access the correct orientation; calculate text view bounds again, with correct view bounds
+	if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft || [UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight)
+		[self calculateTextViewBounds];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -259,7 +272,7 @@ static float kSystemFontSizeForPlainText = 18.440904;
 - (void)calculateTextViewBounds
 {
 	//	based on the bounding rectangle of the text
-	CGRect rect = [plainTextView.attributedText boundingRectWithSize:CGSizeMake(plainTextView.frame.size.width, 1000000) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
+	CGRect rect = [plainTextView.text boundingRectWithSize:CGSizeMake(plainTextView.frame.size.width-2.0*plainTextView.textContainer.lineFragmentPadding, MAXFLOAT) options:NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName : [UIFont systemFontOfSize:kSystemFontSizeForPlainText] } context:nil];
 	// calculated height seems to be short by about 1%
 	float contentHeight = rect.size.height*1.01+166;										// show some space at the end of content
 	CGRect frame = plainTextView.frame;
